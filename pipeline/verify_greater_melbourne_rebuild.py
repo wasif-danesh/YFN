@@ -13,7 +13,7 @@ def main():
     files=sorted(set(list((BASE/'curated').glob('*.csv'))+
         list((BASE/'audit').glob('*.csv'))+
         [p for p in (BASE/'audit').glob('*.json') if p.name!='rebuild-check.json']+
-        [BASE/n for n in ['sample.sqlite','sample-summary.csv','sample-summary.json','manifest.json','selected-sa2.geojson','schema-guide.md','data-dictionary.md']]))
+        [BASE/n for n in ['yfn.sqlite','sample-summary.csv','sample-summary.json','manifest.json','selected-sa2.geojson','schema-guide.md','data-dictionary.md']]))
     def hashes():return {str(p.relative_to(BASE)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
     before=hashes();start=time.monotonic()
     subprocess.run([sys.executable,str(Path(__file__).with_name('build_greater_melbourne.py'))],check=True)

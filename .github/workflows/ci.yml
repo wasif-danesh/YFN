@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   sample-integrity:
-    name: Committed sample integrity
+    name: Greater Melbourne database integrity
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7

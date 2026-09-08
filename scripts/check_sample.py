@@ -9,7 +9,7 @@ from pathlib import Path
 import sqlite3
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = ROOT / 'data/samples/greater-melbourne-v1'
+BASE = ROOT / 'data/greater-melbourne-v1'
 
 
 def require(condition, message):
@@ -23,7 +23,7 @@ def check_sample(base=BASE):
     require(evidence['status']=='passed','Original rebuild evidence did not pass')
     # Only require the committed subset. Bulky raw geometry and intersection
     # audits are intentionally excluded from Git and are not reverified here.
-    files=['sample.sqlite','manifest.json','sample-summary.csv','sample-summary.json']
+    files=['yfn.sqlite','manifest.json','sample-summary.csv','sample-summary.json']
     files += [str(p.relative_to(base)) for p in sorted((base/'curated').glob('*.csv'))]
     require(len(files)==14,'Expected ten curated CSV tables')
     for filename in files:
@@ -31,7 +31,7 @@ def check_sample(base=BASE):
         require(expected==hashlib.sha256((base/filename).read_bytes()).hexdigest(),f'Artifact hash mismatch: {filename}')
     require(hashlib.sha256((base/'acquisition.json').read_bytes()).hexdigest()==manifest['source_manifest_sha256'],'Acquisition manifest changed')
     require(manifest['data_mode']=='real' and manifest['publication_ready'] is False,'Unexpected sample release mode')
-    db=sqlite3.connect((base/'sample.sqlite').resolve().as_uri()+'?mode=ro',uri=True)
+    db=sqlite3.connect((base/'yfn.sqlite').resolve().as_uri()+'?mode=ro',uri=True)
     try:
         require(db.execute('PRAGMA integrity_check').fetchone()[0]=='ok','SQLite integrity failed')
         require(not db.execute('PRAGMA foreign_key_check').fetchall(),'Broken foreign keys')

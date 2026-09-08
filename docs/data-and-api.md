@@ -2,9 +2,9 @@
 
 Status: recommended implementation draft, 8 September 2026. This is not a claim that data has been downloaded, inspected or approved. Agree this contract at the start so all team members can work independently.
 
-Subsequent evidence, 8 September 2026: a [four-SA2 real-data sample](../data/samples/real-sa2-v1/README.md) now contains source-checked Census rent, 2020–2025 ERP and reproducible sample spatial calculations. Its CSVs, SQLite schema, field mappings and validation reports inform this proposal; they do not approve the provisional transport weighting, open-space filter or production scoring. The original draft below remains a proposal for team review.
+Subsequent evidence, 8 September 2026: a [four-SA2 regression evidence](../pipeline/fixtures/four-area-regression.json) now contains source-checked Census rent, 2020–2025 ERP and reproducible sample spatial calculations. Its CSVs, SQLite schema, field mappings and validation reports inform this proposal; they do not approve the provisional transport weighting, open-space filter or production scoring. The original draft below remains a proposal for team review.
 
-The user subsequently requested the [complete Greater Melbourne sample](../data/samples/greater-melbourne-v1/README.md). It now covers all 361 spatial SA2s with four observation rows each, including unavailable values. Use its [ER diagram and schema guide](../data/samples/greater-melbourne-v1/schema-guide.md) and [column dictionary](../data/samples/greater-melbourne-v1/data-dictionary.md) for concrete design evidence. The implemented sample adds comparison-eligibility notes, separate source files, method records, observation components and spatial diagnostics to the earlier proposal. It retains zero-population geographies, withholds ambiguous zero rent medians, and preserves partial PTAL coverage. The final shared application contract and production eligibility/scoring rules remain to be agreed.
+The user subsequently requested the [complete Greater Melbourne sample](../data/greater-melbourne-v1/README.md). It now covers all 361 spatial SA2s with four observation rows each, including unavailable values. Use its [ER diagram and schema guide](../data/greater-melbourne-v1/schema-guide.md) and [column dictionary](../data/greater-melbourne-v1/data-dictionary.md) for concrete design evidence. The implemented sample adds comparison-eligibility notes, separate source files, method records, observation components and spatial diagnostics to the earlier proposal. It retains zero-population geographies, withholds ambiguous zero rent medians, and preserves partial PTAL coverage. The final shared application contract and production eligibility/scoring rules remain to be agreed.
 
 ## 1. Dataset register: both iterations
 
@@ -35,7 +35,7 @@ Semantic names above are our requirements, not assertions about the actual file 
 9. Join curated indicators and population history, calculate approved metrics and quality flags, and retain every source used in derived values.
 10. Rebuild a new SQLite file with foreign keys enabled and parameterised bulk insertion in a transaction. Do not mutate the live database during requests.
 11. Validate uniqueness, foreign keys, score bounds, source coverage, missing states and hand-calculated examples. Spot-check results against original sources before publication.
-12. Publish a versioned database artefact and build manifest. Swap releases during deployment; preserve a previous validated release for rollback.
+12. Rebuild the single `data/greater-melbourne-v1/yfn.sqlite` and matching manifest. Commit reviewed data updates together; use Git history to restore a previous code/database combination. No separate release folder is required.
 
 Suggested curated CSVs: `areas.csv`, `area_aliases.csv` (optional), `indicators.csv`, `observations.csv`, `population_history.csv`, `data_sources.csv` and `observation_sources.csv`. Intermediate transport/open-space tables can remain CSV/Parquet with geometry kept separately. Generated CSVs should not require hand edits.
 
@@ -154,13 +154,11 @@ Null is a JSON null, not a string or zero. An unavailable indicator keeps its ke
 
 Use a consistent error envelope, e.g. `{ "error": { "code": "INVALID_SELECTION", "message": "Choose two or three different areas." } }`. Add matching FastAPI validation exception handling if adopting this shape, because default validation errors differ. Missing an individual indicator does not make the whole comparison fail. Database failure returns a safe 503 and the UI offers retry.
 
-## 6. Mock-to-real integration
+## 6. One shared database for development and deployment
 
-Create fixtures for three fictional areas with nine-digit string IDs reserved for development, e.g. `999999991` to `999999993`, and clearly fictional names. Cover normal values, partial data, ties, negative growth and zero-baseline growth in tests. These IDs must not enter the real release.
+The user approved one maintained `data/greater-melbourne-v1/yfn.sqlite` on 9 September 2026. UI and API teams develop against the same data and response contract. The frontend only reads JSON from FastAPI. The pipeline owner rebuilds SQLite offline; no separate synthetic database, samples directory or releases directory is required.
 
-Use one pipeline entry point accepting either curated synthetic CSVs or validated real CSVs. Use the same schema and API response models in both modes. Seed all four indicator rows even when one is unavailable so the page structure is stable. Mark synthetic mode in metadata and show a development banner.
-
-Before replacing fixtures: verify all real IDs against the official master, validate all joins, inspect sample outputs, reject synthetic source IDs, compare API contract output and rerun the full browser journey. Store DB releases with checksums. Do not use mock data as an automatic fallback when the production API fails.
+Keep temporary/in-memory fixtures for edge-case tests. Do not insert fictional values into the shared database or use fixtures as a runtime fallback. Preserve source dates, unavailable values and provisional flags. Review data changes and checksums with the corresponding code; restore older versions through Git history. Publishing real observations still requires approval of the affected spatial definitions.
 
 ## 7. Tests that resolve real risks
 

@@ -1,4 +1,4 @@
-"""Acquire complete official spatial layers and reuse checksummed ABS snapshots.
+"""Acquire official ABS and spatial sources directly into the dataset raw folder.
 
 Public read-only requests only. Resumable cache; offline build is separate.
 """
@@ -8,7 +8,6 @@ import hashlib
 import io
 import json
 from pathlib import Path
-import shutil
 import subprocess
 from threading import Lock
 from urllib.parse import urlencode
@@ -16,29 +15,20 @@ import xml.etree.ElementTree as ET
 import zipfile
 import shapefile
 
-from acquire_real_sample import BASE as SAMPLE, DOWNLOADS, WFS, PARKS
-
-BASE = SAMPLE.parent / 'greater-melbourne-v1'
-RAW = BASE / 'raw'
+from melbourne_config import BASE, RAW, DOWNLOADS, WFS, PARKS
 
 
 def main():
     RAW.mkdir(parents=True, exist_ok=True)
     manifest_path = BASE / 'acquisition.json'
     manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
-    prior = json.loads((SAMPLE/'acquisition.json').read_text())
     lock = Lock()
 
     def fetch(name, url, refresh=False):
         target = RAW/name
         if not target.exists() or refresh:
             temp = target.with_suffix(target.suffix+'.part')
-            if name in DOWNLOADS and name in prior and not refresh:
-                original = SAMPLE/prior[name]['file']
-                assert hashlib.sha256(original.read_bytes()).hexdigest() == prior[name]['sha256']
-                shutil.copy2(original, temp)
-            else:
-                subprocess.run(['curl','-sSL','--fail','--retry','3','--max-time','180',url,'-o',str(temp)],check=True)
+            subprocess.run(['curl','-sSL','--fail','--retry','3','--max-time','180',url,'-o',str(temp)],check=True)
             temp.replace(target)
         digest = hashlib.sha256(target.read_bytes()).hexdigest()
         with lock:

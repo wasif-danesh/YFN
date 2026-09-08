@@ -7,3 +7,5 @@ Create `app/main.py` as the ASGI entry point, with `app/api/` for routes, `app/s
 Commands run from the repository root. Resolve `DATABASE_PATH` against that root and open SQLite using a read-only URI (`mode=ro`). Validate the database on startup and make `/health` fail when it cannot be used. Read data-mode/release metadata from the database; do not turn a sample into production data by changing an environment variable.
 
 Use separate pinned `requirements.txt` (runtime) and `requirements-dev.txt` (including runtime and tests). GIS libraries belong to the pipeline environment, not the deployed API. For the documented development command, include Uvicorn's dotenv support, for example through `uvicorn[standard]`.
+
+Use `DATABASE_PATH=data/greater-melbourne-v1/yfn.sqlite` locally and on Render. There is one maintained database; no release-directory copy is needed.

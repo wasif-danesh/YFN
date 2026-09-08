@@ -12,14 +12,14 @@ services:
     healthCheckPath: /health
     envVars:
       - key: DATABASE_PATH
-        value: data/releases/active.sqlite
+        value: data/greater-melbourne-v1/yfn.sqlite
       - key: CORS_ALLOWED_ORIGINS
         sync: false
     buildFilter:
       paths:
         - backend/**
         - contracts/**
-        - data/releases/**
+        - data/greater-melbourne-v1/**
         - scripts/**
         - .python-version
         - .gitattributes

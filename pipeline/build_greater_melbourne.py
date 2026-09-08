@@ -1,7 +1,7 @@
 """Build the schema-design sample offline from checksummed official snapshots.
 
 This is a sample investigation, not the production pipeline or approved scoring.
-Python dependencies are in requirements-sample.txt. Run without Python -O because
+Python dependencies are in requirements-greater-melbourne.txt. Run without Python -O because
 assertions deliberately stop the sample build on validation failures.
 """
 import csv
@@ -27,7 +27,8 @@ from shapely.geometry.polygon import orient
 from shapely.ops import transform, unary_union
 from shapely.validation import make_valid
 
-from acquire_greater_melbourne import BASE, RAW
+from melbourne_config import BASE, RAW
+from melbourne_common import growth, per_resident, esri_polygon, polygonal, projected
 from melbourne_spatial import SpatialSources, geodesic_area
 from melbourne_source_checks import check_sources
 
@@ -57,48 +58,7 @@ def write_csv(path, rows):
         w.writerows(rows)
 
 
-def growth(start, end):
-    return None if start is None or end is None or start <= 0 else 100*(end-start)/start
-
-
-def per_resident(area, population):
-    return None if area is None or population is None or population <= 0 else area/population
-
-
-def esri_polygon(rings):
-    """Interpret Esri clockwise shells and counterclockwise holes explicitly."""
-    shells = []
-    holes = []
-    for ring in rings:
-        p = Polygon(ring)
-        if p.exterior.is_ccw:
-            holes.append(p)
-        else:
-            shells.append(p)
-    assert shells, 'Esri polygon has no clockwise exterior'
-    assigned = [[] for _ in shells]
-    for hole in holes:
-        parents = [(s.area,i) for i,s in enumerate(shells) if s.covers(hole.representative_point())]
-        assert parents, 'Unassigned interior ring'
-        assigned[min(parents)[1]].append(list(hole.exterior.coords))
-    polygons = [Polygon(s.exterior.coords,assigned[i]) for i,s in enumerate(shells)]
-    return polygons[0] if len(polygons)==1 else MultiPolygon(polygons)
-
-
-def polygonal(g):
-    if g.geom_type in ['Polygon','MultiPolygon']:
-        return g
-    return unary_union([polygonal(p) for p in getattr(g,'geoms',[]) if p.geom_type in ['Polygon','MultiPolygon','GeometryCollection']])
-
-
-def projected(g, transformer, repairs, source, feature_id):
-    p = transform(transformer.transform,g)
-    if not p.is_valid:
-        before = p.area
-        p = polygonal(make_valid(p))
-        repairs.append({'source':source,'feature_id':str(feature_id),'area_before_m2':before,'area_after_m2':p.area})
-    assert p.is_valid and not p.is_empty
-    return p
+# Shared calculations also power the regression tests.
 
 
 def main():
@@ -368,7 +328,7 @@ def main():
         'runtime':{'python':platform.python_version(),'shapely':shapely.__version__,'pyproj':pyproj.__version__,'pyshp':shapefile.__version__,'openpyxl':openpyxl.__version__},
         'pipeline_files_sha256':{name:hashlib.sha256((Path(__file__).parent/name).read_bytes()).hexdigest() for name in
             ['build_greater_melbourne.py','melbourne_spatial.py','melbourne_source_checks.py','acquire_greater_melbourne.py',
-             'build_real_sample.py','acquire_real_sample.py','greater_melbourne_schema.sql','requirements-greater-melbourne.txt','requirements-sample.txt']},
+             'melbourne_common.py','melbourne_config.py','greater_melbourne_schema.sql','requirements-greater-melbourne.txt']},
         'crs':{'area':'EPSG:7855','sa2_and_ptal':'EPSG:7844','open_space':'EPSG:3857','open_space_transform':parks_to_area.get_last_used_operation().description,'open_space_transform_accuracy_m':parks_to_area.get_last_used_operation().accuracy},
         'verification_scope':'All-area checksums, source identities, population endpoints, complete spatial layer counts and IDs, clipping, overlap, geodesic area sanity, database constraints; separate QuickStats spot checks. No field survey or approved production scoring.'}
     manifest['runtime']['numpy']=numpy.__version__
@@ -376,7 +336,7 @@ def main():
     # Load actual CSV files, exercising the agreed interchange rather than using
     # an independent in-memory path to the database.
     schema=(Path(__file__).parent/'greater_melbourne_schema.sql').read_text()
-    db_temp=BASE/'sample.building.sqlite'
+    db_temp=BASE/'yfn.building.sqlite'
     if db_temp.exists():db_temp.unlink()
     db=sqlite3.connect(db_temp)
     db.executescript(schema)
@@ -397,7 +357,7 @@ def main():
         expected=next(r['raw_value'] for r in observations if r['sa2_code']==code and r['indicator_key']==key)
         assert (value is None and expected is None) or (value is not None and expected is not None and math.isclose(value,expected,rel_tol=1e-12))
     db.close()
-    db_temp.replace(BASE/'sample.sqlite')
+    db_temp.replace(BASE/'yfn.sqlite')
     write_json(AUDIT/'validation-report.json',{'status':'passed_with_documented_limitations','table_counts':{n:len(r) for n,r in tables.items()},
         'raw_file_checksums_verified':len(acquisition),'quickstats_pages_cross_checked':len(quickstats_checks),
         'quickstats_numeric_rent_matches':sum(c['quickstats_rent'] is not None for c in quickstats_checks),

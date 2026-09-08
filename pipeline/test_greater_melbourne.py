@@ -9,13 +9,13 @@ import sqlite3
 import unittest
 
 from acquire_greater_melbourne import BASE
-from build_real_sample import growth, per_resident
+from melbourne_common import growth, per_resident
 from melbourne_source_checks import quickstats_rent
 
 
 class GreaterMelbourneChecks(unittest.TestCase):
     def setUp(self):
-        self.db=sqlite3.connect(f'file:{BASE / "sample.sqlite"}?mode=ro',uri=True)
+        self.db=sqlite3.connect(f'file:{BASE / "yfn.sqlite"}?mode=ro',uri=True)
         self.db.row_factory=sqlite3.Row
 
     def tearDown(self): self.db.close()
@@ -78,7 +78,7 @@ class GreaterMelbourneChecks(unittest.TestCase):
         for r in totals:self.assertEqual(r['sum_sa2_erp'],r['gccsa_table_4_erp'])
 
     def test_original_four_area_results_remain_consistent(self):
-        prior=json.loads((BASE.parent/'real-sa2-v1/sample-summary.json').read_text())
+        prior=json.loads((Path(__file__).parent/'fixtures/four-area-regression.json').read_text())
         now={r['sa2_code']:r for r in json.loads((BASE/'sample-summary.json').read_text())}
         for a in prior:
             for k in ['rent_2021_aud_week','erp_2020','erp_2025','population_growth_2020_2025_percent','transport_raw_index_sample','selected_open_space_m2']:

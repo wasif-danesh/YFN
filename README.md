@@ -22,6 +22,16 @@ The real dataset is suitable for development and schema design. Transport aggreg
 
 At preparation on 8 September 2026, this local workspace had not yet been initialized as a Git repository and no GitHub repository URL or deployed service URLs had been assigned. Replace the clone placeholder below when the maintainer creates the shared repository; update this status table when the application and deployments are in place.
 
+## Simple team workflow
+
+There is one database: [`data/greater-melbourne-v1/yfn.sqlite`](data/greater-melbourne-v1/yfn.sqlite).
+
+1. Clone/pull the repository and run `python scripts/check_sample.py`.
+2. Backend developers use the database path in `backend/.env.example`. Frontend developers call the API; they do not open SQLite.
+3. Only the data maintainer runs the acquisition/build commands. They commit the updated database, curated files, manifest and validation evidence together after checks pass.
+
+Local development and Render use the same database path. There are no `samples/` or `releases/` folders, no database selection step and no routine downloads for UI/API developers. Public deployment still depends on resolving the documented provisional methods.
+
 ## Contents
 
 - [Architecture](#architecture)
@@ -83,7 +93,6 @@ The top-level workspaces below are present. Files marked **planned** will be cre
 yfn/
 ├── README.md                         # Team onboarding and operating guide
 ├── LICENSE                           # MIT licence for project software
-├── AGENTS.md                         # Instructions for coding assistants
 ├── .editorconfig                     # Shared text conventions
 ├── .gitignore                        # Environments, secrets and bulky outputs
 ├── .gitattributes                    # Stable line endings for checksummed files
@@ -130,22 +139,16 @@ yfn/
 │   ├── verify_greater_melbourne_rebuild.py
 │   ├── test_*.py                     # Calculation, spatial and release tests
 │   ├── requirements-*.txt            # Pinned data-processing dependencies
-│   └── *_real_sample.py             # Original sample scripts/shared helpers
+│   └── fixtures/                    # Small regression values; no second database
 ├── data/
-│   ├── samples/
-│   │   ├── real-sa2-v1/              # Original four-area evidence, preserved
-│   │   └── greater-melbourne-v1/
-│   │       ├── curated/              # Compact normalized CSVs; committed
-│   │       ├── audit/                # Reports committed; large intersections ignored
-│   │       ├── raw/                  # Local original downloads; ignored
-│   │       ├── sample.sqlite         # Real development database; committed
-│   │       ├── manifest.json         # Release/method/runtime metadata
-│   │       ├── acquisition.json      # Source URLs, timestamps and hashes
-│   │       └── schema-guide.md       # ER diagram and design notes
-│   └── releases/
-│       ├── README.md
-│       ├── active.sqlite            # Planned approved runtime artifact
-│       └── manifest.json            # Planned matching release manifest
+│   └── greater-melbourne-v1/         # One maintained dataset for local/API deployment
+│       ├── yfn.sqlite             # The single database used by the backend
+│       ├── curated/                  # Generated CSVs; committed
+│       ├── audit/                    # Validation evidence; bulky intersections ignored
+│       ├── raw/                      # Local downloads; ignored by Git
+│       ├── manifest.json             # Data/method/runtime metadata
+│       ├── acquisition.json          # Source URLs, timestamps and hashes
+│       └── schema-guide.md           # ER diagram and design notes
 ├── scripts/
 │   └── check_sample.py              # Fast check usable on a fresh clone
 ├── deploy/
@@ -185,7 +188,7 @@ Read [requirements](docs/requirements.md), [project decisions](docs/project-cont
 
 ### What belongs in Git
 
-Commit application code, dependency manifests/lockfiles, contracts, SQL, documentation, compact curated CSVs, sample databases and small validation reports. Commit an approved runtime SQLite file and its manifest together when release preparation is implemented.
+Commit application code, dependency manifests/lockfiles, contracts, SQL, documentation, compact curated CSVs, the single SQLite database and small validation reports. Commit database and manifest changes together.
 
 Do not commit `.env`, virtual environments, `node_modules`, build outputs, temporary SQLite journals, raw downloads or bulky generated spatial audits/geometry. `.env.example` is intentionally committed. The current `.gitignore` preserves the local files; it only controls future Git tracking. If files were already tracked in another repository, review its index separately.
 
@@ -229,7 +232,7 @@ The scaffold must define `dev`, `generate`, `lint` and `test` npm scripts, decla
 
 | Variable | Used by | Local example | Render value |
 |---|---|---|---|
-| `DATABASE_PATH` | API | `data/samples/greater-melbourne-v1/sample.sqlite` | `data/releases/active.sqlite`, once approved |
+| `DATABASE_PATH` | API | `data/greater-melbourne-v1/yfn.sqlite` | `data/greater-melbourne-v1/yfn.sqlite`, after publication approval |
 | `CORS_ALLOWED_ORIGINS` | API | `["http://localhost:3000"]` | JSON array containing the actual frontend HTTPS origin |
 | `NUXT_PUBLIC_API_BASE` | Frontend build | `http://localhost:8000/api/v1` | Actual public API HTTPS URL ending in `/api/v1` |
 | `PORT` | Render API process | Development command uses 8000 | Supplied by Render; bind to `0.0.0.0` |
@@ -238,7 +241,7 @@ These names are the proposed settings contract for implementation. CORS must par
 
 ## Database and API contract
 
-Start with the [SQLite sample](data/samples/greater-melbourne-v1/sample.sqlite), [ER diagram](data/samples/greater-melbourne-v1/schema-guide.md), [column dictionary](data/samples/greater-melbourne-v1/data-dictionary.md) and [SQL schema](pipeline/greater_melbourne_schema.sql).
+Start with the [SQLite sample](data/greater-melbourne-v1/yfn.sqlite), [ER diagram](data/greater-melbourne-v1/schema-guide.md), [column dictionary](data/greater-melbourne-v1/data-dictionary.md) and [SQL schema](pipeline/greater_melbourne_schema.sql).
 
 | Tables | Purpose |
 |---|---|
@@ -276,13 +279,13 @@ These endpoints are proposed, not implemented. Establish FastAPI response models
 
 The sample records these sources as CC BY 4.0 and retains source-specific limitations and attribution. Project software uses the [MIT licence](LICENSE). Third-party datasets and reference documents retain their respective licences and attribution requirements; the MIT licence does not replace those terms.
 
-See the [sample report](data/samples/greater-melbourne-v1/README.md) and [acquisition manifest](data/samples/greater-melbourne-v1/acquisition.json) for exact resources, hashes and methods. Source validation includes 14 independent QuickStats checks, exact reconciliation of six annual Greater Melbourne population totals, and complete spatial-layer count/ID checks. All four indicator rows are retained for each area even when a value is unavailable.
+See the [sample report](data/greater-melbourne-v1/README.md) and [acquisition manifest](data/greater-melbourne-v1/acquisition.json) for exact resources, hashes and methods. Source validation includes 14 independent QuickStats checks, exact reconciliation of six annual Greater Melbourne population totals, and complete spatial-layer count/ID checks. All four indicator rows are retained for each area even when a value is unavailable.
 
 ## Data preparation and refreshes
 
 ### Work with the existing sample
 
-Frontend and backend contributors can use the checked-in database immediately. Keep synthetic fixtures separate from real samples, but use the same eventual database loader and API shape. Synthetic values must be labelled and must never silently replace unavailable real data.
+Frontend and backend contributors use the same checked-in `data/greater-melbourne-v1/yfn.sqlite`. The frontend requests JSON from FastAPI; only the backend opens SQLite. Test fixtures may be in memory and must never silently replace unavailable real data.
 
 ### Rebuild from original source snapshots
 
@@ -296,14 +299,13 @@ python -m pip install -r pipeline/requirements-greater-melbourne.txt
 
 On Windows, use `py -3.12` to create the environment and `.venv-data\Scripts\Activate.ps1` to activate it. Confirm `curl --version` works.
 
-For exact reproduction, restore the archived `raw/` folders matching the committed acquisition manifests. After restoring them, run the offline builder and tests below. On a completely fresh clone without archived snapshots, the current acquisition scripts depend on the original four-area raw files; acquire those first:
+Most team members only need to clone the repository and run `python scripts/check_sample.py`; the database is already included. Only the data maintainer needs the GIS environment and commands below. For an exact rebuild, restore `data/greater-melbourne-v1/raw/` snapshots matching `acquisition.json`. If snapshots are absent, acquisition downloads the official sources directly:
 
 ```sh
-python pipeline/acquire_real_sample.py
 python pipeline/acquire_greater_melbourne.py
 ```
 
-The scripts intentionally stop if a saved source no longer matches its recorded hash. If the live source has changed, treat that as a new data release: preserve the existing evidence and adapt acquisition to a new versioned output folder. Do not delete old manifests merely to bypass checksum failures. A fresh download is not guaranteed to reproduce a historical snapshot.
+The scripts intentionally stop if a saved source no longer matches its recorded hash. If the live source has changed, the data maintainer must review the source change and deliberately update the snapshot and manifest in the same dataset folder. Preserve old raw snapshots separately if historical reproduction is needed; Git retains prior committed database versions. Do not delete old manifests merely to bypass checksum failures. A fresh download is not guaranteed to reproduce a historical snapshot.
 
 Once matching snapshots are present:
 
@@ -318,11 +320,11 @@ The pipeline uses assertions for validation: do not run it with Python `-O`. Ful
 
 The complete Greater Melbourne sample's measured offline rebuild took approximately 53 seconds in the original environment. That excludes downloads and is not a timing guarantee for other machines.
 
-### Prepare an application data release
+### Update the single application database
 
 Resolve the production method/coverage decisions, then build and validate the selected real dataset. Review value changes, null counts, geometry repairs, boundary compatibility, provenance and the schema/API contract. The API implementation must add a release-validation check before deployment is enabled.
 
-For the initial small SQLite artifact, commit `data/releases/active.sqlite` and its matching manifest in the same PR. Reviewers should see a human-readable summary of the changes; do not rely on a binary diff alone. Do not hand-edit SQLite, copy it into the frontend's `public/` directory, or run acquisition on every code push. See [release conventions](data/releases/README.md).
+For the initial small SQLite artifact, commit `data/greater-melbourne-v1/yfn.sqlite` and its matching manifest in the same PR. Reviewers should see a human-readable summary of the changes; do not rely on a binary diff alone. Do not hand-edit SQLite, copy it into the frontend's `public/` directory, or run acquisition on every code push. The database path stays the same locally and on Render. Git history preserves prior committed versions; no separate releases folder or database promotion step is needed.
 
 ## Team Git workflow
 
@@ -351,12 +353,12 @@ The repository maintainer should create the shared GitHub repository, add collab
 
 ### Intended deployment policy
 
-Configure **After CI Checks Pass**, represented by `autoDeployTrigger: checksPass`, for both services. Render supports separate services and path filters for one repository. Keep **Root Directory blank** for both services so commands run from the repository root and the API can access `data/releases/`. Files outside a configured subdirectory root are otherwise unavailable. [Render monorepo support](https://render.com/docs/monorepo-support)
+Configure **After CI Checks Pass**, represented by `autoDeployTrigger: checksPass`, for both services. Render supports separate services and path filters for one repository. Keep **Root Directory blank** for both services so commands run from the repository root and the API can access `data/greater-melbourne-v1/`. Files outside a configured subdirectory root are otherwise unavailable. [Render monorepo support](https://render.com/docs/monorepo-support)
 
 | Change | Expected automatic deployment |
 |---|---|
 | `frontend/**` | Static site |
-| `backend/**` or `data/releases/**` | API |
+| `backend/**` or `data/greater-melbourne-v1/**` | API |
 | `contracts/**` or `.github/workflows/**` | Both |
 | `pipeline/**`, sample data or ordinary documentation only | Neither; promote a validated runtime artifact separately |
 | Active `render.yaml` | Blueprint configuration is processed; service changes may trigger deployment |
@@ -428,9 +430,8 @@ If a release fails, inspect the failing check or build log first. For a live reg
 - [Project context and decisions](docs/project-context.md)
 - [Requirements and page corrections](docs/requirements.md)
 - [Data preparation and API proposal](docs/data-and-api.md)
-- [Real-data package, ER diagram and verification](data/samples/greater-melbourne-v1/README.md)
+- [Real-data package, ER diagram and verification](data/greater-melbourne-v1/README.md)
 - [Original reference documents and wireframes](docs/references/README.md)
-- [Coding-assistant guidance](AGENTS.md)
 
 The proposal lists Andrew Tran, Sanskrita DSarma, Tin Nguyen and Wasif Danesh. Assign current workstream owners in the team's tracker; this guide does not assign individual responsibilities. Coordinate frontend, API, data and integration/QA work through the shared contract and review process.
 

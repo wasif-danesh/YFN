@@ -9,7 +9,7 @@ from shapely import STRtree
 from shapely.geometry import shape
 from shapely.ops import transform
 
-from build_real_sample import esri_polygon, projected, polygonal
+from melbourne_common import esri_polygon, projected, polygonal
 
 
 def geodesic_area(geometry, geod):

@@ -41,8 +41,8 @@ test-results/
 .eslintcache
 .stylelintcache
 
-# Shared data-workspace rules. Sample-specific bulk outputs are ignored in
-# each sample's .gitignore. Keep curated CSVs, manifests and SQLite releases.
+# Shared data rules. Bulk outputs are ignored in the dataset .gitignore.
+# Keep the single SQLite database, curated CSVs and manifests.
 data/**/raw/
 data/**/staging/
 *.building.sqlite
