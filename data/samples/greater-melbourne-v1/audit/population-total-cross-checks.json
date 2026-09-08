@@ -1,0 +1,50 @@
+[
+  {
+    "year": 2020,
+    "sum_sa2_erp": 5061107,
+    "gccsa_table_4_erp": 5061107,
+    "source_worksheet": "Table 4",
+    "source_row": 9,
+    "result": "exact_match"
+  },
+  {
+    "year": 2021,
+    "sum_sa2_erp": 4975319,
+    "gccsa_table_4_erp": 4975319,
+    "source_worksheet": "Table 4",
+    "source_row": 9,
+    "result": "exact_match"
+  },
+  {
+    "year": 2022,
+    "sum_sa2_erp": 5028420,
+    "gccsa_table_4_erp": 5028420,
+    "source_worksheet": "Table 4",
+    "source_row": 9,
+    "result": "exact_match"
+  },
+  {
+    "year": 2023,
+    "sum_sa2_erp": 5194491,
+    "gccsa_table_4_erp": 5194491,
+    "source_worksheet": "Table 4",
+    "source_row": 9,
+    "result": "exact_match"
+  },
+  {
+    "year": 2024,
+    "sum_sa2_erp": 5330560,
+    "gccsa_table_4_erp": 5330560,
+    "source_worksheet": "Table 4",
+    "source_row": 9,
+    "result": "exact_match"
+  },
+  {
+    "year": 2025,
+    "sum_sa2_erp": 5435590,
+    "gccsa_table_4_erp": 5435590,
+    "source_worksheet": "Table 4",
+    "source_row": 9,
+    "result": "exact_match"
+  }
+]

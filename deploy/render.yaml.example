@@ -1,0 +1,54 @@
+# Reference template only. App entry points, dependency files, application CI
+# checks and an approved runtime DB must exist before copying to /render.yaml.
+# Root directory is deliberately omitted for BOTH services: repository root.
+services:
+  - type: web
+    name: yfn-api
+    runtime: python
+    branch: main
+    autoDeployTrigger: checksPass
+    buildCommand: python -m pip install -r backend/requirements.txt
+    startCommand: python -m uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_PATH
+        value: data/releases/active.sqlite
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false
+    buildFilter:
+      paths:
+        - backend/**
+        - contracts/**
+        - data/releases/**
+        - scripts/**
+        - .python-version
+        - .gitattributes
+        - .github/workflows/**
+        - render.yaml
+
+  - type: web
+    name: yfn-web
+    runtime: static
+    branch: main
+    autoDeployTrigger: checksPass
+    buildCommand: npm --prefix frontend ci && npm --prefix frontend run generate
+    staticPublishPath: frontend/.output/public
+    envVars:
+      - key: NODE_VERSION
+        value: 24.20.0
+      - key: NUXT_PUBLIC_API_BASE
+        sync: false
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /200.html
+    buildFilter:
+      paths:
+        - frontend/**
+        - contracts/**
+        - .nvmrc
+        - .gitattributes
+        - .github/workflows/**
+        - render.yaml
+# Choose the API instance plan and region deliberately at activation time.
+# No paid plan or service is provisioned by adding this reference file.

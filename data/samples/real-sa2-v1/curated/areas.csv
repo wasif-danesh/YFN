@@ -1,0 +1,5 @@
+sa2_code,name,boundary_year,gccsa_code,official_area_sq_km,calculated_area_m2,area_crs,source_id
+206041117,Carlton,2021,2GMEL,1.8187,1818205.8381134425,EPSG:7855,abs-sa2-2021
+212051567,Clayton (North) - Notting Hill,2021,2GMEL,5.2293,5228754.452727938,EPSG:7855,abs-sa2-2021
+212051568,Clayton - Central,2021,2GMEL,4.1819,4181183.760136116,EPSG:7855,abs-sa2-2021
+213031348,Footscray,2021,2GMEL,4.9671,4967394.437054503,EPSG:7855,abs-sa2-2021

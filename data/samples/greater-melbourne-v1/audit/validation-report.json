@@ -1,0 +1,57 @@
+{
+  "status": "passed_with_documented_limitations",
+  "table_counts": {
+    "areas": 361,
+    "indicators": 4,
+    "methods": 4,
+    "observations": 1444,
+    "population_history": 2166,
+    "data_sources": 5,
+    "source_files": 178,
+    "observation_sources": 3249,
+    "observation_components": 2527,
+    "area_diagnostics": 361
+  },
+  "raw_file_checksums_verified": 178,
+  "quickstats_pages_cross_checked": 14,
+  "quickstats_numeric_rent_matches": 11,
+  "quickstats_zero_rent_unavailability_confirmations": 3,
+  "population_annual_gccsa_total_matches": 6,
+  "sa2_census_erp_identity_matches": 361,
+  "source_query_counts_and_unique_ids_match": true,
+  "geometry_repairs": 9,
+  "unique_repaired_source_features": 9,
+  "spatial_order_of_operations_check": true,
+  "max_full_feature_area_difference_from_source_hectares_m2": 8.232560902833939,
+  "source_hectare_area_comparisons": 41177,
+  "source_hectare_exceptions": 12,
+  "quality_counts": {
+    "rent_weekly": {
+      "available": 358,
+      "unavailable": 3
+    },
+    "transport_access": {
+      "limited": 360,
+      "unavailable": 1
+    },
+    "population_growth": {
+      "available": 359,
+      "unavailable": 2
+    },
+    "green_space_per_resident": {
+      "limited": 354,
+      "unavailable": 7
+    }
+  },
+  "projection_vs_geodesic_relative_tolerance": 0.002,
+  "topology_tolerance_m2": 0.01,
+  "sqlite_integrity": "ok",
+  "foreign_key_violations": 0,
+  "limitations": [
+    "Transport weighting and open-space filter are sample methods, not production-approved.",
+    "Transport and open-space observation dates are not asserted from metadata update dates.",
+    "Complete API query retrieval does not prove geographic inventory completeness or current ground truth.",
+    "2025 population is preliminary; rent is 2021 Census reported rent.",
+    "Transport percentile and rating are intentionally null."
+  ]
+}

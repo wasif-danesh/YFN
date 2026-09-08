@@ -1,0 +1,10 @@
+# Original downloads and reproducible spatial outputs stay local or archived.
+/raw/
+/staging/
+/selected-sa2.geojson
+/audit/ptal-intersections.csv
+/audit/open-space-intersections.csv
+*.building.sqlite
+
+# Intentionally retain sample.sqlite, curated CSVs, source/release manifests,
+# schema documentation and compact audit reports for clean-clone development.

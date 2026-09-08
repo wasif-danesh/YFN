@@ -1,0 +1,30 @@
+[
+  {
+    "sa2_code": "206041117",
+    "quickstats_rent_2021": 365,
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/206041117",
+    "checked_at": "2026-09-08",
+    "verification": "Manually checked separate official QuickStats page; exact equality with DataPack enforced during build."
+  },
+  {
+    "sa2_code": "213031348",
+    "quickstats_rent_2021": 355,
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/213031348",
+    "checked_at": "2026-09-08",
+    "verification": "Manually checked separate official QuickStats page; exact equality with DataPack enforced during build."
+  },
+  {
+    "sa2_code": "212051568",
+    "quickstats_rent_2021": 401,
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/212051568",
+    "checked_at": "2026-09-08",
+    "verification": "Manually checked separate official QuickStats page; exact equality with DataPack enforced during build."
+  },
+  {
+    "sa2_code": "212051567",
+    "quickstats_rent_2021": 380,
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/212051567",
+    "checked_at": "2026-09-08",
+    "verification": "Manually checked separate official QuickStats page; exact equality with DataPack enforced during build."
+  }
+]

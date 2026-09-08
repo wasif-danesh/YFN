@@ -1,0 +1,66 @@
+# Local environments and credentials
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.template
+!.env.*.template
+.venv*/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.hypothesis/
+.tox/
+.nox/
+*.egg-info/
+.eggs/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Frontend dependencies and generated output
+node_modules/
+.nuxt/
+.output/
+.nitro/
+.cache/
+.parcel-cache/
+.turbo/
+dist/
+build/
+coverage/
+playwright-report/
+blob-report/
+test-results/
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+
+# Shared data-workspace rules. Sample-specific bulk outputs are ignored in
+# each sample's .gitignore. Keep curated CSVs, manifests and SQLite releases.
+data/**/raw/
+data/**/staging/
+*.building.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.part
+
+# Local tooling
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+*.orig
+.idea/
+.vscode/

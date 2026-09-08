@@ -1,0 +1,142 @@
+{
+  "32180DS0003_2001-25.xlsx": {
+    "url": "https://www.abs.gov.au/statistics/people/population/regional-population/2024-25/32180DS0003_2001-25.xlsx",
+    "file": "raw/32180DS0003_2001-25.xlsx",
+    "sha256": "f35d0ca0caaf70b0933871747210e62ac3ff5f7ab7fb4876c92bb1f6e1f6a0a8",
+    "bytes": 688233,
+    "retrieved_at": "2026-09-08T04:14:06.250420+00:00"
+  },
+  "2021_GCP_SA2_for_VIC_short-header.zip": {
+    "url": "https://www.abs.gov.au/census/find-census-data/datapacks/download/2021_GCP_SA2_for_VIC_short-header.zip",
+    "file": "raw/2021_GCP_SA2_for_VIC_short-header.zip",
+    "sha256": "a437c5fd3c3210c41052e9ff08ecbd54170c8476ef921b197cdcb1d6e9e5e0a3",
+    "bytes": 12928859,
+    "retrieved_at": "2026-09-08T04:14:11.977564+00:00"
+  },
+  "SA2_2021_AUST_SHP_GDA2020.zip": {
+    "url": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files/SA2_2021_AUST_SHP_GDA2020.zip",
+    "file": "raw/SA2_2021_AUST_SHP_GDA2020.zip",
+    "sha256": "c4dc5bac209f01177eaa0715d27f32cdb09ab5784fb82979741556d2f8e6d148",
+    "bytes": 50678443,
+    "retrieved_at": "2026-09-08T04:14:47.202966+00:00"
+  },
+  "open-space-layer.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0?f=pjson",
+    "file": "raw/open-space-layer.json",
+    "sha256": "619a31d59f4ce2ce0d1fc949c6202a01a53145bc9e44bbc48a851a63880c3897",
+    "bytes": 18059,
+    "retrieved_at": "2026-09-08T04:14:50.435794+00:00"
+  },
+  "open-space-catalogue.json": {
+    "url": "https://discover.data.vic.gov.au/api/3/action/package_show?id=open-space",
+    "file": "raw/open-space-catalogue.json",
+    "sha256": "e6d709719dd36096435c6fa44a14ef3eb247f919e4cd595387f9d7c09c108c3d",
+    "bytes": 8729,
+    "retrieved_at": "2026-09-08T04:17:09.641317+00:00"
+  },
+  "ptal-catalogue.json": {
+    "url": "https://discover.data.vic.gov.au/api/3/action/package_show?id=public-transport-accessibility-level-ptal-melbourne-metro",
+    "file": "raw/ptal-catalogue.json",
+    "sha256": "876522bee706f07385d09e32d41671cd336c35ed2cf20da86a9ccfa42c2929b2",
+    "bytes": 10539,
+    "retrieved_at": "2026-09-08T04:17:09.931713+00:00"
+  },
+  "ptal-schema.xml": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=DescribeFeatureType&typeNames=open-data-platform%3Aptal_metro",
+    "file": "raw/ptal-schema.xml",
+    "sha256": "13085a9e290707a3eec74d60ec0a042d922b289d64ef986b8dcacf4d9155c82f",
+    "bytes": 1187,
+    "retrieved_at": "2026-09-08T04:17:10.031649+00:00"
+  },
+  "ptal-metadata.xml": {
+    "url": "https://metashare.maps.vic.gov.au/geonetwork/srv/api/records/ca93f889-e9a2-4774-b7c5-dab6cb2ea2aa/formatters/xml",
+    "file": "raw/ptal-metadata.xml",
+    "sha256": "792f2490ed4f939935d008612486486e4487269e205826eb8d8f99bd1846bb3e",
+    "bytes": 53711,
+    "retrieved_at": "2026-09-08T04:17:10.229407+00:00"
+  },
+  "ptal-206041117-0.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&cql_filter=BBOX%28geom%2C144.95733376898684%2C-37.80790979806384%2C144.9757214867197%2C-37.792247017638616%2C%27EPSG%3A7844%27%29&count=5000&startIndex=0",
+    "file": "raw/ptal-206041117-0.json",
+    "sha256": "80944d59525a980a927311279324f3041532895255b24fea23c3e3d8bd8b77f2",
+    "bytes": 47057,
+    "retrieved_at": "2026-09-08T04:17:44.646645+00:00"
+  },
+  "parks-count-206041117.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=1%3D1&geometry=16136526.581914216%2C-4552375.336267989%2C16138673.493289085%2C-4550068.712786774&geometryType=esriGeometryEnvelope&inSR=3857&spatialRel=esriSpatialRelIntersects&f=json&returnCountOnly=true",
+    "file": "raw/parks-count-206041117.json",
+    "sha256": "068189b9ef0243e448165d62219cba88235dea5dc69593c65000a6af9f412d79",
+    "bytes": 13,
+    "retrieved_at": "2026-09-08T04:17:45.360271+00:00"
+  },
+  "parks-206041117-0.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=1%3D1&geometry=16136526.581914216%2C-4552375.336267989%2C16138673.493289085%2C-4550068.712786774&geometryType=esriGeometryEnvelope&inSR=3857&spatialRel=esriSpatialRelIntersects&f=json&outFields=%2A&returnGeometry=true&outSR=3857&orderByFields=FID&resultOffset=0&resultRecordCount=1000",
+    "file": "raw/parks-206041117-0.json",
+    "sha256": "e74af51d01ee58edab6277cd13f263c2210e2ed5dfd991ac832bab0f45b8e286",
+    "bytes": 201321,
+    "retrieved_at": "2026-09-08T04:17:46.288286+00:00"
+  },
+  "ptal-212051567-0.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&cql_filter=BBOX%28geom%2C145.12187499812822%2C-37.92716967078932%2C145.15292909368668%2C-37.899138899023136%2C%27EPSG%3A7844%27%29&count=5000&startIndex=0",
+    "file": "raw/ptal-212051567-0.json",
+    "sha256": "3935efc55058d5a00f7ff858356a9243b487b07b518c0fd5ce6e902f1a62fac6",
+    "bytes": 141703,
+    "retrieved_at": "2026-09-08T04:17:46.411585+00:00"
+  },
+  "parks-count-212051567.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=1%3D1&geometry=16154843.227756733%2C-4569192.432647403%2C16158400.153861346%2C-4565137.303851215&geometryType=esriGeometryEnvelope&inSR=3857&spatialRel=esriSpatialRelIntersects&f=json&returnCountOnly=true",
+    "file": "raw/parks-count-212051567.json",
+    "sha256": "59174034e6cd40c23f1a5a031641b731eb6ea87870ecfcfe5f796c9fbf8abcaa",
+    "bytes": 12,
+    "retrieved_at": "2026-09-08T04:17:46.948988+00:00"
+  },
+  "parks-212051567-0.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=1%3D1&geometry=16154843.227756733%2C-4569192.432647403%2C16158400.153861346%2C-4565137.303851215&geometryType=esriGeometryEnvelope&inSR=3857&spatialRel=esriSpatialRelIntersects&f=json&outFields=%2A&returnGeometry=true&outSR=3857&orderByFields=FID&resultOffset=0&resultRecordCount=1000",
+    "file": "raw/parks-212051567-0.json",
+    "sha256": "ac64a289c7f92ab3da337bea9e0061cad894ade83f318600034031c71de668a1",
+    "bytes": 122576,
+    "retrieved_at": "2026-09-08T04:17:47.903463+00:00"
+  },
+  "ptal-212051568-0.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&cql_filter=BBOX%28geom%2C145.1075275491545%2C-37.93136101040582%2C145.14337452319214%2C-37.912746678333974%2C%27EPSG%3A7844%27%29&count=5000&startIndex=0",
+    "file": "raw/ptal-212051568-0.json",
+    "sha256": "8f6007b6d8b9f586465e3b529788539bdf8b5a809195c3943246340f2c5ed082",
+    "bytes": 104539,
+    "retrieved_at": "2026-09-08T04:17:48.018865+00:00"
+  },
+  "parks-count-212051568.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=1%3D1&geometry=16153246.077042794%2C-4569783.95826612%2C16157336.543939145%2C-4567057.166932738&geometryType=esriGeometryEnvelope&inSR=3857&spatialRel=esriSpatialRelIntersects&f=json&returnCountOnly=true",
+    "file": "raw/parks-count-212051568.json",
+    "sha256": "a4e4a89f9f08eddc6bc4b72a5efb42891979be7af44b62d85ecfe22c86678682",
+    "bytes": 12,
+    "retrieved_at": "2026-09-08T04:17:48.398455+00:00"
+  },
+  "parks-212051568-0.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=1%3D1&geometry=16153246.077042794%2C-4569783.95826612%2C16157336.543939145%2C-4567057.166932738&geometryType=esriGeometryEnvelope&inSR=3857&spatialRel=esriSpatialRelIntersects&f=json&outFields=%2A&returnGeometry=true&outSR=3857&orderByFields=FID&resultOffset=0&resultRecordCount=1000",
+    "file": "raw/parks-212051568-0.json",
+    "sha256": "4fbcca3ff12c9c4260edae3cb12534b42dc16c38f9442f11cb982ab8268713ed",
+    "bytes": 83838,
+    "retrieved_at": "2026-09-08T04:17:49.236805+00:00"
+  },
+  "ptal-213031348-0.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&cql_filter=BBOX%28geom%2C144.87940063262388%2C-37.81527786348638%2C144.91650703641935%2C-37.78635048181358%2C%27EPSG%3A7844%27%29&count=5000&startIndex=0",
+    "file": "raw/ptal-213031348-0.json",
+    "sha256": "44039730bbc3793cf949b03556742c2e0cc7a0da6990b1404df5144571dc14bb",
+    "bytes": 163090,
+    "retrieved_at": "2026-09-08T04:17:49.371970+00:00"
+  },
+  "parks-count-213031348.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=1%3D1&geometry=16127851.104858369%2C-4553413.535172923%2C16132081.77083405%2C-4549238.110835205&geometryType=esriGeometryEnvelope&inSR=3857&spatialRel=esriSpatialRelIntersects&f=json&returnCountOnly=true",
+    "file": "raw/parks-count-213031348.json",
+    "sha256": "a438f12180ba726d38e7f78f165af4c63b277f6d7302474fadc855acf567e612",
+    "bytes": 13,
+    "retrieved_at": "2026-09-08T04:17:50.764185+00:00"
+  },
+  "parks-213031348-0.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=1%3D1&geometry=16127851.104858369%2C-4553413.535172923%2C16132081.77083405%2C-4549238.110835205&geometryType=esriGeometryEnvelope&inSR=3857&spatialRel=esriSpatialRelIntersects&f=json&outFields=%2A&returnGeometry=true&outSR=3857&orderByFields=FID&resultOffset=0&resultRecordCount=1000",
+    "file": "raw/parks-213031348-0.json",
+    "sha256": "417ea3e91b2e89d50cd8ca92035ff0db7de7b1340eaf489d96b21da43695204b",
+    "bytes": 470743,
+    "retrieved_at": "2026-09-08T04:17:52.041815+00:00"
+  }
+}

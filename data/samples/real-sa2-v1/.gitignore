@@ -1,0 +1,9 @@
+# Preserve exact source snapshots in an archive; live sources can change.
+/raw/
+/staging/
+/selected-sa2.geojson
+/audit/ptal-intersections.csv
+/audit/open-space-intersections.csv
+*.building.sqlite
+
+# Keep the sample database, curated CSVs and compact verification evidence.

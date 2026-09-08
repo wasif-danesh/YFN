@@ -1,0 +1,30 @@
+name: Repository checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: repository-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sample-integrity:
+    name: Committed sample integrity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version-file: .python-version
+      - run: python scripts/check_sample.py
+
+# This initial workflow checks the existing data package only.
+# Add mandatory API tests, frontend checks/build, and release validation BEFORE
+# activating the Render template. Do not use skipped jobs as a deployment gate.

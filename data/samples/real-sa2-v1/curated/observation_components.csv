@@ -1,0 +1,29 @@
+sa2_code,indicator_key,component_key,value,unit,reference_period,source_id
+206041117,population_growth,population_start,20865,persons,2020-06-30,abs-erp-2024-25
+206041117,population_growth,population_end,25267,persons,2025-06-30,abs-erp-2024-25
+206041117,transport_access,weighted_index_area_sum,76034106.3774678,access_index*m2,Retrieved 2026-09-08,dtp-ptal-snapshot
+206041117,transport_access,valid_intersection_area,1818205.838113357,m2,Retrieved 2026-09-08,dtp-ptal-snapshot
+206041117,transport_access,sa2_area,1818205.8381134425,m2,Boundary 2021,abs-sa2-2021
+206041117,green_space_per_resident,eligible_open_space_area,280199.0661233622,m2,Observation date unverified,vpa-open-space-snapshot
+206041117,green_space_per_resident,population_denominator,25267,persons,2025-06-30,abs-erp-2024-25
+212051567,population_growth,population_start,11715,persons,2020-06-30,abs-erp-2024-25
+212051567,population_growth,population_end,14911,persons,2025-06-30,abs-erp-2024-25
+212051567,transport_access,weighted_index_area_sum,39120291.46490686,access_index*m2,Retrieved 2026-09-08,dtp-ptal-snapshot
+212051567,transport_access,valid_intersection_area,5228754.45272794,m2,Retrieved 2026-09-08,dtp-ptal-snapshot
+212051567,transport_access,sa2_area,5228754.452727938,m2,Boundary 2021,abs-sa2-2021
+212051567,green_space_per_resident,eligible_open_space_area,53829.58760264703,m2,Observation date unverified,vpa-open-space-snapshot
+212051567,green_space_per_resident,population_denominator,14911,persons,2025-06-30,abs-erp-2024-25
+212051568,population_growth,population_start,14027,persons,2020-06-30,abs-erp-2024-25
+212051568,population_growth,population_end,15483,persons,2025-06-30,abs-erp-2024-25
+212051568,transport_access,weighted_index_area_sum,36677863.48490052,access_index*m2,Retrieved 2026-09-08,dtp-ptal-snapshot
+212051568,transport_access,valid_intersection_area,4181183.7601361675,m2,Retrieved 2026-09-08,dtp-ptal-snapshot
+212051568,transport_access,sa2_area,4181183.760136116,m2,Boundary 2021,abs-sa2-2021
+212051568,green_space_per_resident,eligible_open_space_area,78218.84511940536,m2,Observation date unverified,vpa-open-space-snapshot
+212051568,green_space_per_resident,population_denominator,15483,persons,2025-06-30,abs-erp-2024-25
+213031348,population_growth,population_start,18092,persons,2020-06-30,abs-erp-2024-25
+213031348,population_growth,population_end,20882,persons,2025-06-30,abs-erp-2024-25
+213031348,transport_access,weighted_index_area_sum,123423068.49490994,access_index*m2,Retrieved 2026-09-08,dtp-ptal-snapshot
+213031348,transport_access,valid_intersection_area,4967394.437054485,m2,Retrieved 2026-09-08,dtp-ptal-snapshot
+213031348,transport_access,sa2_area,4967394.437054503,m2,Boundary 2021,abs-sa2-2021
+213031348,green_space_per_resident,eligible_open_space_area,809263.334020908,m2,Observation date unverified,vpa-open-space-snapshot
+213031348,green_space_per_resident,population_denominator,20882,persons,2025-06-30,abs-erp-2024-25

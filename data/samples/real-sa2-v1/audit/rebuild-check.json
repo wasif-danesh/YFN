@@ -1,0 +1,21 @@
+{
+  "result": "passed",
+  "network_used": false,
+  "same_environment": true,
+  "all_listed_files_byte_identical": true,
+  "sha256": {
+    "curated/methods.csv": "289ae1649eabec9b365635d59a873ae1515f8068136b79db92e02d40ac20de50",
+    "curated/indicators.csv": "6b34b476f25793a835daa47c1f5f07ba7dfa438396cc0f6b0136eace42b24fbe",
+    "curated/source_files.csv": "302135d11281025938143e761f2d385dc2ab0fbf079e884ba96beb0707e7b096",
+    "curated/data_sources.csv": "55bed16df8e84896c2fb9b232fbbb692a1fc46c9afe352bf71e9b6a7f68307c0",
+    "curated/observation_components.csv": "db443fa41848936427eb06f05eb7c4d98e49990b67a9ddb22a7b0b4c8c5b6522",
+    "curated/areas.csv": "506b59e9190dc92ab7e50d4f435c980971dff0303d826dee0a0a15c16419dbb1",
+    "curated/population_history.csv": "bca10827805bfea6e44630e9159fa7208f4f46381e6bca89e9b84653e8e26934",
+    "curated/observation_sources.csv": "adb6ec872a2ddf1f4bba9c9d832adc1f4926edfe245381805d456d9189af1e85",
+    "curated/observations.csv": "8c3e466d76ff8064085f9851fd7b5eb84b520c6050177422fa9d3e2b47c79985",
+    "sample.sqlite": "c8c32b9ebea1982474d61116256247ca9c0fe74b3370a410cce85931d485f704",
+    "sample-summary.csv": "7b918236c03f6c07804d75059203e590cca499ca268752b34b8707aaa837c2d2",
+    "sample-summary.json": "7486c508017b846e2e3972bf52d0466ed7c7949c71632e33c7343b18f64caa47",
+    "manifest.json": "b1f822bc6b14e6ebf74273a0642b4e72891fc217aeb33bd73118c8d862e0e3e4"
+  }
+}

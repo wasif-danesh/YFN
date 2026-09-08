@@ -1,0 +1,58 @@
+[
+  {
+    "sa2_code": "206041117",
+    "name": "Carlton",
+    "rent_2021_aud_week": 365,
+    "erp_2020": 20865,
+    "erp_2025": 25267,
+    "population_growth_2020_2025_percent": 21.09753175173736,
+    "transport_raw_index_sample": 41.81820604886178,
+    "transport_coverage_fraction": 0.999999999999953,
+    "selected_open_space_m2": 280199.0661233622,
+    "selected_open_space_m2_per_person_sample": 11.089526501894259,
+    "transport_score": null,
+    "spatial_method_status": "sample_only_not_approved_for_publication"
+  },
+  {
+    "sa2_code": "212051567",
+    "name": "Clayton (North) - Notting Hill",
+    "rent_2021_aud_week": 380,
+    "erp_2020": 11715,
+    "erp_2025": 14911,
+    "population_growth_2020_2025_percent": 27.281263337601366,
+    "transport_raw_index_sample": 7.481761061565448,
+    "transport_coverage_fraction": 1.0,
+    "selected_open_space_m2": 53829.58760264703,
+    "selected_open_space_m2_per_person_sample": 3.6100588560557325,
+    "transport_score": null,
+    "spatial_method_status": "sample_only_not_approved_for_publication"
+  },
+  {
+    "sa2_code": "212051568",
+    "name": "Clayton - Central",
+    "rent_2021_aud_week": 401,
+    "erp_2020": 14027,
+    "erp_2025": 15483,
+    "population_growth_2020_2025_percent": 10.379981464318814,
+    "transport_raw_index_sample": 8.772124256912841,
+    "transport_coverage_fraction": 1.0,
+    "selected_open_space_m2": 78218.84511940536,
+    "selected_open_space_m2_per_person_sample": 5.051917917677799,
+    "transport_score": null,
+    "spatial_method_status": "sample_only_not_approved_for_publication"
+  },
+  {
+    "sa2_code": "213031348",
+    "name": "Footscray",
+    "rent_2021_aud_week": 355,
+    "erp_2020": 18092,
+    "erp_2025": 20882,
+    "population_growth_2020_2025_percent": 15.42118063232368,
+    "transport_raw_index_sample": 24.846641445307913,
+    "transport_coverage_fraction": 0.9999999999999968,
+    "selected_open_space_m2": 809263.334020908,
+    "selected_open_space_m2_per_person_sample": 38.75411043103668,
+    "transport_score": null,
+    "spatial_method_status": "sample_only_not_approved_for_publication"
+  }
+]

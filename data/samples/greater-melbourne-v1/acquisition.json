@@ -1,0 +1,1248 @@
+{
+  "2021_GCP_SA2_for_VIC_short-header.zip": {
+    "url": "https://www.abs.gov.au/census/find-census-data/datapacks/download/2021_GCP_SA2_for_VIC_short-header.zip",
+    "file": "raw/2021_GCP_SA2_for_VIC_short-header.zip",
+    "sha256": "a437c5fd3c3210c41052e9ff08ecbd54170c8476ef921b197cdcb1d6e9e5e0a3",
+    "bytes": 12928859,
+    "retrieved_at": "2026-09-08T04:14:11.977564+00:00"
+  },
+  "32180DS0003_2001-25.xlsx": {
+    "url": "https://www.abs.gov.au/statistics/people/population/regional-population/2024-25/32180DS0003_2001-25.xlsx",
+    "file": "raw/32180DS0003_2001-25.xlsx",
+    "sha256": "f35d0ca0caaf70b0933871747210e62ac3ff5f7ab7fb4876c92bb1f6e1f6a0a8",
+    "bytes": 688233,
+    "retrieved_at": "2026-09-08T04:14:06.250420+00:00"
+  },
+  "SA2_2021_AUST_SHP_GDA2020.zip": {
+    "url": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files/SA2_2021_AUST_SHP_GDA2020.zip",
+    "file": "raw/SA2_2021_AUST_SHP_GDA2020.zip",
+    "sha256": "c4dc5bac209f01177eaa0715d27f32cdb09ab5784fb82979741556d2f8e6d148",
+    "bytes": 50678443,
+    "retrieved_at": "2026-09-08T04:14:47.202966+00:00"
+  },
+  "open-space-catalogue.json": {
+    "url": "https://discover.data.vic.gov.au/api/3/action/package_show?id=open-space",
+    "file": "raw/open-space-catalogue.json",
+    "sha256": "e6d709719dd36096435c6fa44a14ef3eb247f919e4cd595387f9d7c09c108c3d",
+    "bytes": 8729,
+    "retrieved_at": "2026-09-08T04:17:09.641317+00:00"
+  },
+  "open-space-layer.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0?f=pjson",
+    "file": "raw/open-space-layer.json",
+    "sha256": "619a31d59f4ce2ce0d1fc949c6202a01a53145bc9e44bbc48a851a63880c3897",
+    "bytes": 18059,
+    "retrieved_at": "2026-09-08T04:14:50.435794+00:00"
+  },
+  "parks-all-000000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+1+AND+FID+%3C%3D+500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-000000.json",
+    "sha256": "df2865e0e9a250301a6bcdcac4969a3f4c04c54373699c8850ec925e5a085ab4",
+    "bytes": 809616,
+    "retrieved_at": "2026-09-08T05:37:18.616518+00:00"
+  },
+  "parks-all-000500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+501+AND+FID+%3C%3D+1000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-000500.json",
+    "sha256": "07cfde588b363416dd4002b605385e99a386a5b557438b5b92cbe5215f76976f",
+    "bytes": 1044172,
+    "retrieved_at": "2026-09-08T05:37:19.102785+00:00"
+  },
+  "parks-all-001000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+1001+AND+FID+%3C%3D+1500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-001000.json",
+    "sha256": "6df9f415188baa4883e1915001238682a24ab926e4c4eb20916d5d8715c8c9d8",
+    "bytes": 1016761,
+    "retrieved_at": "2026-09-08T05:37:19.282898+00:00"
+  },
+  "parks-all-001500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+1501+AND+FID+%3C%3D+2000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-001500.json",
+    "sha256": "89cf65527a3cfdf245a05b49b6eaca385d2b95c73dd3611ed0b66b614d9f54a5",
+    "bytes": 891014,
+    "retrieved_at": "2026-09-08T05:37:19.089893+00:00"
+  },
+  "parks-all-002000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+2001+AND+FID+%3C%3D+2500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-002000.json",
+    "sha256": "b79aea024c55a570e2897ad8165cb31cc9abd66c0badccbb9283157febc35c70",
+    "bytes": 1457443,
+    "retrieved_at": "2026-09-08T05:37:20.090956+00:00"
+  },
+  "parks-all-002500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+2501+AND+FID+%3C%3D+3000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-002500.json",
+    "sha256": "5177d57389b23584f2379030d688905bf263b3124ba5afe7d355e4936e02882d",
+    "bytes": 1204691,
+    "retrieved_at": "2026-09-08T05:37:20.379665+00:00"
+  },
+  "parks-all-003000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+3001+AND+FID+%3C%3D+3500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-003000.json",
+    "sha256": "ca73fdbb86f43072744485cf519c6615074264635c1876d0d610fafd4afcea65",
+    "bytes": 1900342,
+    "retrieved_at": "2026-09-08T05:37:21.094532+00:00"
+  },
+  "parks-all-003500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+3501+AND+FID+%3C%3D+4000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-003500.json",
+    "sha256": "c8c64957bec4b4c820b9f1d8f4792b087950e87facd4b488c2ae8cf002fcf4ba",
+    "bytes": 1220989,
+    "retrieved_at": "2026-09-08T05:37:20.954809+00:00"
+  },
+  "parks-all-004000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+4001+AND+FID+%3C%3D+4500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-004000.json",
+    "sha256": "0f2a9ac361b6a4df05b5dd2a44dd8dd2088ac8f514c4f6f572622f35dc9497a7",
+    "bytes": 2807483,
+    "retrieved_at": "2026-09-08T05:37:22.424766+00:00"
+  },
+  "parks-all-004500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+4501+AND+FID+%3C%3D+5000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-004500.json",
+    "sha256": "23684246d6e2466ddd65e630d6eb22e218d73235f6ed8b5ed49c0a49421f1b67",
+    "bytes": 2484776,
+    "retrieved_at": "2026-09-08T05:37:22.277554+00:00"
+  },
+  "parks-all-005000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+5001+AND+FID+%3C%3D+5500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-005000.json",
+    "sha256": "3c08621599bd61308eb7dd636285d1da2d816dee631a688d94d0e6a4bd35f233",
+    "bytes": 2447446,
+    "retrieved_at": "2026-09-08T05:37:23.599034+00:00"
+  },
+  "parks-all-005500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+5501+AND+FID+%3C%3D+6000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-005500.json",
+    "sha256": "447a2369dae35e3a2614234c546ec55b48b867931d26fe9c83e5a5dbb6ae657a",
+    "bytes": 1754323,
+    "retrieved_at": "2026-09-08T05:37:22.669745+00:00"
+  },
+  "parks-all-006000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+6001+AND+FID+%3C%3D+6500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-006000.json",
+    "sha256": "5698ad70e9821087ff310b5e16d093fb39c5c70064ed0bebdd492e238be12171",
+    "bytes": 812835,
+    "retrieved_at": "2026-09-08T05:37:23.698477+00:00"
+  },
+  "parks-all-006500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+6501+AND+FID+%3C%3D+7000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-006500.json",
+    "sha256": "64538abfe702970d50da75be9a05557dcac712388d2df91bbed29a9b9e4e63f3",
+    "bytes": 719016,
+    "retrieved_at": "2026-09-08T05:37:23.596195+00:00"
+  },
+  "parks-all-007000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+7001+AND+FID+%3C%3D+7500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-007000.json",
+    "sha256": "1b2aeff3181368a5664e7ef753454c1d20b2400ee90ea8e1198bd5edebd89fea",
+    "bytes": 1192605,
+    "retrieved_at": "2026-09-08T05:37:24.217982+00:00"
+  },
+  "parks-all-007500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+7501+AND+FID+%3C%3D+8000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-007500.json",
+    "sha256": "4d1d4f022c50b86aed4c5302be6df63713fd28c39100ab943aa73c623568be6d",
+    "bytes": 691981,
+    "retrieved_at": "2026-09-08T05:37:24.738640+00:00"
+  },
+  "parks-all-008000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+8001+AND+FID+%3C%3D+8500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-008000.json",
+    "sha256": "5d517914e087a680def56c70f0a0ca7541fb417047808ef47aff7689ce14437a",
+    "bytes": 785405,
+    "retrieved_at": "2026-09-08T05:37:24.781920+00:00"
+  },
+  "parks-all-008500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+8501+AND+FID+%3C%3D+9000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-008500.json",
+    "sha256": "cdcb53c03e95b2f6834eec4d4628b5f1bfc3b750a6ad62b5208cc46530c3520c",
+    "bytes": 740490,
+    "retrieved_at": "2026-09-08T05:37:24.848916+00:00"
+  },
+  "parks-all-009000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+9001+AND+FID+%3C%3D+9500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-009000.json",
+    "sha256": "8bac120223b9e650e0885e77b10e1efa03ed6e63047f140dc24d9ca43572ac88",
+    "bytes": 968985,
+    "retrieved_at": "2026-09-08T05:37:25.613595+00:00"
+  },
+  "parks-all-009500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+9501+AND+FID+%3C%3D+10000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-009500.json",
+    "sha256": "8880e5c19ec7f990512da67e2d12bb8bc337f1898303f2b676c3e40df403e635",
+    "bytes": 709665,
+    "retrieved_at": "2026-09-08T05:37:26.248941+00:00"
+  },
+  "parks-all-010000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+10001+AND+FID+%3C%3D+10500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-010000.json",
+    "sha256": "51b5ef803076a3117b67eaf19902fd8f69820583f8d869b1091487346fba0527",
+    "bytes": 1365011,
+    "retrieved_at": "2026-09-08T05:37:26.315606+00:00"
+  },
+  "parks-all-010500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+10501+AND+FID+%3C%3D+11000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-010500.json",
+    "sha256": "3405a1e8e06321a2148b481785f4ce913d406952c4f52897ed961ef77925858c",
+    "bytes": 919501,
+    "retrieved_at": "2026-09-08T05:37:26.418891+00:00"
+  },
+  "parks-all-011000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+11001+AND+FID+%3C%3D+11500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-011000.json",
+    "sha256": "ccb78836d4fd1d2fa8f2193bb4f31b152b6544b78fa8733fb17807d584ef8ae7",
+    "bytes": 755698,
+    "retrieved_at": "2026-09-08T05:37:27.223759+00:00"
+  },
+  "parks-all-011500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+11501+AND+FID+%3C%3D+12000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-011500.json",
+    "sha256": "e67595c1f73de60d55d3bf739e6b1d9f88eb51cbb0507878ebf7e620516da598",
+    "bytes": 970576,
+    "retrieved_at": "2026-09-08T05:37:27.518710+00:00"
+  },
+  "parks-all-012000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+12001+AND+FID+%3C%3D+12500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-012000.json",
+    "sha256": "5e39e3cb99fd8e2f5efb57c4881ef1dd66ec8975bef90cfce1a456c8229ef76d",
+    "bytes": 1082512,
+    "retrieved_at": "2026-09-08T05:37:27.592496+00:00"
+  },
+  "parks-all-012500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+12501+AND+FID+%3C%3D+13000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-012500.json",
+    "sha256": "702933bd5b95fac1ff3167ef845959d31c75645dc41d61855c0d366386071740",
+    "bytes": 1535692,
+    "retrieved_at": "2026-09-08T05:37:28.323886+00:00"
+  },
+  "parks-all-013000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+13001+AND+FID+%3C%3D+13500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-013000.json",
+    "sha256": "1fad7d4660ce85aa7f17b34ee821205553675e6641562b563b87bbab4ea243bd",
+    "bytes": 823217,
+    "retrieved_at": "2026-09-08T05:37:28.382311+00:00"
+  },
+  "parks-all-013500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+13501+AND+FID+%3C%3D+14000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-013500.json",
+    "sha256": "e89e662a751e3a4ee34dd6ae21492b216ee37c6cf0cd236929e04af68917a544",
+    "bytes": 731947,
+    "retrieved_at": "2026-09-08T05:37:28.613923+00:00"
+  },
+  "parks-all-014000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+14001+AND+FID+%3C%3D+14500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-014000.json",
+    "sha256": "89d2b5ea8945197b25a2d8058e7964be435a7ac9ba3935018d427ffc3aad7811",
+    "bytes": 1172709,
+    "retrieved_at": "2026-09-08T05:37:29.244141+00:00"
+  },
+  "parks-all-014500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+14501+AND+FID+%3C%3D+15000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-014500.json",
+    "sha256": "2aa9eb062fcdd5827457b1cd576b37100f2d01597c09fa572aa21d0b7eba887d",
+    "bytes": 1198938,
+    "retrieved_at": "2026-09-08T05:37:29.664976+00:00"
+  },
+  "parks-all-015000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+15001+AND+FID+%3C%3D+15500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-015000.json",
+    "sha256": "34561fb92408a80e343524aaccb93044e951ea8bd6410d3dffec7f37c8dc3a12",
+    "bytes": 1125452,
+    "retrieved_at": "2026-09-08T05:37:29.633912+00:00"
+  },
+  "parks-all-015500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+15501+AND+FID+%3C%3D+16000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-015500.json",
+    "sha256": "faa7c4a056434cdc9682828c018e7ed8f95df29ce6333cf6362587a9b54d6ca5",
+    "bytes": 843892,
+    "retrieved_at": "2026-09-08T05:37:29.982833+00:00"
+  },
+  "parks-all-016000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+16001+AND+FID+%3C%3D+16500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-016000.json",
+    "sha256": "2bd1505cb68f25a556be945a5e5574dc6c8b10cd4900baf8197e9e95ed26c1b7",
+    "bytes": 975699,
+    "retrieved_at": "2026-09-08T05:37:31.001034+00:00"
+  },
+  "parks-all-016500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+16501+AND+FID+%3C%3D+17000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-016500.json",
+    "sha256": "b9c863c31b599139bea342a86ca6a677f3c8e6d705f6564fee7fe8e15a8cc3b7",
+    "bytes": 839153,
+    "retrieved_at": "2026-09-08T05:37:30.789161+00:00"
+  },
+  "parks-all-017000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+17001+AND+FID+%3C%3D+17500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-017000.json",
+    "sha256": "ec98e6de1f14aa5b24bcf4310f5aae3bdce277c023b10803dd595d5c55303c92",
+    "bytes": 1003314,
+    "retrieved_at": "2026-09-08T05:37:30.950346+00:00"
+  },
+  "parks-all-017500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+17501+AND+FID+%3C%3D+18000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-017500.json",
+    "sha256": "f9610cc74b627e20aaffea973e130bfb72da583388af00fd49f5fc022b1c8b8f",
+    "bytes": 916850,
+    "retrieved_at": "2026-09-08T05:37:31.192215+00:00"
+  },
+  "parks-all-018000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+18001+AND+FID+%3C%3D+18500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-018000.json",
+    "sha256": "e2cbe1e65dca834ea8f6fd55b066154ce59271e7460e840ef1b2641d69d4e401",
+    "bytes": 1254653,
+    "retrieved_at": "2026-09-08T05:37:32.640275+00:00"
+  },
+  "parks-all-018500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+18501+AND+FID+%3C%3D+19000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-018500.json",
+    "sha256": "92433a2ba31ca21c547561d5e5d26d796334ae6f9938483e0e1b91513a46bb1a",
+    "bytes": 1405571,
+    "retrieved_at": "2026-09-08T05:37:32.407765+00:00"
+  },
+  "parks-all-019000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+19001+AND+FID+%3C%3D+19500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-019000.json",
+    "sha256": "5c65721cc25f92d82f70a28c624f181e5ef26b5112928d83baba96bb09f7046a",
+    "bytes": 1092161,
+    "retrieved_at": "2026-09-08T05:37:32.623410+00:00"
+  },
+  "parks-all-019500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+19501+AND+FID+%3C%3D+20000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-019500.json",
+    "sha256": "1a1c11ec884866949756ddbeca28afdd45da8055c39ca7be86099ed8c61d266c",
+    "bytes": 751640,
+    "retrieved_at": "2026-09-08T05:37:32.274709+00:00"
+  },
+  "parks-all-020000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+20001+AND+FID+%3C%3D+20500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-020000.json",
+    "sha256": "0f019c11f7e97eb899fa68685ac9f1ec26a57fef4c9ad16128a635d9ad6c1385",
+    "bytes": 1381684,
+    "retrieved_at": "2026-09-08T05:37:33.711238+00:00"
+  },
+  "parks-all-020500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+20501+AND+FID+%3C%3D+21000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-020500.json",
+    "sha256": "5fd58c05217b6e296a6b1bea983233b23e6909917b06556105dcc7a2c4d59efd",
+    "bytes": 1678365,
+    "retrieved_at": "2026-09-08T05:37:34.781202+00:00"
+  },
+  "parks-all-021000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+21001+AND+FID+%3C%3D+21500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-021000.json",
+    "sha256": "8a25256fa77f39d2c1b3ade74aa2a2f1af298b7f42d2d6ab7394b445ba04a17b",
+    "bytes": 1023427,
+    "retrieved_at": "2026-09-08T05:37:33.869207+00:00"
+  },
+  "parks-all-021500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+21501+AND+FID+%3C%3D+22000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-021500.json",
+    "sha256": "fbdf8f6f121c53d1ea54d197285581798cd6fd7c6f3313532c227688da74266a",
+    "bytes": 918630,
+    "retrieved_at": "2026-09-08T05:37:34.399082+00:00"
+  },
+  "parks-all-022000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+22001+AND+FID+%3C%3D+22500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-022000.json",
+    "sha256": "767ef84bf52be1eb89d82fbb8b69cc0d3665de990c9522c683da7a6b8f7067f4",
+    "bytes": 1622278,
+    "retrieved_at": "2026-09-08T05:37:35.238769+00:00"
+  },
+  "parks-all-022500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+22501+AND+FID+%3C%3D+23000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-022500.json",
+    "sha256": "6a5f20c4319d89cb0e8016ed2a4f529778f865fce3214e7f42b913ef97ff8d6e",
+    "bytes": 1717507,
+    "retrieved_at": "2026-09-08T05:37:35.547542+00:00"
+  },
+  "parks-all-023000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+23001+AND+FID+%3C%3D+23500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-023000.json",
+    "sha256": "bf9914eb2bf703561f3785c79046662a95c396cba1ea38797cb0389cab9c16a1",
+    "bytes": 801811,
+    "retrieved_at": "2026-09-08T05:37:35.588965+00:00"
+  },
+  "parks-all-023500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+23501+AND+FID+%3C%3D+24000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-023500.json",
+    "sha256": "ab01cf254a7cdee78b7704f4340accf5f1a56ab38618dd78bc233f039f5974bc",
+    "bytes": 998132,
+    "retrieved_at": "2026-09-08T05:37:36.231446+00:00"
+  },
+  "parks-all-024000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+24001+AND+FID+%3C%3D+24500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-024000.json",
+    "sha256": "e10b2457f14665eea09b4bdde5e9a28153a4c2f7eb119b7cd4088513facd4717",
+    "bytes": 664321,
+    "retrieved_at": "2026-09-08T05:37:36.801024+00:00"
+  },
+  "parks-all-024500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+24501+AND+FID+%3C%3D+25000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-024500.json",
+    "sha256": "9b931c95f2d3d412f8602e2f842aab4decc0f6c3395812769afc55c55f2dcffa",
+    "bytes": 596253,
+    "retrieved_at": "2026-09-08T05:37:37.063489+00:00"
+  },
+  "parks-all-025000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+25001+AND+FID+%3C%3D+25500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-025000.json",
+    "sha256": "087c08bfda412eb4b292fc8ad48d9791a37cb812c72c689f67e6f2ec94560b6a",
+    "bytes": 669464,
+    "retrieved_at": "2026-09-08T05:37:36.725191+00:00"
+  },
+  "parks-all-025500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+25501+AND+FID+%3C%3D+26000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-025500.json",
+    "sha256": "a92a6b13d73265e2ce7a28dcd58e38c887992dd6748d83b9b7664ab30babec2a",
+    "bytes": 725074,
+    "retrieved_at": "2026-09-08T05:37:37.810957+00:00"
+  },
+  "parks-all-026000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+26001+AND+FID+%3C%3D+26500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-026000.json",
+    "sha256": "4315facd54a81678d8b2faba9785d2b8c806ae16c283ed0fc2cc58584bd3f715",
+    "bytes": 700125,
+    "retrieved_at": "2026-09-08T05:37:38.163765+00:00"
+  },
+  "parks-all-026500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+26501+AND+FID+%3C%3D+27000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-026500.json",
+    "sha256": "764d30a65052284f09c8521ae1c98a07f64bfe0236e2823be59a04b4c941a9f2",
+    "bytes": 651796,
+    "retrieved_at": "2026-09-08T05:37:38.370763+00:00"
+  },
+  "parks-all-027000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+27001+AND+FID+%3C%3D+27500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-027000.json",
+    "sha256": "33fb7e28cb761c767c5502c731b6eb8eb94f5701bbda72bfb4b813b718fb5f55",
+    "bytes": 1187809,
+    "retrieved_at": "2026-09-08T05:37:38.327772+00:00"
+  },
+  "parks-all-027500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+27501+AND+FID+%3C%3D+28000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-027500.json",
+    "sha256": "54f17b69ed4dbadca9bbc32cb1501c8a9574c9757a17bdc902ec65f7f3d3c996",
+    "bytes": 1020638,
+    "retrieved_at": "2026-09-08T05:37:39.551980+00:00"
+  },
+  "parks-all-028000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+28001+AND+FID+%3C%3D+28500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-028000.json",
+    "sha256": "207b1bd9903216fc170351be961f40ff90057961398e3501f2dd03aa69e6c251",
+    "bytes": 842100,
+    "retrieved_at": "2026-09-08T05:37:39.569922+00:00"
+  },
+  "parks-all-028500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+28501+AND+FID+%3C%3D+29000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-028500.json",
+    "sha256": "fc321baccb6f889528c594a00793eef70b0064dbae1bac323a768005da7a9ce6",
+    "bytes": 991703,
+    "retrieved_at": "2026-09-08T05:37:40.078289+00:00"
+  },
+  "parks-all-029000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+29001+AND+FID+%3C%3D+29500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-029000.json",
+    "sha256": "5f575bd4e80093fa69b5228094e348168d54f56d4522912dff910b132022aaa3",
+    "bytes": 1250319,
+    "retrieved_at": "2026-09-08T05:37:40.514405+00:00"
+  },
+  "parks-all-029500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+29501+AND+FID+%3C%3D+30000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-029500.json",
+    "sha256": "22cefe2c4e540545e1e213af50be1774185a1273c244469d83f1db9eadc67e92",
+    "bytes": 888540,
+    "retrieved_at": "2026-09-08T05:37:41.171761+00:00"
+  },
+  "parks-all-030000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+30001+AND+FID+%3C%3D+30500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-030000.json",
+    "sha256": "b85cd9e88a31a8154005f758b29806f5f953056b25c04681f05e9f7642ba4e99",
+    "bytes": 699138,
+    "retrieved_at": "2026-09-08T05:37:41.472213+00:00"
+  },
+  "parks-all-030500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+30501+AND+FID+%3C%3D+31000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-030500.json",
+    "sha256": "c22de444bf3f38fa5c163b2cbe845a9ed3211f3907a825d8324fc4dcc5fddc0e",
+    "bytes": 639277,
+    "retrieved_at": "2026-09-08T05:37:41.413289+00:00"
+  },
+  "parks-all-031000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+31001+AND+FID+%3C%3D+31500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-031000.json",
+    "sha256": "c5ff63505df7d50396d906a142b91f86ba9f017461180f281691512ea66a93e8",
+    "bytes": 709797,
+    "retrieved_at": "2026-09-08T05:37:42.164741+00:00"
+  },
+  "parks-all-031500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+31501+AND+FID+%3C%3D+32000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-031500.json",
+    "sha256": "d92cd7e19986d69f15a3896edc7fd401e49f10ac427801f30762c5d248ee019e",
+    "bytes": 707778,
+    "retrieved_at": "2026-09-08T05:37:42.969617+00:00"
+  },
+  "parks-all-032000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+32001+AND+FID+%3C%3D+32500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-032000.json",
+    "sha256": "f2d6026bfbf5128ae2da3196f258a1fe0a5ab350ef462437778d0d68eef41001",
+    "bytes": 1505574,
+    "retrieved_at": "2026-09-08T05:37:43.721478+00:00"
+  },
+  "parks-all-032500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+32501+AND+FID+%3C%3D+33000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-032500.json",
+    "sha256": "68885845f827b7ff35332379bd27efe83a9e54774fab377b7cd00eb106ab1954",
+    "bytes": 937363,
+    "retrieved_at": "2026-09-08T05:37:43.339153+00:00"
+  },
+  "parks-all-033000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+33001+AND+FID+%3C%3D+33500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-033000.json",
+    "sha256": "359e22e90692f9a383ffc851f520f1fe841609003ed65abb900e348ec2f0d82d",
+    "bytes": 689497,
+    "retrieved_at": "2026-09-08T05:37:43.230223+00:00"
+  },
+  "parks-all-033500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+33501+AND+FID+%3C%3D+34000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-033500.json",
+    "sha256": "95921dfb325d064e40a4de38b543b92161f62135c1e9c5e91480c13342da2412",
+    "bytes": 906320,
+    "retrieved_at": "2026-09-08T05:37:44.328994+00:00"
+  },
+  "parks-all-034000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+34001+AND+FID+%3C%3D+34500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-034000.json",
+    "sha256": "904a62fbc03802c9a88d5c4ba054c48976acb6199a3764ce96e3565582c8ea7b",
+    "bytes": 833432,
+    "retrieved_at": "2026-09-08T05:37:44.429885+00:00"
+  },
+  "parks-all-034500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+34501+AND+FID+%3C%3D+35000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-034500.json",
+    "sha256": "3832f3dbc9eb0612a799cfce1a5f94b2c14bf556de2ccbb65a927f80185362e4",
+    "bytes": 1085532,
+    "retrieved_at": "2026-09-08T05:37:44.920295+00:00"
+  },
+  "parks-all-035000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+35001+AND+FID+%3C%3D+35500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-035000.json",
+    "sha256": "00e5cf4715d8b6e8682bb9bb96be5c209ce1ba200243a9847e3e19a52f1dbe11",
+    "bytes": 1242645,
+    "retrieved_at": "2026-09-08T05:37:45.360493+00:00"
+  },
+  "parks-all-035500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+35501+AND+FID+%3C%3D+36000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-035500.json",
+    "sha256": "d7db6d93bcbd69584889395bb2142e2b6769c6627d7c627d164b1fd0420fdda4",
+    "bytes": 785339,
+    "retrieved_at": "2026-09-08T05:37:45.620498+00:00"
+  },
+  "parks-all-036000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+36001+AND+FID+%3C%3D+36500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-036000.json",
+    "sha256": "c0134abe43a8967dcd7cd349034b142bcc193554a724cc539374fcff01461a60",
+    "bytes": 715061,
+    "retrieved_at": "2026-09-08T05:37:45.977730+00:00"
+  },
+  "parks-all-036500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+36501+AND+FID+%3C%3D+37000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-036500.json",
+    "sha256": "a7b0a89ef1825b780045682c8bace41c5c7f0e540e3b96096b4d87b797d1f4bb",
+    "bytes": 882035,
+    "retrieved_at": "2026-09-08T05:37:46.625018+00:00"
+  },
+  "parks-all-037000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+37001+AND+FID+%3C%3D+37500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-037000.json",
+    "sha256": "1d87e80c6c04a25bba89d52e53cc8f879c09d169e0c4e9256470e3dc917e7182",
+    "bytes": 601141,
+    "retrieved_at": "2026-09-08T05:37:47.248175+00:00"
+  },
+  "parks-all-037500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+37501+AND+FID+%3C%3D+38000&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-037500.json",
+    "sha256": "482228f35fb208a9ca63d235fc8a6b3ce743aa60bac855ef1ea826bf1bc3e742",
+    "bytes": 711672,
+    "retrieved_at": "2026-09-08T05:37:47.202294+00:00"
+  },
+  "parks-all-038000.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+38001+AND+FID+%3C%3D+38500&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-038000.json",
+    "sha256": "3d4a698bda00ebe63423073087e216d2fd38da878e68e0f2fba90061da54c355",
+    "bytes": 3099636,
+    "retrieved_at": "2026-09-08T05:37:48.032025+00:00"
+  },
+  "parks-all-038500.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=FID+%3E%3D+38501+AND+FID+%3C%3D+38810&outFields=%2A&returnGeometry=true&outSR=3857&f=json&orderByFields=FID",
+    "file": "raw/parks-all-038500.json",
+    "sha256": "c1d9bc725775964e30ffbd75d92286035eac4b4adb15242936111affa701eb5a",
+    "bytes": 1006348,
+    "retrieved_at": "2026-09-08T05:37:48.208095+00:00"
+  },
+  "parks-ids-after.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=1%3D1&returnIdsOnly=true&f=json",
+    "file": "raw/parks-ids-after.json",
+    "sha256": "290aa6fa9a554552f39935c2a0bd07f10e835966d497c307d41fe61b3338cf74",
+    "bytes": 221795,
+    "retrieved_at": "2026-09-08T05:41:52.647677+00:00"
+  },
+  "parks-ids-before.json": {
+    "url": "https://services5.arcgis.com/DmRfik4clMVydXO3/arcgis/rest/services/VPA_Draft_Open_Space_Data/FeatureServer/0/query?where=1%3D1&returnIdsOnly=true&f=json",
+    "file": "raw/parks-ids-before.json",
+    "sha256": "aa4e459d37094ac3ed3c882f6263e3d10f2c64c9b881f0ecf484a2058f279cbb",
+    "bytes": 221797,
+    "retrieved_at": "2026-09-08T05:36:20.243761+00:00"
+  },
+  "ptal-all-000000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=0",
+    "file": "raw/ptal-all-000000.json",
+    "sha256": "1b9d6cae26d5a85c5a4dc55cfe86152c3b9fe177dde389349987e4e2a51d40c4",
+    "bytes": 1706429,
+    "retrieved_at": "2026-09-08T05:36:20.701288+00:00"
+  },
+  "ptal-all-005000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=5000",
+    "file": "raw/ptal-all-005000.json",
+    "sha256": "72058a45298debe4063dec48d5bfea15275e04d19ecb703b6f17f0842868cb46",
+    "bytes": 1712780,
+    "retrieved_at": "2026-09-08T05:36:20.864314+00:00"
+  },
+  "ptal-all-010000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=10000",
+    "file": "raw/ptal-all-010000.json",
+    "sha256": "09b05bdafb4b26636efb6f7a53798c319816633c25c1a6887a54478bf6c2f011",
+    "bytes": 1720903,
+    "retrieved_at": "2026-09-08T05:36:20.836288+00:00"
+  },
+  "ptal-all-015000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=15000",
+    "file": "raw/ptal-all-015000.json",
+    "sha256": "e63041f0720b9663d0e5459dfb7f45f1c4ba96e0dfc0da8640400b7354650e13",
+    "bytes": 1717875,
+    "retrieved_at": "2026-09-08T05:36:20.825901+00:00"
+  },
+  "ptal-all-020000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=20000",
+    "file": "raw/ptal-all-020000.json",
+    "sha256": "724cc938a372501afab5ed8eedd2740069bd6f9017061fe1e4dd4060ad86ea89",
+    "bytes": 1715163,
+    "retrieved_at": "2026-09-08T05:36:21.195779+00:00"
+  },
+  "ptal-all-025000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=25000",
+    "file": "raw/ptal-all-025000.json",
+    "sha256": "1b509307f74b4488d97eef254c66f065143fd13e2feab8889811ea833cfc809e",
+    "bytes": 1716623,
+    "retrieved_at": "2026-09-08T05:36:21.486492+00:00"
+  },
+  "ptal-all-030000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=30000",
+    "file": "raw/ptal-all-030000.json",
+    "sha256": "033ffc9d16294388b085b5b6d2a43816f5acd86ba1ad4cb602ec3ce97f51380b",
+    "bytes": 1715565,
+    "retrieved_at": "2026-09-08T05:36:21.529901+00:00"
+  },
+  "ptal-all-035000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=35000",
+    "file": "raw/ptal-all-035000.json",
+    "sha256": "bcd68274c4704782d5cac90a72b6b28b0b1676b0e27251f5c153e5a54dc6540c",
+    "bytes": 1715602,
+    "retrieved_at": "2026-09-08T05:36:21.529700+00:00"
+  },
+  "ptal-all-040000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=40000",
+    "file": "raw/ptal-all-040000.json",
+    "sha256": "9bb8005a1c127fa46876369c9984233055f8664ead890d5a8fe1b2e46450aad6",
+    "bytes": 1715082,
+    "retrieved_at": "2026-09-08T05:36:21.740119+00:00"
+  },
+  "ptal-all-045000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=45000",
+    "file": "raw/ptal-all-045000.json",
+    "sha256": "9bb164a84913187fe5916c9f2766acfee0eb0b396ee0a9321dc403442fdcf5f5",
+    "bytes": 1716824,
+    "retrieved_at": "2026-09-08T05:36:21.990315+00:00"
+  },
+  "ptal-all-050000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=50000",
+    "file": "raw/ptal-all-050000.json",
+    "sha256": "26a084958f654eae302b0e22468a3d82b35fadbb1a90b41be4108769ea8df8b8",
+    "bytes": 1717804,
+    "retrieved_at": "2026-09-08T05:36:22.010951+00:00"
+  },
+  "ptal-all-055000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=55000",
+    "file": "raw/ptal-all-055000.json",
+    "sha256": "197101cae1a00197c58c81cacd3e941bedcffd3a41a176736edd32573ecbc5ff",
+    "bytes": 1722029,
+    "retrieved_at": "2026-09-08T05:36:22.005177+00:00"
+  },
+  "ptal-all-060000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=60000",
+    "file": "raw/ptal-all-060000.json",
+    "sha256": "ac926616e9ef0c3dc428977bf69a2233dc8085d655477254ac556565c028eb46",
+    "bytes": 1720295,
+    "retrieved_at": "2026-09-08T05:36:22.130222+00:00"
+  },
+  "ptal-all-065000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=65000",
+    "file": "raw/ptal-all-065000.json",
+    "sha256": "5e2765170ccbb9e31a2bfa984e660a5db767e3bc74d661c8051e3b80e7490e22",
+    "bytes": 1718001,
+    "retrieved_at": "2026-09-08T05:36:22.636923+00:00"
+  },
+  "ptal-all-070000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=70000",
+    "file": "raw/ptal-all-070000.json",
+    "sha256": "c6ab185d139d082202766431a8cfd70a721de3b238fa2bfde228b18401e0c800",
+    "bytes": 1712056,
+    "retrieved_at": "2026-09-08T05:36:22.741994+00:00"
+  },
+  "ptal-all-075000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=75000",
+    "file": "raw/ptal-all-075000.json",
+    "sha256": "06d85d0018f0bb9101441551eedaeb89aa5966521f667376b4983221e1260d65",
+    "bytes": 1720779,
+    "retrieved_at": "2026-09-08T05:36:22.706650+00:00"
+  },
+  "ptal-all-080000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=80000",
+    "file": "raw/ptal-all-080000.json",
+    "sha256": "124aaca57a52a4792d10754cb6e7bca5f360916ef8604239485e5044aa32efbd",
+    "bytes": 1719252,
+    "retrieved_at": "2026-09-08T05:36:22.780320+00:00"
+  },
+  "ptal-all-085000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=85000",
+    "file": "raw/ptal-all-085000.json",
+    "sha256": "ebb866b0e0529521080943a8ce7bdb752773fdc0d733308367372f21e9537e6d",
+    "bytes": 1719616,
+    "retrieved_at": "2026-09-08T05:36:23.243893+00:00"
+  },
+  "ptal-all-090000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=90000",
+    "file": "raw/ptal-all-090000.json",
+    "sha256": "6058b6eea502be6dbd809621dfde4fe665e59643bf848addea99c1337d25e9b7",
+    "bytes": 1717830,
+    "retrieved_at": "2026-09-08T05:36:23.417451+00:00"
+  },
+  "ptal-all-095000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=95000",
+    "file": "raw/ptal-all-095000.json",
+    "sha256": "c1540f9de1d4628a3a9aa2dcbd2b5bd3fb5717919dcc495e79aa5b8aac9ace6c",
+    "bytes": 1719252,
+    "retrieved_at": "2026-09-08T05:36:23.230164+00:00"
+  },
+  "ptal-all-100000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=100000",
+    "file": "raw/ptal-all-100000.json",
+    "sha256": "5261104b8a1526f2d481f99d7590500907b0ce163ba516665e34d3cc62b858b6",
+    "bytes": 1727519,
+    "retrieved_at": "2026-09-08T05:36:23.395286+00:00"
+  },
+  "ptal-all-105000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=105000",
+    "file": "raw/ptal-all-105000.json",
+    "sha256": "89cc889c9532354481b58aee7ac5efe7c29d48c3322156ba03d742be5bf66b08",
+    "bytes": 1717097,
+    "retrieved_at": "2026-09-08T05:36:23.872059+00:00"
+  },
+  "ptal-all-110000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=110000",
+    "file": "raw/ptal-all-110000.json",
+    "sha256": "766fe8f8e74def0934489d235413798dd4260eec5ba550e81aeb7740ecc1f40f",
+    "bytes": 1723805,
+    "retrieved_at": "2026-09-08T05:36:23.993552+00:00"
+  },
+  "ptal-all-115000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=115000",
+    "file": "raw/ptal-all-115000.json",
+    "sha256": "44af54d75338ad81463abede83a5410fa0b1eb0f459c143504de23161c807c49",
+    "bytes": 1725103,
+    "retrieved_at": "2026-09-08T05:36:24.037298+00:00"
+  },
+  "ptal-all-120000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=120000",
+    "file": "raw/ptal-all-120000.json",
+    "sha256": "e4fb64a19230754c7e5aef86c19ddd1f483ffc8a195c3ec811636087b1e01359",
+    "bytes": 1724154,
+    "retrieved_at": "2026-09-08T05:36:24.022799+00:00"
+  },
+  "ptal-all-125000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=125000",
+    "file": "raw/ptal-all-125000.json",
+    "sha256": "4acb519a8d4e731c9d1613a48b3e143955ea386d0f98fb1148f28fae0e8d573d",
+    "bytes": 1722050,
+    "retrieved_at": "2026-09-08T05:36:24.541862+00:00"
+  },
+  "ptal-all-130000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=130000",
+    "file": "raw/ptal-all-130000.json",
+    "sha256": "cc4bbe678efd51be086e6ca81d14f23aeaaa221bb32170d6acdd8a01059660b8",
+    "bytes": 1723236,
+    "retrieved_at": "2026-09-08T05:36:24.651419+00:00"
+  },
+  "ptal-all-135000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=135000",
+    "file": "raw/ptal-all-135000.json",
+    "sha256": "2eafa05fc2aad2446369753929d87a441822d9f01e1ffd4bd91af778a5115e62",
+    "bytes": 1724020,
+    "retrieved_at": "2026-09-08T05:36:24.753093+00:00"
+  },
+  "ptal-all-140000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=140000",
+    "file": "raw/ptal-all-140000.json",
+    "sha256": "db7e2ab224de6275bea8f6cd89cea7081ce23b4416cde868a90c4e8915d33f9b",
+    "bytes": 1722871,
+    "retrieved_at": "2026-09-08T05:36:24.763300+00:00"
+  },
+  "ptal-all-145000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=145000",
+    "file": "raw/ptal-all-145000.json",
+    "sha256": "438afa2ac814d17a1875517d469e0547714197b2b681e94cd33087ab0f710e1d",
+    "bytes": 1721101,
+    "retrieved_at": "2026-09-08T05:36:25.217705+00:00"
+  },
+  "ptal-all-150000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=150000",
+    "file": "raw/ptal-all-150000.json",
+    "sha256": "e20bf5be129148c265c7d4ffbe54e69a4b7f3709f09488380d55050d2715080c",
+    "bytes": 1722859,
+    "retrieved_at": "2026-09-08T05:36:25.277898+00:00"
+  },
+  "ptal-all-155000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=155000",
+    "file": "raw/ptal-all-155000.json",
+    "sha256": "c5f4708b1f68d1a14e9e10467500429602123a4916a5cfbbba553f6d39b2304a",
+    "bytes": 1717960,
+    "retrieved_at": "2026-09-08T05:36:25.377069+00:00"
+  },
+  "ptal-all-160000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=160000",
+    "file": "raw/ptal-all-160000.json",
+    "sha256": "01a36315d18ff246a487f5bf58b771cbab4db4ca64aa59ea6f2551ad96b415a9",
+    "bytes": 1720949,
+    "retrieved_at": "2026-09-08T05:36:25.390433+00:00"
+  },
+  "ptal-all-165000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=165000",
+    "file": "raw/ptal-all-165000.json",
+    "sha256": "541ba6d31c91987b28b1f137ef7f8a8c7151a957519d1a94bf1817cb3ea677bd",
+    "bytes": 1726750,
+    "retrieved_at": "2026-09-08T05:36:25.955420+00:00"
+  },
+  "ptal-all-170000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=170000",
+    "file": "raw/ptal-all-170000.json",
+    "sha256": "f6171717ec625a19b9989e783bbe0d2618871dc87833a2953c49ab3dab67679f",
+    "bytes": 1720482,
+    "retrieved_at": "2026-09-08T05:36:25.892708+00:00"
+  },
+  "ptal-all-175000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=175000",
+    "file": "raw/ptal-all-175000.json",
+    "sha256": "1914caf33cd602970d8e4cf95588d1b49959ba87433802ca4d843acec88a9514",
+    "bytes": 1723000,
+    "retrieved_at": "2026-09-08T05:36:26.007806+00:00"
+  },
+  "ptal-all-180000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=180000",
+    "file": "raw/ptal-all-180000.json",
+    "sha256": "085f6bdaaa6fa08862c506159c3ef6a4702792a230d21b30302dbc5eb399dc39",
+    "bytes": 1723816,
+    "retrieved_at": "2026-09-08T05:36:26.023138+00:00"
+  },
+  "ptal-all-185000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=185000",
+    "file": "raw/ptal-all-185000.json",
+    "sha256": "225d656692c341137c3426b6fba58397ba0c1335911ac16b3891692752dbddd9",
+    "bytes": 1724705,
+    "retrieved_at": "2026-09-08T05:36:26.749853+00:00"
+  },
+  "ptal-all-190000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=190000",
+    "file": "raw/ptal-all-190000.json",
+    "sha256": "1c6c2b69b8beb98e1e80466d9ce7350ebc120c196736bf5e044591797ab5194d",
+    "bytes": 1722026,
+    "retrieved_at": "2026-09-08T05:36:26.850173+00:00"
+  },
+  "ptal-all-195000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=195000",
+    "file": "raw/ptal-all-195000.json",
+    "sha256": "d0fe51cd20caafda81273436621780bc2a2f17336960ead498aa842e024edaa7",
+    "bytes": 1718112,
+    "retrieved_at": "2026-09-08T05:36:26.826035+00:00"
+  },
+  "ptal-all-200000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=200000",
+    "file": "raw/ptal-all-200000.json",
+    "sha256": "32f7c96e75300b028ee8e18e40c6dbde6d82ee726989816310072d25978abc72",
+    "bytes": 1727150,
+    "retrieved_at": "2026-09-08T05:36:26.832700+00:00"
+  },
+  "ptal-all-205000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=205000",
+    "file": "raw/ptal-all-205000.json",
+    "sha256": "592cea240396c4ad21eabbf6fb99f9e44f50becab4a427fa1bef2f6eb98a6fba",
+    "bytes": 1726937,
+    "retrieved_at": "2026-09-08T05:36:27.486474+00:00"
+  },
+  "ptal-all-210000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=210000",
+    "file": "raw/ptal-all-210000.json",
+    "sha256": "44131183fc5e567d2e246403e3acc4697f0cc2fc8b6476b0811225dc718fa3e9",
+    "bytes": 1725183,
+    "retrieved_at": "2026-09-08T05:36:27.533763+00:00"
+  },
+  "ptal-all-215000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=215000",
+    "file": "raw/ptal-all-215000.json",
+    "sha256": "c8d5357c34dbe8e59c0765e4f42c9ed7b8851f7a3e516e0722c20cf99226d651",
+    "bytes": 1726251,
+    "retrieved_at": "2026-09-08T05:36:27.584386+00:00"
+  },
+  "ptal-all-220000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=220000",
+    "file": "raw/ptal-all-220000.json",
+    "sha256": "5461670279fdcf86620fad34184c43c300e483a137dd5dbd1afdd7a2fb623e2c",
+    "bytes": 1723362,
+    "retrieved_at": "2026-09-08T05:36:27.587880+00:00"
+  },
+  "ptal-all-225000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=225000",
+    "file": "raw/ptal-all-225000.json",
+    "sha256": "2c803f930866815c7e1c21afaa4278cdf16b400853d084c537c17868470111eb",
+    "bytes": 1725462,
+    "retrieved_at": "2026-09-08T05:36:28.398158+00:00"
+  },
+  "ptal-all-230000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=230000",
+    "file": "raw/ptal-all-230000.json",
+    "sha256": "226b4b6d58eaa3b47190d72ac13350f19aee72c6c24a5b8e41fcbdefd8ee1cb5",
+    "bytes": 1721850,
+    "retrieved_at": "2026-09-08T05:36:28.392015+00:00"
+  },
+  "ptal-all-235000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=235000",
+    "file": "raw/ptal-all-235000.json",
+    "sha256": "c676bf7131d2afcd416fea2b5b594cfabe2df8dc71db0c5c5bc935961f7a2aa6",
+    "bytes": 1759874,
+    "retrieved_at": "2026-09-08T05:36:28.454021+00:00"
+  },
+  "ptal-all-240000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=240000",
+    "file": "raw/ptal-all-240000.json",
+    "sha256": "0013f059f66a583dc978c483b59a010134fb53e2e4a9e3f462d01b45398bf47f",
+    "bytes": 1745850,
+    "retrieved_at": "2026-09-08T05:36:28.397898+00:00"
+  },
+  "ptal-all-245000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=245000",
+    "file": "raw/ptal-all-245000.json",
+    "sha256": "f248d9c4f22dbc10915b6cc6af52cdcc6bc2dc1e19107be2e2e1796179b5170e",
+    "bytes": 1742427,
+    "retrieved_at": "2026-09-08T05:36:29.559571+00:00"
+  },
+  "ptal-all-250000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=250000",
+    "file": "raw/ptal-all-250000.json",
+    "sha256": "fd5196c2e6cac8ea36683fcb6baf23b6eac3c8c7e3c481fadebf8451f0a3d379",
+    "bytes": 1753791,
+    "retrieved_at": "2026-09-08T05:36:29.639355+00:00"
+  },
+  "ptal-all-255000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=255000",
+    "file": "raw/ptal-all-255000.json",
+    "sha256": "5a9a0192e2db0950bd08dd1bcc6a79b0f1b2be8b5efac845c34e0dc001149bee",
+    "bytes": 1755452,
+    "retrieved_at": "2026-09-08T05:36:29.565267+00:00"
+  },
+  "ptal-all-260000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=260000",
+    "file": "raw/ptal-all-260000.json",
+    "sha256": "7c80c4e1378b194a5bad8c523474f414e955d8a31fa478325838c8b653054655",
+    "bytes": 1757020,
+    "retrieved_at": "2026-09-08T05:36:29.668494+00:00"
+  },
+  "ptal-all-265000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=265000",
+    "file": "raw/ptal-all-265000.json",
+    "sha256": "814d093ac3281354232f4695a7d7fe7636fd8425bb18648bd0cda31a74a19ca3",
+    "bytes": 1757420,
+    "retrieved_at": "2026-09-08T05:36:30.415509+00:00"
+  },
+  "ptal-all-270000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=270000",
+    "file": "raw/ptal-all-270000.json",
+    "sha256": "ad9a01e9c07da78691d3fce91f1c984dedbb8095dbd4a70c4b36ca67c1d14663",
+    "bytes": 1754993,
+    "retrieved_at": "2026-09-08T05:36:30.422019+00:00"
+  },
+  "ptal-all-275000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=275000",
+    "file": "raw/ptal-all-275000.json",
+    "sha256": "50df44c6adc86e88c3c993d369e1f4533ec05f5b5ec422ddd6686ae9257d20e3",
+    "bytes": 1765807,
+    "retrieved_at": "2026-09-08T05:36:30.684793+00:00"
+  },
+  "ptal-all-280000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=280000",
+    "file": "raw/ptal-all-280000.json",
+    "sha256": "b38ae92456b3b1ca79927434309729a73929d1918e94e1b3ae8fdd6749ef7927",
+    "bytes": 1757673,
+    "retrieved_at": "2026-09-08T05:36:30.822366+00:00"
+  },
+  "ptal-all-285000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=285000",
+    "file": "raw/ptal-all-285000.json",
+    "sha256": "31dc80e7804d61b5f8c24a149ca0f078e6bc10a16937a3ec23b96cba4ece4bf8",
+    "bytes": 1761022,
+    "retrieved_at": "2026-09-08T05:36:31.149601+00:00"
+  },
+  "ptal-all-290000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=290000",
+    "file": "raw/ptal-all-290000.json",
+    "sha256": "acb9653ee8dd6e9720ba37b30b1891078933347d0e9680a8f130d016e996eec2",
+    "bytes": 1752526,
+    "retrieved_at": "2026-09-08T05:36:31.229594+00:00"
+  },
+  "ptal-all-295000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=295000",
+    "file": "raw/ptal-all-295000.json",
+    "sha256": "011ae8b4ebd5f94da9bedc2c997798aea4e0014a1540a984483fc54ed28635f1",
+    "bytes": 1747780,
+    "retrieved_at": "2026-09-08T05:36:31.524760+00:00"
+  },
+  "ptal-all-300000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=300000",
+    "file": "raw/ptal-all-300000.json",
+    "sha256": "4c774d3c90c06ce1c90fa1911519591abb00fbeb6df031f13787e4c8d29c8953",
+    "bytes": 1758206,
+    "retrieved_at": "2026-09-08T05:36:31.536215+00:00"
+  },
+  "ptal-all-305000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=305000",
+    "file": "raw/ptal-all-305000.json",
+    "sha256": "5fe162f0863937f25e0870875afd64ad020b82f05f1727300582cdf62964ffde",
+    "bytes": 1760428,
+    "retrieved_at": "2026-09-08T05:36:31.914532+00:00"
+  },
+  "ptal-all-310000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=310000",
+    "file": "raw/ptal-all-310000.json",
+    "sha256": "5138d60596e8d8f1093b51e51fd38a8eef6f921ba5488e3cbae436c866f397ea",
+    "bytes": 1755421,
+    "retrieved_at": "2026-09-08T05:36:32.003975+00:00"
+  },
+  "ptal-all-315000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=315000",
+    "file": "raw/ptal-all-315000.json",
+    "sha256": "4c481a56d8fac775ca090b25c274453224a92fe205507ec642599107efa65ea5",
+    "bytes": 1746013,
+    "retrieved_at": "2026-09-08T05:36:32.241573+00:00"
+  },
+  "ptal-all-320000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=320000",
+    "file": "raw/ptal-all-320000.json",
+    "sha256": "d997d5776411ba980c507faf6909da415bdf31f38abb2d7015ca71f7f6bd892d",
+    "bytes": 1750444,
+    "retrieved_at": "2026-09-08T05:36:32.268319+00:00"
+  },
+  "ptal-all-325000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=325000",
+    "file": "raw/ptal-all-325000.json",
+    "sha256": "ff7a8b6472f1e45a951d52261841b4de8ece04bf269c91fdeb33f71329d365b5",
+    "bytes": 1761739,
+    "retrieved_at": "2026-09-08T05:36:32.614062+00:00"
+  },
+  "ptal-all-330000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=330000",
+    "file": "raw/ptal-all-330000.json",
+    "sha256": "2e16cd44e51c3d54e2c6ebcd85c063a7767739f77b7f5e72593d5d135d25d0dd",
+    "bytes": 1756595,
+    "retrieved_at": "2026-09-08T05:36:32.709902+00:00"
+  },
+  "ptal-all-335000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=335000",
+    "file": "raw/ptal-all-335000.json",
+    "sha256": "da1f239580cad923c0f49a9f3ae738f2766acd4c850f96e6b69c704b5a34287a",
+    "bytes": 1761957,
+    "retrieved_at": "2026-09-08T05:36:33.056977+00:00"
+  },
+  "ptal-all-340000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=340000",
+    "file": "raw/ptal-all-340000.json",
+    "sha256": "e65cc5b3cb9de26c5e843f8bf0eeae4d9bb69aacf0dec1fd0612bdd889edb9c4",
+    "bytes": 1763795,
+    "retrieved_at": "2026-09-08T05:36:33.057902+00:00"
+  },
+  "ptal-all-345000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=345000",
+    "file": "raw/ptal-all-345000.json",
+    "sha256": "1751af9a2f4389434805b1fadc53da5664cdb02cb78182a94b4e885bd4f03bb8",
+    "bytes": 1762402,
+    "retrieved_at": "2026-09-08T05:36:33.318565+00:00"
+  },
+  "ptal-all-350000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=350000",
+    "file": "raw/ptal-all-350000.json",
+    "sha256": "d3a1ab5aa376e27fde5efcd3f1a8f5fca5814e4e7c5f5715fafc6cb1792d0d7c",
+    "bytes": 1759573,
+    "retrieved_at": "2026-09-08T05:36:33.487470+00:00"
+  },
+  "ptal-all-355000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=355000",
+    "file": "raw/ptal-all-355000.json",
+    "sha256": "b2dac90fb08b208dccacb4857dfab0f05ffbca50cecc10c28f03791495debd17",
+    "bytes": 1732709,
+    "retrieved_at": "2026-09-08T05:36:33.757014+00:00"
+  },
+  "ptal-all-360000.json": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&outputFormat=application%2Fjson&srsName=EPSG%3A7844&count=5000&startIndex=360000",
+    "file": "raw/ptal-all-360000.json",
+    "sha256": "dea41c79dd57157ee2b1d5c8750636773f2c121d66e48c9b1f47e120e85d9457",
+    "bytes": 243722,
+    "retrieved_at": "2026-09-08T05:36:33.631818+00:00"
+  },
+  "ptal-catalogue.json": {
+    "url": "https://discover.data.vic.gov.au/api/3/action/package_show?id=public-transport-accessibility-level-ptal-melbourne-metro",
+    "file": "raw/ptal-catalogue.json",
+    "sha256": "876522bee706f07385d09e32d41671cd336c35ed2cf20da86a9ccfa42c2929b2",
+    "bytes": 10539,
+    "retrieved_at": "2026-09-08T04:17:09.931713+00:00"
+  },
+  "ptal-hits-after.xml": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&resultType=hits",
+    "file": "raw/ptal-hits-after.xml",
+    "sha256": "93af383e15d58f693771742aba67535f6c4c266752c260cb9e19041b871e9b70",
+    "bytes": 741,
+    "retrieved_at": "2026-09-08T05:41:50.726404+00:00"
+  },
+  "ptal-hits-before.xml": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Aptal_metro&resultType=hits",
+    "file": "raw/ptal-hits-before.xml",
+    "sha256": "51ef05f04f86bdb3033b729beace5a1f995248b4552be548958e435a01c46173",
+    "bytes": 741,
+    "retrieved_at": "2026-09-08T05:36:19.080978+00:00"
+  },
+  "ptal-metadata.xml": {
+    "url": "https://metashare.maps.vic.gov.au/geonetwork/srv/api/records/ca93f889-e9a2-4774-b7c5-dab6cb2ea2aa/formatters/xml",
+    "file": "raw/ptal-metadata.xml",
+    "sha256": "792f2490ed4f939935d008612486486e4487269e205826eb8d8f99bd1846bb3e",
+    "bytes": 53711,
+    "retrieved_at": "2026-09-08T04:17:10.229407+00:00"
+  },
+  "ptal-schema.xml": {
+    "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=DescribeFeatureType&typeNames=open-data-platform%3Aptal_metro",
+    "file": "raw/ptal-schema.xml",
+    "sha256": "13085a9e290707a3eec74d60ec0a042d922b289d64ef986b8dcacf4d9155c82f",
+    "bytes": 1187,
+    "retrieved_at": "2026-09-08T04:17:10.031649+00:00"
+  },
+  "quickstats-206011106.html": {
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/206011106",
+    "file": "raw/quickstats-206011106.html",
+    "sha256": "72f2c57216a412aa40756fdb4b1a00b11b54972e768aab36b5451f09a7d7c7d9",
+    "bytes": 190468,
+    "retrieved_at": "2026-09-08T05:41:46.752365+00:00"
+  },
+  "quickstats-206041117.html": {
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/206041117",
+    "file": "raw/quickstats-206041117.html",
+    "sha256": "441a701a07bd844d0e970c1cfe2d8d7e584e234f1f945bc29547d35631d244f3",
+    "bytes": 189911,
+    "retrieved_at": "2026-09-08T05:41:47.003066+00:00"
+  },
+  "quickstats-206041127.html": {
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/206041127",
+    "file": "raw/quickstats-206041127.html",
+    "sha256": "2d64a4461a575d9c7e6310cdbbe9a3c09c241355d4ce5f836dfea74bc161d5b2",
+    "bytes": 74424,
+    "retrieved_at": "2026-09-08T05:41:47.213611+00:00"
+  },
+  "quickstats-206041507.html": {
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/206041507",
+    "file": "raw/quickstats-206041507.html",
+    "sha256": "7914aea99185ec192034f13293c59e2ae4328e6142cce5bd03174d2afbb12b76",
+    "bytes": 74439,
+    "retrieved_at": "2026-09-08T05:41:47.364877+00:00"
+  },
+  "quickstats-207011155.html": {
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/207011155",
+    "file": "raw/quickstats-207011155.html",
+    "sha256": "127fcebd26262206b0d1ce869b2b59587baac262ce6471d1507175515e2c3a13",
+    "bytes": 192132,
+    "retrieved_at": "2026-09-08T05:41:47.609539+00:00"
+  },
+  "quickstats-209021524.html": {
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/209021524",
+    "file": "raw/quickstats-209021524.html",
+    "sha256": "d4d04cafda374d3e7c36d40efb019e6df0628b31700b438ef6f05495e7c94928",
+    "bytes": 190714,
+    "retrieved_at": "2026-09-08T05:41:47.918808+00:00"
+  },
+  "quickstats-210011227.html": {
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/210011227",
+    "file": "raw/quickstats-210011227.html",
+    "sha256": "830753746dcafd7a90b17d88050e86c7df0f61b76abba726eb6087c34303935f",
+    "bytes": 74369,
+    "retrieved_at": "2026-09-08T05:41:48.099781+00:00"
+  },
+  "quickstats-210051442.html": {
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/210051442",
+    "file": "raw/quickstats-210051442.html",
+    "sha256": "4d7517fa35fda596851cb00a9ac8d192a528d668c874cfb6c22952bbb4ea32ce",
+    "bytes": 190408,
+    "retrieved_at": "2026-09-08T05:41:48.298777+00:00"
+  },
+  "quickstats-212021454.html": {
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/212021454",
+    "file": "raw/quickstats-212021454.html",
+    "sha256": "6e841d93d5a744c9aba3c59ad2de2ca75af1479ee2176e7e1ec0e67075974bf7",
+    "bytes": 190896,
+    "retrieved_at": "2026-09-08T05:41:48.536989+00:00"
+  },
+  "quickstats-212051567.html": {
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/212051567",
+    "file": "raw/quickstats-212051567.html",
+    "sha256": "e042a2cf9f0acd72216d98bb0cf50d90320b82d9547ce38aaa27429342446a65",
+    "bytes": 191863,
+    "retrieved_at": "2026-09-08T05:41:48.754183+00:00"
+  },
+  "quickstats-212051568.html": {
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/212051568",
+    "file": "raw/quickstats-212051568.html",
+    "sha256": "8ad8244edbe4b940ec893644d6610a305c4e01986c82b6e4595d082d1c54181b",
+    "bytes": 190750,
+    "retrieved_at": "2026-09-08T05:41:48.971766+00:00"
+  },
+  "quickstats-213021344.html": {
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/213021344",
+    "file": "raw/quickstats-213021344.html",
+    "sha256": "13aeaae7b789647cace7544a7ac0493765144b8bf0a86ad6b472afe8db1fabf1",
+    "bytes": 189868,
+    "retrieved_at": "2026-09-08T05:41:49.229514+00:00"
+  },
+  "quickstats-213031348.html": {
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/213031348",
+    "file": "raw/quickstats-213031348.html",
+    "sha256": "18c637a32869d09d3d04836f67a6cdc42cefd7066ea6f94322e4157f81c0007a",
+    "bytes": 190139,
+    "retrieved_at": "2026-09-08T05:41:49.399384+00:00"
+  },
+  "quickstats-214021592.html": {
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/214021592",
+    "file": "raw/quickstats-214021592.html",
+    "sha256": "f71cad03f188f567b52ca18e85fd08d19b2027db13043cfb66ca4900daf37d3a",
+    "bytes": 190241,
+    "retrieved_at": "2026-09-08T05:41:49.579266+00:00"
+  },
+  "rent-dictionary-2021.html": {
+    "url": "https://www.abs.gov.au/census/guide-census-data/census-dictionary/2021/variables-topic/housing/rent-weekly-dollar-values-rntd",
+    "file": "raw/rent-dictionary-2021.html",
+    "sha256": "fa393613ca020d5871832f868977d4034c0b23bf36c7f56fc631b8a307e81c89",
+    "bytes": 125954,
+    "retrieved_at": "2026-09-08T05:41:49.661068+00:00"
+  }
+}
