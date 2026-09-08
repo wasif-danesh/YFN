@@ -52,6 +52,9 @@ data/**/staging/
 *.part
 
 # Local tooling
+/AGENTS.md
+/Agents.md
+/Codex-README.md
 .DS_Store
 ._*
 Thumbs.db
