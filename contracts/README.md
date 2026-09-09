@@ -8,7 +8,7 @@ The frontend can use these real, labelled responses:
 - [Compare](examples/compare.json): `areas` containing `area` and `indicators`, plus `meta`.
 - [Area Details](examples/area-details.json): `area`, `indicators`, `population_history`, `population_sources`, `meta`.
 
-Data endpoints are under `/api/v1`; health is `/health`. Source information is embedded, so there is no separate `/sources` endpoint. No map endpoint or suburb-alias lookup is implemented.
+Browser endpoints are under `/api/v1`, including `/api/v1/status` for readiness. Render continues to use `/health`; both readiness routes share the same handler and response. Source information is embedded, so there is no separate `/sources` endpoint. No map endpoint or suburb-alias lookup is implemented.
 
 ## Frontend rules
 

@@ -3,6 +3,8 @@ import { test, expect } from '@playwright/test'
 test('static homepage calls the real API, shows JSON, handles errors and reloads', async ({ page }) => {
   const browserErrors = []
   page.on('pageerror', error => browserErrors.push(error.message))
+  // The browser must work even when an extension blocks the hosting health URL.
+  await page.route('**/health', route => route.abort('blockedbyclient'))
   await page.goto('/')
   await expect(page.getByText('4 of 4 requests successful')).toBeVisible()
   await expect(page.getByTestId('health').locator('pre')).toContainText('"database": "ready"')

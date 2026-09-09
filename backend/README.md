@@ -45,6 +45,7 @@ Request flow: **frontend → api.py → database.py → yfn.sqlite → JSON**. S
 
 | GET path | Behaviour |
 |---|---|
+| `/api/v1/status` | Browser service/database readiness check; same response as `/health` |
 | `/health` | 200 when the database is readable and compatible; otherwise 503 |
 | `/api/v1/areas?query=carl&limit=20` | Case-insensitive official SA2-name search; comparable areas only |
 | `/api/v1/compare?sa2=206041117,213031348` | Four indicators for two or three distinct comparable codes, in supplied order |

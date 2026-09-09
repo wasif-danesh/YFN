@@ -1,4 +1,4 @@
-"""The four endpoints used by the website and hosting health check."""
+"""Website endpoints and the hosting health check."""
 import re
 import sqlite3
 from typing import Annotated
@@ -27,6 +27,7 @@ def require_area(db, code):
     return area
 
 
+@router.get("/api/v1/status", response_model=HealthResponse, tags=["Health"])
 @router.get("/health", response_model=HealthResponse, tags=["Health"])
 def health(db: Db):
     """Technical readiness only; publication approval is reported separately in data meta."""

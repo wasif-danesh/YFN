@@ -144,7 +144,7 @@ def test_unavailable_database_returns_safe_503(tmp_path, kind):
         with sqlite3.connect(path) as db:
             db.execute("UPDATE sample_release SET manifest_json='{}'")
     with TestClient(create_app(Settings(path))) as client:
-        for url in ["/health", "/api/v1/areas", f"/api/v1/areas/{CARLTON}"]:
+        for url in ["/health", "/api/v1/status", "/api/v1/areas", f"/api/v1/areas/{CARLTON}"]:
             response = client.get(url)
             assert response.status_code == 503
             assert response.json()["error"]["code"] == "DATABASE_UNAVAILABLE"
@@ -200,3 +200,10 @@ def test_invalid_cors_configuration(monkeypatch, origins):
 def test_openapi_export_matches_application(client):
     saved = json.loads((ROOT / "contracts/openapi.json").read_text())
     assert client.get("/openapi.json").json() == saved
+
+
+def test_browser_status_matches_health_and_allows_frontend(client):
+    response = client.get("/api/v1/status", headers={"Origin": "http://localhost:3000"})
+    assert response.status_code == 200
+    assert response.json() == client.get("/health").json()
+    assert response.headers["access-control-allow-origin"] == "http://localhost:3000"

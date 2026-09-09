@@ -58,3 +58,7 @@ If a deployment fails, inspect its build log and GitHub checks. For a live regre
 ## Local verification evidence
 
 Verified on 9 September 2026 with Python 3.12.14 and Node 24.20.0: 36 backend tests, 8 frontend unit/component tests and 2 Chromium browser tests (desktop and mobile) passed. A clean `npm ci` and static production build passed; the build check found no database or backend files in published assets. Database hashes/integrity passed for all 361 SA2s. The Blueprint passed Render’s published JSON schema validation. Desktop/mobile screenshots were visually reviewed. These are local checks; Render deployment and its generated URLs still require the dashboard verification above.
+
+## Browser service check
+
+The frontend uses `/api/v1/status` for its Service health card. `/health` remains available for Render’s configured health check. Both routes run the same database readiness handler and return the same JSON and error responses. This change avoids the observed browser-profile block on `/health`; it cannot guarantee compatibility with every extension. Deploy the backend with the new route before deploying the frontend, then retry in the affected regular browser profile.

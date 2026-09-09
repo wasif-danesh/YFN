@@ -14,7 +14,7 @@ The planned journey is **Home → Compare → Area Details**. Users can compare 
 | Real development data | Prepared for all **361 Greater Melbourne SA2s**, using 2021 boundaries |
 | SQLite, schema and ER diagram | Built and verified; **1,444 indicator rows** and **2,166 population-history rows** |
 | Data pipeline | Acquisition, offline processing and validation scripts implemented |
-| REST API | FastAPI implemented with four endpoints, response models and backend tests |
+| REST API | FastAPI implemented with four browser endpoints plus a hosting health check, response models and backend tests |
 | Frontend | Nuxt API test homepage implemented; final renter pages remain planned |
 | GitHub checks | Database, backend, frontend unit/build and desktop/mobile browser checks configured |
 | Render | Root Blueprint ready for a Free-plan test deployment; see the Render guide |
@@ -264,6 +264,7 @@ The implemented REST endpoints are:
 | `GET /api/v1/areas?query=...&limit=20` | Search eligible areas |
 | `GET /api/v1/areas/{sa2_code}` | Area details, indicators and population history |
 | `GET /api/v1/compare?sa2=code1,code2` | Compare two or three distinct areas |
+| `/api/v1/status` | Browser service/database readiness check; same response as `/health` |
 | `GET /health` | Process/database readiness |
 
 See the [implemented contract](contracts/README.md), [OpenAPI](contracts/openapi.json) and real JSON examples. Sources are embedded with indicators and population history; no separate sources endpoint is needed. Keep raw values, units, periods, quality, coverage and provenance available to the client. All comparisons must use the same stored calculations; the UI formats values rather than recalculating indicators.

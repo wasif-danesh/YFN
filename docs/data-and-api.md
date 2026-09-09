@@ -112,6 +112,7 @@ The authoritative contract is now [contracts/README.md](../contracts/README.md),
 | `/api/v1/areas?query=carl&limit=20` | Comparable official SA2 names and codes, plus metadata |
 | `/api/v1/compare?sa2=206041117,213031348` | Two or three distinct comparable areas with the same four indicator objects |
 | `/api/v1/areas/206041117` | Area identity, indicators, annual population history, population sources and metadata |
+| `/api/v1/status` | Browser service/database readiness check; same response as `/health` |
 | `/health` | Technical database readiness (200), otherwise safe 503 |
 
 Source metadata is embedded; internal source paths and workbook locators are not exposed. Raw values, nulls, source periods, method IDs/status and provisional notes are preserved. History contains annual counts and revision status. No new scores are calculated. Health does not imply publication approval; metadata retains `publication_ready=false`.

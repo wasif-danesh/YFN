@@ -55,3 +55,7 @@ CI installs dependencies from the lockfile, runs unit tests, generates the site,
 ## Deployment configuration
 
 See [Render setup](../deploy/README.md). The Blueprint sets `NUXT_PUBLIC_API_ORIGIN` from the API service's public Render URL; Nuxt appends `/api/v1`. Optional `NUXT_PUBLIC_API_BASE` overrides that with a complete URL. Changing either requires a static-site rebuild. Never put secrets, SQLite or raw datasets in `public/` or public Nuxt configuration.
+
+## Browser service check
+
+The frontend uses `/api/v1/status` for its Service health card. `/health` remains available for Render’s configured health check. Both routes run the same database readiness handler and return the same JSON and error responses. This change avoids the observed browser-profile block on `/health`; it cannot guarantee compatibility with every extension. Deploy the backend with the new route before deploying the frontend, then retry in the affected regular browser profile.

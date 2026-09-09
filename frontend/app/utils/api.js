@@ -12,7 +12,7 @@ export function endpointUrl(apiBase, key, inputs) {
     throw new Error('API base must be an HTTP(S) URL ending in /api/v1.')
   }
   const root = base.href.replace(/\/$/, '')
-  if (key === 'health') return new URL('/health', base).href
+  if (key === 'health') return `${root}/status`
   if (key === 'search') return `${root}/areas?${new URLSearchParams({ query: inputs.query, limit: '20' })}`
   if (key === 'compare') return `${root}/compare?${new URLSearchParams({ sa2: inputs.compareCodes })}`
   if (key === 'details') return `${root}/areas/${encodeURIComponent(inputs.detailCode)}`

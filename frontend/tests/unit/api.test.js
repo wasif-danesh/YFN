@@ -3,8 +3,8 @@ import { endpointUrl, requestJson } from '../../app/utils/api.js'
 
 const inputs = { query: 'Carl & %', compareCodes: '206041117,213031348', detailCode: '206041117' }
 describe('API requests', () => {
-  it('uses root health and encodes search/selection parameters', () => {
-    expect(endpointUrl('https://api.example/api/v1/', 'health', inputs)).toBe('https://api.example/health')
+  it('uses versioned status and encodes search/selection parameters', () => {
+    expect(endpointUrl('https://api.example/api/v1/', 'health', inputs)).toBe('https://api.example/api/v1/status')
     const search = new URL(endpointUrl('https://api.example/api/v1', 'search', inputs))
     expect(search.searchParams.get('query')).toBe(inputs.query)
     expect(endpointUrl('https://api.example/api/v1', 'details', inputs)).toBe('https://api.example/api/v1/areas/206041117')
