@@ -103,56 +103,20 @@ Enable foreign keys on every relevant connection. Index area names, alias search
 
 A view can flatten the four indicators for API efficiency, but both compare/details must use the same underlying observations. Geometries and raw source files need not be shipped with the web app. Keep the database under backend-only deployment files and open it in SQLite read-only mode.
 
-## 5. REST contract proposal
+## 5. Implemented REST contract — 9 September 2026
 
-Use the same response models for fixture and real data. The frontend formats numbers but does not recalculate scores. Pin the schema in backend response models and contract examples at the start.
+The authoritative contract is now [contracts/README.md](../contracts/README.md), [OpenAPI](../contracts/openapi.json) and [backend/app/models.py](../backend/app/models.py). This replaces the earlier proposed JSON shape and separate sources endpoint.
 
-| Request | Response | Validation |
-|---|---|---|
-| `GET /api/v1/areas?query=...&limit=20` | `{ "areas": [Area], "meta": Meta }` | Proposed limit 1-50; query maximum 100 characters; unknown search returns empty list. |
-| `GET /api/v1/compare?sa2=code1,code2` | `{ "areas": [{ "area": Area, "indicators": [IndicatorValue] }], "meta": Meta }` | Two/three unique supported codes, preserve requested order. |
-| `GET /api/v1/areas/{sa2_code}` | `{ "area": Area, "indicators": [IndicatorValue], "population_history": [...], "meta": Meta }` | Unknown area returns 404; invalid format returns 422. |
-| `GET /api/v1/sources` | `{ "sources": [Source], "meta": Meta }` | Public source metadata, no local file paths or credentials. |
-| `GET /health` | `{ "status": "ok", "database": "ready" }` | 503 when not ready; no private diagnostics. |
+| GET path | Response |
+|---|---|
+| `/api/v1/areas?query=carl&limit=20` | Comparable official SA2 names and codes, plus metadata |
+| `/api/v1/compare?sa2=206041117,213031348` | Two or three distinct comparable areas with the same four indicator objects |
+| `/api/v1/areas/206041117` | Area identity, indicators, annual population history, population sources and metadata |
+| `/health` | Technical database readiness (200), otherwise safe 503 |
 
-Suggested `Area`: `sa2_code` string, `name` string, `boundary_year` integer, `geography_type` string (`SA2`), `matched_alias` string/null. Use official real codes from the boundary master, not invented codes assigned to actual suburb names.
+Source metadata is embedded; internal source paths and workbook locators are not exposed. Raw values, nulls, source periods, method IDs/status and provisional notes are preserved. History contains annual counts and revision status. No new scores are calculated. Health does not imply publication approval; metadata retains `publication_ready=false`.
 
-Suggested `Meta`: `data_mode`, `data_version` (pipeline run ID), `method_version`, `boundary_year` and `benchmark_count` (valid transport cohort size, null when no scoring).
-
-Suggested `Source`: `source_id`, `publisher`, `dataset_name`, `url`, `reference_period`, `licence`, `limitation`. Include a `sources` array within each indicator so combined-source measures retain both numerator/denominator provenance.
-
-Example `IndicatorValue` shape below uses a fictional source and value solely to illustrate the contract; it is NOT an actual Melbourne observation:
-
-```json
-{
-  "key": "rent_weekly",
-  "label": "Median weekly rent",
-  "raw_value": 400,
-  "unit": "AUD/week",
-  "score": null,
-  "rating": null,
-  "reference_period": "2021 Census",
-  "start_year": 2021,
-  "end_year": 2021,
-  "geography": {"type": "SA2", "code": "999999991", "boundary_year": 2021},
-  "quality": {"status": "available", "reason": null, "coverage_fraction": null},
-  "method_version": "draft-1",
-  "explanation": "Median weekly rent reported in the 2021 Census; not current advertised rent.",
-  "sources": [{
-    "source_id": "synthetic-fixture",
-    "publisher": "Development team",
-    "dataset_name": "Synthetic fixture; not ABS observations",
-    "url": null,
-    "reference_period": "Example only",
-    "licence": null,
-    "limitation": "Fictional values for development only"
-  }]
-}
-```
-
-Null is a JSON null, not a string or zero. An unavailable indicator keeps its key/label/unit but sets raw value, score and rating to null and supplies a quality reason. Home needs search results only; static explanatory content does not need an API request. Compare uses the same four indicator objects as details. Population history items contain `year`, `population` and `source_id`, sorted ascending; their sources are available through `/sources`.
-
-Use a consistent error envelope, e.g. `{ "error": { "code": "INVALID_SELECTION", "message": "Choose two or three different areas." } }`. Add matching FastAPI validation exception handling if adopting this shape, because default validation errors differ. Missing an individual indicator does not make the whole comparison fail. Database failure returns a safe 503 and the UI offers retry.
+Search accepts up to 100 characters and limit 1–50. Empty search lists comparable areas alphabetically. Comparison preserves order and rejects malformed, repeated or ineligible codes. Details supports all 361 areas; the UI must respect eligibility before comparison. Errors have a consistent `{error: {code, message}}` shape. A one-area initial selection is held by the frontend and can use Details until another area is selected. The map uses a future static GeoJSON asset, not an API map endpoint.
 
 ## 6. One shared database for development and deployment
 
@@ -168,3 +132,9 @@ Keep temporary/in-memory fixtures for edge-case tests. Do not insert fictional v
 - Schema: duplicate observation keys rejected; broken foreign keys rejected; null and zero remain distinct; every displayed measure links to source records.
 - API/UI: repeated codes and four areas rejected; malformed and unknown codes handled; missing indicators remain visible; compare/details agree; direct links reload; loading and retry work.
 - Release: frontend build contains no SQLite file or secrets; runtime DB is read-only; real builds contain no synthetic records; external API errors reveal no SQL, paths or stack traces.
+
+## API integration test deployment — 9 September 2026
+
+The user requested a temporary frontend homepage that calls all four APIs and displays JSON, deployment configuration, tests and team instructions. Nuxt now provides this responsive console with independent loading, timeout/error and retry states. It preserves nulls and flags and explicitly labels the provisional development data. Final Home/Compare/Area Details renter interactions remain planned.
+
+The user selected the Free API plan for this test. Root `render.yaml` defines the static site and Python API, automatic public API URL configuration, database validation, health checks and deployment after GitHub checks. The team completes CORS setup using the actual static-site origin; see [Render instructions](../deploy/README.md). This does not authorise Codex to push or deploy. The Free plan is not the final always-on production tier; the provisional dataset is not publication-approved. Frontend CI now runs unit/component tests, static generation and desktop/mobile browser tests against the real backend.

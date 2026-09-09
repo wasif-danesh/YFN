@@ -1,7 +1,32 @@
 # Shared API contract
 
-Agree response models before parallel API/UI development. Start with the [contract proposal](../docs/data-and-api.md#5-rest-contract-proposal) and the [real schema](../data/greater-melbourne-v1/schema-guide.md).
+The implemented contract is defined by [response models](../backend/app/models.py) and exported to [openapi.json](openapi.json). Earlier proposals are design history where they differ from this implementation.
 
-Once FastAPI models exist, export their OpenAPI schema to `openapi.json` and keep reviewed examples in `examples/`. Generate the schema from the running application rather than editing two competing definitions. Contract tests should check examples against those models and CI should detect a stale export.
+The frontend can use these real, labelled responses:
 
-Both real and synthetic responses must include the same fields for identity, value, units, period, quality, coverage and provenance. Preserve nulls and nine-digit SA2 strings. Document breaking changes and update the UI and API in the same pull request; maintain compatibility during their separate Render deployments.
+- [Search](examples/search.json): `areas`, `meta`.
+- [Compare](examples/compare.json): `areas` containing `area` and `indicators`, plus `meta`.
+- [Area Details](examples/area-details.json): `area`, `indicators`, `population_history`, `population_sources`, `meta`.
+
+Data endpoints are under `/api/v1`; health is `/health`. Source information is embedded, so there is no separate `/sources` endpoint. No map endpoint or suburb-alias lookup is implemented.
+
+## Frontend rules
+
+Use string `sa2_code` identities. Search returns comparable official SA2 names, not semantic or suburb-alias matches. Compare needs two or three unique codes; retain an initial one-area selection locally until another is chosen. Details can describe an ineligible area with its eligibility explanation.
+
+Display indicators in API order: rent, transport, population growth, open space. Format numbers/units but do not recalculate indicators or replace null with zero. Compare and Details use identical indicator objects. Annual history contains counts sorted by actual year, with revision status and source information.
+
+Show dates and make quality/source notes discoverable. Current responses have `meta.publication_ready=false`; spatial methods remain provisional. Real example data is not approval to publish statistics. No unapproved scores are supplied.
+
+Errors are `{ "error": { "code": "...", "message": "..." } }`. Handle 404 for unknown areas, 422 for invalid inputs/selections and 503 with retry. A successful response may contain individual unavailable indicators.
+
+## Update the contract
+
+With backend development dependencies installed, run from the repository root:
+
+```sh
+python -m scripts.export_api_contract
+python -m pytest backend/tests -q
+```
+
+Export runs the app locally without opening a network port or modifying SQLite. Tests check OpenAPI drift. Regenerate examples when data or response behaviour changes; do not maintain different shapes in frontend code.

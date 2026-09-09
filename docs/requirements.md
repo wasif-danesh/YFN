@@ -8,7 +8,7 @@ Home: understand purpose and search an area -> Compare: select two or three area
 
 ## Iteration 1 target
 
-Deliver the three wireframe pages with four indicator categories, a REST API, reproducible SQLite build and a complete deployed journey. The later draft specification targets all four categories; the older pitch has a narrower minimum. Resolve this scope difference at the start. Development with synthetic data is a staging milestone, not proof that the final data requirement is satisfied.
+Deliver the three wireframe pages with four indicator categories, a REST API, reproducible SQLite build and a complete deployed journey. The user has confirmed all four categories, homepage SA2 typeahead and Leaflet map, and professional blue styling. Semantic search is excluded. The existing real database supports development; provisional spatial methods still need resolution before public use.
 
 | ID | Behaviour | Acceptance condition |
 |---|---|---|
@@ -56,8 +56,8 @@ Plan storage for source versions and observations now so these changes do not re
 
 | Workstream | Can start immediately with | Delivers |
 |---|---|---|
-| Frontend | Wireframes and shared synthetic JSON examples | Three pages, loading/error states, one API client module |
-| API | Agreed response models and seeded SQLite | Search, compare, details, sources and health endpoints |
+| Frontend | Blue design mockups and generated real API examples | Three pages, loading/error states, one API client module |
+| API | Implemented response models and single SQLite database | Search, compare, details (with embedded sources) and health endpoints |
 | Data | Source manifest and expected curated columns | Profile reports, cleansed tables, real data, validation evidence |
 | Integration/QA | Same schema and contracts | Database builder, automated checks, Render configuration, end-to-end tests |
 
@@ -97,3 +97,15 @@ Configure two services from one GitHub repository: `frontend/` as a Render Stati
 Set the frontend's public API URL and backend's allowed frontend origin through configuration. The API URL is public, not a secret. Keep the database outside the static site's published directory. Use a build/release step to place the validated database with the backend; do not depend on runtime writes or a persistent disk.
 
 Verify current Render plan limits, cold-start behaviour, build/output commands and route handling at implementation time. Run GitHub checks before release and configure the chosen deployment mechanism to respect their result; automatic deploy-on-push alone does not establish this. Do not commit credentials or deploy hooks. Prepare deployment configuration as code and use the user's deployment authorisation before publishing.
+
+## Required basic application tests
+
+Backend tests are implemented in `backend/tests`: search, input validation, comparison order/consistency, all-area responses, missing data, population history, read-only access, database failure and CORS. Run `python -m pytest backend/tests -q`; CI runs this with the committed-data check.
+
+Frontend tests are required when Nuxt is implemented: typeahead keyboard selection, add/remove and duplicate/three-area limits, indicator formatting/null/provisional states, loading/error/retry, and at least one browser journey from Home through Compare to Details and back. Cover direct-link reload and preserved selection, with manual mobile and accessibility checks. Use component tests and a small browser test suite; do not claim frontend coverage before the implementation exists.
+
+## API integration test deployment — 9 September 2026
+
+The user requested a temporary frontend homepage that calls all four APIs and displays JSON, deployment configuration, tests and team instructions. Nuxt now provides this responsive console with independent loading, timeout/error and retry states. It preserves nulls and flags and explicitly labels the provisional development data. Final Home/Compare/Area Details renter interactions remain planned.
+
+The user selected the Free API plan for this test. Root `render.yaml` defines the static site and Python API, automatic public API URL configuration, database validation, health checks and deployment after GitHub checks. The team completes CORS setup using the actual static-site origin; see [Render instructions](../deploy/README.md). This does not authorise Codex to push or deploy. The Free plan is not the final always-on production tier; the provisional dataset is not publication-approved. Frontend CI now runs unit/component tests, static generation and desktop/mobile browser tests against the real backend.

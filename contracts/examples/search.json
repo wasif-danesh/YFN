@@ -1,0 +1,28 @@
+{
+  "areas": [
+    {
+      "sa2_code": "206041117",
+      "name": "Carlton",
+      "boundary_year": 2021,
+      "geography_type": "SA2",
+      "is_comparable": true,
+      "eligibility_note": "Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable."
+    },
+    {
+      "sa2_code": "206071140",
+      "name": "Carlton North - Princes Hill",
+      "boundary_year": 2021,
+      "geography_type": "SA2",
+      "is_comparable": true,
+      "eligibility_note": "Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable."
+    }
+  ],
+  "meta": {
+    "data_mode": "real",
+    "data_version": "greater-melbourne-v1",
+    "method_version": "greater-melbourne-sample-v1-not-approved-for-publication",
+    "boundary_year": 2021,
+    "publication_ready": false,
+    "benchmark_count": null
+  }
+}

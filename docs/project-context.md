@@ -20,7 +20,7 @@ Team members listed in the proposal: Andrew Tran, Sanskrita DSarma, Tin Nguyen a
 | Measures shown in wireframes | Median weekly rent, relative transport access, actual recent population growth, green space per resident |
 | Population outlook | Historical observed/estimated population change; no ML forecast |
 | Main UI | Simple language; no methodology section; brief evidence and limitations remain available |
-| Map | Not required; excluded from the current implementation baseline |
+| Map | Approved Leaflet homepage map for Iteration 1; static boundary asset still to be prepared |
 | Privacy | No login, personal profiles or retention of personal information |
 | Architecture | Static Nuxt/Vue frontend; FastAPI; Python pipeline; SQLite; Render; GitHub |
 | Database | Prepared offline and read-only in the running API |
@@ -33,7 +33,7 @@ Team members listed in the proposal: Andrew Tran, Sanskrita DSarma, Tin Nguyen a
 - UrbanLens Melbourne and community-infrastructure planners are superseded.
 - AccessReady Melbourne was a different earlier idea; do not import its wheelchair-destination functionality.
 - ML growth forecasts, an overall liveability ranking, Redis and Monash hosting are outside the current baseline.
-- No decision has been made to introduce maps, property listings, personal affordability advice, accounts or saved profiles.
+- Property listings, personal affordability advice, accounts and saved profiles remain outside scope. The homepage map is now approved.
 - Earlier discussions of cloud alternatives do not change the current choice of Render.
 
 ## Geography
@@ -82,7 +82,7 @@ This establishes source-backed availability and calculations for the documented 
 
 ## Development repository guide
 
-The user requested a professional team README and folder structure accounting for GitHub-triggered Render deployment. The root [README](../README.md) now documents the recommended monorepo layout, clone/local workflows, current data and planned application commands. Workspace guides, environment examples, a clean-clone data check and initial data-only GitHub CI are present. [The Render template](../deploy/render.yaml.example) remains inactive until the applications, required application checks and approved runtime data are implemented. It uses repository-root build contexts for access to shared data and contracts, path filters, and deployment after CI checks pass on the proposed `main` branch. This does not create a GitHub repository or authorize an external deployment.
+The user requested a professional team README and folder structure accounting for GitHub-triggered Render deployment. The root [README](../README.md) now documents the recommended monorepo layout, clone/local workflows, current data and planned application commands. Workspace guides, environment examples and a clean-clone data check are present. GitHub CI now includes backend tests as well as the data check. The original inactive template has been superseded by the root [Render Blueprint](../render.yaml) for the explicitly labelled test deployment described below. It uses repository-root build contexts for access to shared data and contracts, path filters, and deployment after CI checks pass on the proposed `main` branch. This does not create a GitHub repository or authorize an external deployment.
 
 ## Single-database simplification — 9 September 2026
 
@@ -91,3 +91,13 @@ The user approved one maintained directory, `data/greater-melbourne-v1/`, and on
 The four-area package and its acquisition/build scripts are retired. Independent expected values remain as a small regression fixture. The Greater Melbourne pipeline downloads directly and uses shared configuration/calculation modules. This replaces earlier advice requiring separate sample and release databases or parallel synthetic database development. Tests may use temporary in-memory fixtures.
 
 Previously approved UI direction: all four indicator categories in Iteration 1, homepage SA2 typeahead and Leaflet map, and a professional responsive blue theme. Semantic search is excluded. Suburb aliases and sorting/filtering are Iteration 2 candidates; their mockup does not establish verified suburb mappings.
+
+## Backend implementation — 9 September 2026
+
+The user authorised building the backend with basic tests and emphasised that frontend tests are also required. FastAPI now uses five simple modules: main.py, api.py, database.py, models.py and settings.py. Four read-only endpoints implement official-name search, comparison, details and health; sources are embedded in responses. The backend serves the existing single database without an ORM or extra service layers. Generated contracts/examples and GitHub backend tests are included. Frontend component/browser tests remain required when that application is built. No deployment or public-data approval is implied.
+
+## API integration test deployment — 9 September 2026
+
+The user requested a temporary frontend homepage that calls all four APIs and displays JSON, deployment configuration, tests and team instructions. Nuxt now provides this responsive console with independent loading, timeout/error and retry states. It preserves nulls and flags and explicitly labels the provisional development data. Final Home/Compare/Area Details renter interactions remain planned.
+
+The user selected the Free API plan for this test. Root `render.yaml` defines the static site and Python API, automatic public API URL configuration, database validation, health checks and deployment after GitHub checks. The team completes CORS setup using the actual static-site origin; see [Render instructions](../deploy/README.md). This does not authorise Codex to push or deploy. The Free plan is not the final always-on production tier; the provisional dataset is not publication-approved. Frontend CI now runs unit/component tests, static generation and desktop/mobile browser tests against the real backend.

@@ -14,13 +14,14 @@ The planned journey is **Home → Compare → Area Details**. Users can compare 
 | Real development data | Prepared for all **361 Greater Melbourne SA2s**, using 2021 boundaries |
 | SQLite, schema and ER diagram | Built and verified; **1,444 indicator rows** and **2,166 population-history rows** |
 | Data pipeline | Acquisition, offline processing and validation scripts implemented |
-| Frontend and REST API | Workspace folders and environment examples prepared; application code has not been implemented |
-| GitHub checks | Initial workflow validates the committed data sample; application checks are still to be added |
-| Render | Reference configuration prepared; no active Blueprint or deployed service is established by this repository |
+| REST API | FastAPI implemented with four endpoints, response models and backend tests |
+| Frontend | Nuxt API test homepage implemented; final renter pages remain planned |
+| GitHub checks | Database, backend, frontend unit/build and desktop/mobile browser checks configured |
+| Render | Root Blueprint ready for a Free-plan test deployment; see the Render guide |
 
 The real dataset is suitable for development and schema design. Transport aggregation, coverage eligibility and the open-space filter remain provisional. `publication_ready=false` is preserved. Application development can proceed while the team resolves these definitions.
 
-At preparation on 8 September 2026, this local workspace had not yet been initialized as a Git repository and no GitHub repository URL or deployed service URLs had been assigned. Replace the clone placeholder below when the maintainer creates the shared repository; update this status table when the application and deployments are in place.
+The maintainer has created a GitHub repository. Substitute its URL in the clone command below. No external deployment has been performed by this implementation.
 
 ## Simple team workflow
 
@@ -30,7 +31,7 @@ There is one database: [`data/greater-melbourne-v1/yfn.sqlite`](data/greater-mel
 2. Backend developers use the database path in `backend/.env.example`. Frontend developers call the API; they do not open SQLite.
 3. Only the data maintainer runs the acquisition/build commands. They commit the updated database, curated files, manifest and validation evidence together after checks pass.
 
-Local development and Render use the same database path. There are no `samples/` or `releases/` folders, no database selection step and no routine downloads for UI/API developers. Public deployment still depends on resolving the documented provisional methods.
+Local development and Render use the same database path. There are no `samples/` or `releases/` folders, no database selection step and no routine downloads for UI/API developers. The test console labels provisional data explicitly. The final renter release still requires resolving the documented methods.
 
 ## Contents
 
@@ -83,11 +84,11 @@ GitHub feature branch → pull request → checks + review → main
 
 Node.js is used for frontend tooling and static generation. It is not a separate live application server. Spatial processing runs offline, outside API requests and ordinary Render application builds. The browser accesses the REST API, never SQLite directly.
 
-The initial scope does not include accounts, maps, property listings, ML forecasts, Redis or an overall best-neighbourhood score.
+The initial scope does not include accounts, semantic search, property listings, ML forecasts, Redis or an overall best-neighbourhood score.
 
 ## Repository structure
 
-The top-level workspaces below are present. Files marked **planned** will be created when the applications are implemented; this tree is not a claim that those entry points already run.
+The application workspaces are implemented. Home currently contains the API test console; the final renter pages and map remain planned.
 
 ```text
 yfn/
@@ -99,37 +100,37 @@ yfn/
 ├── .python-version                   # Python runtime baseline
 ├── .nvmrc                            # Node.js runtime baseline
 ├── .github/workflows/
-│   └── ci.yml                        # Committed-data checks; extend for the app
+│   └── ci.yml                        # Database, backend, frontend and browser checks
 ├── frontend/
 │   ├── README.md
 │   ├── .env.example
-│   ├── app/                          # Planned Nuxt 4 application source
-│   │   ├── pages/                    # Home, Compare, Area Details
+│   ├── app/                          # Nuxt 4 application source
+│   │   ├── pages/                    # Test Home; renter pages planned
 │   │   ├── components/               # Shared presentation components
-│   │   ├── composables/              # Shared API client and state helpers
+│   │   ├── utils/                    # Shared API request helpers
 │   │   └── assets/css/               # Tailwind and application styling
 │   ├── public/                       # Planned browser-public assets only
-│   ├── tests/                        # Planned component/UI tests
-│   ├── nuxt.config.js                # Planned build and public API config
-│   ├── package.json                  # Planned scripts and dependencies
-│   └── package-lock.json             # Planned committed npm lockfile
+│   ├── tests/                        # Unit/component and real API browser tests
+│   ├── nuxt.config.js                # Build and public API config
+│   ├── package.json                  # Scripts and pinned dependencies
+│   └── package-lock.json             # Committed npm lockfile
 ├── backend/
 │   ├── README.md
 │   ├── .env.example
-│   ├── app/                          # Planned Python package
-│   │   ├── main.py                   # FastAPI ASGI entry point
-│   │   ├── api/                      # Request handlers and route definitions
-│   │   ├── schemas/                  # Request/response models
-│   │   ├── repositories/             # Parameterized read-only database queries
-│   │   ├── services/                 # Response composition and application logic
-│   │   └── core/                     # Configuration and shared dependencies
-│   ├── tests/                        # Planned API and repository tests
-│   ├── requirements.txt              # Planned pinned runtime dependencies
-│   └── requirements-dev.txt          # Planned runtime + test dependencies
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py                   # FastAPI setup, CORS and safe errors
+│   │   ├── api.py                    # Search, compare, details and health endpoints
+│   │   ├── database.py               # Read-only SQLite queries
+│   │   ├── models.py                 # Shared JSON response definitions
+│   │   └── settings.py               # Environment settings and database path
+│   ├── tests/test_api.py             # API journey and failure tests
+│   ├── requirements.txt              # Pinned runtime dependencies
+│   └── requirements-dev.txt          # Runtime + test dependencies
 ├── contracts/
 │   ├── README.md
-│   ├── openapi.json                  # Planned export from FastAPI models
-│   └── examples/                     # Planned reviewed JSON response examples
+│   ├── openapi.json                  # Exported from FastAPI models
+│   └── examples/                     # Generated real response examples
 ├── pipeline/
 │   ├── acquire_greater_melbourne.py  # Network acquisition; resumable cache
 │   ├── build_greater_melbourne.py    # Offline transformations and SQLite build
@@ -150,11 +151,12 @@ yfn/
 │       ├── acquisition.json          # Source URLs, timestamps and hashes
 │       └── schema-guide.md           # ER diagram and design notes
 ├── scripts/
-│   └── check_sample.py              # Fast check usable on a fresh clone
+│   ├── check_sample.py              # Fast data check usable on a fresh clone
+│   └── export_api_contract.py        # OpenAPI and frontend response examples
 ├── deploy/
-│   └── render.yaml.example          # Reference only; activate after app checks exist
+│   └── README.md                    # Render UI setup and recovery guide
 ├── docs/                            # Requirements, decisions and original references
-└── render.yaml                      # Planned active Render Blueprint
+└── render.yaml                      # Active deployment definition for the test console
 ```
 
 Keep API dependencies separate from the GIS environment. Keep each application's tests with that application. Shared contract examples belong in `contracts/`; do not maintain different mock shapes in the UI and API. Existing pipeline paths are preserved because the source manifests, tests and rebuild evidence refer to them.
@@ -196,11 +198,11 @@ Ignored raw snapshots must be retained by the data owner in a team-accessible ve
 
 ## Local application development
 
-**The following startup commands are implementation targets. They become runnable once the API and Nuxt entry points, dependency files and scripts have been added.** The workspace READMEs describe their expected responsibilities. Do not install guessed dependencies or assume a web application exists at this stage.
+**The backend and frontend test homepage are runnable now.** See the [backend guide](backend/README.md) for endpoint examples, file responsibilities and test instructions.
 
 ### Backend terminal
 
-Run from the repository root after the backend is implemented:
+Run from the repository root. Create the environment and copy `.env` only on first setup:
 
 ```sh
 python3.12 -m venv .venv
@@ -212,11 +214,11 @@ python -m uvicorn backend.app.main:app --reload --env-file backend/.env --port 8
 
 On Windows PowerShell, create the environment with `py -3.12 -m venv .venv`, activate it with `.venv\Scripts\Activate.ps1`, and copy the file with `Copy-Item backend/.env.example backend/.env`. The subsequent `python` commands are the same. If local policy prevents activation, invoke `.venv\Scripts\python.exe` directly.
 
-The intended development URLs are API `http://localhost:8000`, OpenAPI UI `http://localhost:8000/docs`, and health `http://localhost:8000/health`. The API must open `DATABASE_PATH` read-only and resolve relative paths from the repository root. The development example points to the existing sample database.
+The development URLs are API `http://localhost:8000`, OpenAPI UI `http://localhost:8000/docs`, and health `http://localhost:8000/health`. The API must open `DATABASE_PATH` read-only and resolve relative paths from the repository root. The development example points to the existing sample database.
 
 ### Frontend terminal
 
-In a second terminal, from the repository root after frontend scaffolding:
+In a second terminal, from the repository root:
 
 ```sh
 cp frontend/.env.example frontend/.env
@@ -226,18 +228,18 @@ npm --prefix frontend run dev
 
 Use `Copy-Item` instead of `cp` on PowerShell. The expected frontend URL is `http://localhost:3000`. Commit `package-lock.json` and use `npm ci` for ordinary checkouts; use `npm install` only for intentional dependency changes and commit the resulting lockfile change.
 
-The scaffold must define `dev`, `generate`, `lint` and `test` npm scripts, declare `runtimeConfig.public.apiBase`, and implement the planned static routes. For static generation, the intended output is `frontend/.output/public`. [Nuxt deployment guidance](https://nuxt.com/docs/3.x/getting-started/deployment)
+The homepage automatically calls health, search, compare and details and displays their HTTP status and JSON. Run `npm --prefix frontend test` for unit/component checks and `npm --prefix frontend run generate` for the static build. See [frontend instructions](frontend/README.md) for real API browser tests.
 
 ### Configuration
 
 | Variable | Used by | Local example | Render value |
 |---|---|---|---|
-| `DATABASE_PATH` | API | `data/greater-melbourne-v1/yfn.sqlite` | `data/greater-melbourne-v1/yfn.sqlite`, after publication approval |
+| `DATABASE_PATH` | API | `data/greater-melbourne-v1/yfn.sqlite` | `data/greater-melbourne-v1/yfn.sqlite` |
 | `CORS_ALLOWED_ORIGINS` | API | `["http://localhost:3000"]` | JSON array containing the actual frontend HTTPS origin |
-| `NUXT_PUBLIC_API_BASE` | Frontend build | `http://localhost:8000/api/v1` | Actual public API HTTPS URL ending in `/api/v1` |
+| `NUXT_PUBLIC_API_BASE` | Frontend build | `http://localhost:8000/api/v1` | Optional override; Blueprint derives this from the API’s public URL |
 | `PORT` | Render API process | Development command uses 8000 | Supplied by Render; bind to `0.0.0.0` |
 
-These names are the proposed settings contract for implementation. CORS must parse the documented JSON array. An origin includes scheme/host/port but no path or trailing slash. Add approved preview origins explicitly if previews are introduced. Public frontend configuration is visible to visitors and must never contain credentials.
+The backend implements these settings and parses CORS as a JSON array. An origin includes scheme/host/port but no path or trailing slash. Add approved preview origins explicitly if previews are introduced. Public frontend configuration is visible to visitors and must never contain credentials.
 
 ## Database and API contract
 
@@ -255,17 +257,16 @@ Start with the [SQLite sample](data/greater-melbourne-v1/yfn.sqlite), [ER diagra
 
 Keep SA2 codes as strings and preserve nulls. Unknown is not zero. The two zero-population SA2s remain in the sample but are excluded by its provisional comparison flag. The sample supports one boundary edition and one current observation per indicator/area per database release. Future release/history requirements must be reflected consistently in the keys.
 
-The intended REST endpoints are:
+The implemented REST endpoints are:
 
 | Endpoint | Purpose |
 |---|---|
 | `GET /api/v1/areas?query=...&limit=20` | Search eligible areas |
 | `GET /api/v1/areas/{sa2_code}` | Area details, indicators and population history |
 | `GET /api/v1/compare?sa2=code1,code2` | Compare two or three distinct areas |
-| `GET /api/v1/sources` | Source metadata and limitations |
 | `GET /health` | Process/database readiness |
 
-These endpoints are proposed, not implemented. Establish FastAPI response models first, export the contract into `contracts/`, and use it for both API and UI tests. Keep raw values, units, periods, quality, coverage and provenance available to the client. All comparisons must use the same stored calculations; the UI formats values rather than recalculating indicators.
+See the [implemented contract](contracts/README.md), [OpenAPI](contracts/openapi.json) and real JSON examples. Sources are embedded with indicators and population history; no separate sources endpoint is needed. Keep raw values, units, periods, quality, coverage and provenance available to the client. All comparisons must use the same stored calculations; the UI formats values rather than recalculating indicators.
 
 ## Open datasets
 
@@ -322,7 +323,7 @@ The complete Greater Melbourne sample's measured offline rebuild took approximat
 
 ### Update the single application database
 
-Resolve the production method/coverage decisions, then build and validate the selected real dataset. Review value changes, null counts, geometry repairs, boundary compatibility, provenance and the schema/API contract. The API implementation must add a release-validation check before deployment is enabled.
+Resolve the production method/coverage decisions, then build and validate the selected real dataset. Review value changes, null counts, geometry repairs, boundary compatibility, provenance and the schema/API contract. The API startup and Render build validate database integrity. Final publication approval remains separate from these technical checks; the current deployment is an explicitly labelled test console.
 
 For the initial small SQLite artifact, commit `data/greater-melbourne-v1/yfn.sqlite` and its matching manifest in the same PR. Reviewers should see a human-readable summary of the changes; do not rely on a binary diff alone. Do not hand-edit SQLite, copy it into the frontend's `public/` directory, or run acquisition on every code push. The database path stays the same locally and on Render. Git history preserves prior committed versions; no separate releases folder or database promotion step is needed.
 
@@ -351,57 +352,11 @@ The repository maintainer should create the shared GitHub repository, add collab
 
 ## Deploying to Render
 
-### Intended deployment policy
+The root [render.yaml](render.yaml) creates a Static Site and a Python Web Service using the **Free API plan selected for this test**. Follow the [step-by-step Render UI guide](deploy/README.md), including the one-time CORS setup and post-deployment checks. Keep Root Directory blank for both services.
 
-Configure **After CI Checks Pass**, represented by `autoDeployTrigger: checksPass`, for both services. Render supports separate services and path filters for one repository. Keep **Root Directory blank** for both services so commands run from the repository root and the API can access `data/greater-melbourne-v1/`. Files outside a configured subdirectory root are otherwise unavailable. [Render monorepo support](https://render.com/docs/monorepo-support)
+The frontend receives the API public URL through the Blueprint. SQLite is checked and packaged with the backend; only `frontend/.output/public` is published as web assets. No pipeline downloads or persistent disk are needed. Normal main-branch auto-deploys wait for GitHub checks, with separate frontend/backend path filters. Initial, manual and Blueprint configuration deployments still require verification.
 
-| Change | Expected automatic deployment |
-|---|---|
-| `frontend/**` | Static site |
-| `backend/**` or `data/greater-melbourne-v1/**` | API |
-| `contracts/**` or `.github/workflows/**` | Both |
-| `pipeline/**`, sample data or ordinary documentation only | Neither; promote a validated runtime artifact separately |
-| Active `render.yaml` | Blueprint configuration is processed; service changes may trigger deployment |
-
-The filters are in [the reference Blueprint](deploy/render.yaml.example). It is deliberately inactive because the application entry points, application CI checks and approved release artifact do not exist yet. Do not copy it to `render.yaml` until the following activation steps are complete.
-
-### First deployment: maintainer steps
-
-1. Implement the API and frontend, commit their dependency files/lockfile, and confirm the local commands above work.
-2. Add mandatory API tests, frontend lint/tests/static build, contract checks and runtime-release validation to CI. Run checks on PRs **and pushes to `main`**. The current data-only check does not establish application deployability.
-3. Prepare the approved runtime database/manifest, implement startup validation and `/health`, and verify that no database or raw source files appear in the generated frontend directory.
-4. Copy `deploy/render.yaml.example` to root `render.yaml`. Review service names, branch, API region and instance plan. Add the chosen plan/region explicitly before creating services; no hosting budget is assumed. Validate the Blueprint in Render before applying it. [Blueprint reference](https://render.com/docs/blueprint-spec)
-5. Connect the team's GitHub repository to the Render workspace. Create the API first, or use the reviewed Blueprint to create both services. With a Blueprint, `sync: false` settings are entered during setup. If creating both together, update/rebuild the static site after the actual public API URL is known.
-6. Configure the settings below. Use the actual service URLs returned by Render; the proposed names do not guarantee specific available hostnames.
-7. Deploy and verify `/health`, one area response, Home → Compare → Area Details, missing-data states, CORS and direct-link reloads. Confirm the deployed commit and database release match the reviewed version.
-8. Enable automatic deployment after CI checks pass, merge a small reviewed change, and verify that only the expected service rebuilds. Update this README with the real repository and service URLs.
-
-The first deployment, manual deployments and configuration changes need explicit verification; a future automatic-deployment policy is not proof that they have already passed CI. Render treats `neutral` and `skipped` GitHub checks as passing and does not deploy when it detects no checks. Required application checks must therefore really execute and fail on missing prerequisites. [Render deployment behaviour](https://render.com/docs/deploys)
-
-### Service settings after implementation
-
-| Setting | API Web Service | Frontend Static Site |
-|---|---|---|
-| Linked branch | `main` | `main` |
-| Root Directory | Blank: repository root | Blank: repository root |
-| Runtime | Python; `.python-version` | Node for build; `NODE_VERSION=24.20.0` |
-| Build command | `python -m pip install -r backend/requirements.txt` | `npm --prefix frontend ci && npm --prefix frontend run generate` |
-| Start command | `python -m uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT` | None |
-| Publish directory | Not applicable | `frontend/.output/public` |
-| Health check | `/health` | Verify generated pages and assets |
-| Data | Checked-in approved SQLite artifact | JSON requested from the API |
-
-The API launch pattern follows [Render's FastAPI guidance](https://render.com/docs/deploy-fastapi). Render can read the Python version from the repository's [`.python-version` file](https://render.com/docs/python-version). A persistent database disk is unnecessary for this read-only artifact design.
-
-Set `NUXT_PUBLIC_API_BASE` to the public API HTTPS URL plus `/api/v1`; the renter's browser cannot use an internal Render hostname. Set `CORS_ALLOWED_ORIGINS` to a JSON array containing the static site's actual origin. Rebuild the static site after changing its API URL, because static configuration is embedded at build time.
-
-The example rewrite sends unmatched frontend paths to `/200.html`. The Nuxt build must produce that fallback and handle direct Area Details links. Verify `/200.html`, unknown-area behaviour and a direct reload of an area URL before release; adjust prerendering/routing if the scaffold uses a different strategy. [Render rewrite rules](https://render.com/docs/redirects-rewrites)
-
-### Subsequent deployments and recovery
-
-Merge reviewed work into `main`, let CI complete, and inspect the affected Render service's build/deploy logs. A new database is delivered through the same commit-based artifact process as API code. Keep a record of the Git commit, data release ID and verification outcome.
-
-If a release fails, inspect the failing check or build log first. For a live regression, restore a previously verified code/database combination using Render's deployment controls or a reviewed Git revert. Verify the API, data release and UI together; environment changes must also be reviewed because they are not automatically reverted with code. If deploying a specific commit, check the resulting auto-deploy setting before resuming normal releases. [Render manual deployments](https://render.com/docs/deploys#manual-deploys)
+This configuration supports deployment, but the Free plan is for testing: idle API services sleep and take time to wake. Upgrade the API instance plan before requiring continuous production availability. The diagnostic homepage and provisional dataset are not the final renter release. [Render Free limitations](https://render.com/docs/free)
 
 ## Testing and troubleshooting
 
@@ -410,13 +365,15 @@ If a release fails, inspect the failing check or build log first. For a live reg
 | Committed sample consistency | Yes; no downloads | `python scripts/check_sample.py` |
 | Full source/calculation tests | Yes; data dependencies and snapshots required | `python -m unittest discover -s pipeline -p 'test_*.py' -v` |
 | Reproducible offline build | Yes; matching source snapshots required | `python pipeline/verify_greater_melbourne_rebuild.py` |
-| API tests | Planned | `python -m pytest backend/tests` once its dev requirements/tests exist |
-| Frontend checks | Planned | `npm --prefix frontend run lint`, `npm --prefix frontend test`, `npm --prefix frontend run generate` |
+| API tests | Yes; backend dev dependencies required | `python -m pytest backend/tests -q` |
+| Frontend unit/build checks | Yes | `npm --prefix frontend test` and `npm --prefix frontend run generate` |
+| Desktop/mobile API integration | Yes | See [browser test setup](frontend/README.md#tests) |
 | User journey/accessibility | Planned | Test search/compare/details, keyboard use, direct links, loading/errors and missing values |
 
 | Symptom | What to check |
 |---|---|
-| `package.json` or `backend.app.main` is missing | Those application files have not been implemented yet; the workspace folders alone are not runnable apps |
+| API cards show loading or a network error | Wait for the Free API to wake, then retry; inspect API health and CORS |
+| `No module named backend` | Run the documented Uvicorn command from the repository root, with the backend virtual environment activated |
 | API cannot find the database | Start from repo root; inspect `DATABASE_PATH`; do not set Render Root Directory to `backend/` with a root-level data dependency |
 | Browser reports CORS errors | Check the exact frontend origin, JSON parsing of the allowlist and the public API URL |
 | UI still calls an old API URL | Rebuild the static site with the corrected public setting |

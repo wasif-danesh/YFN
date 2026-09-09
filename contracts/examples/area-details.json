@@ -1,0 +1,307 @@
+{
+  "area": {
+    "sa2_code": "206041117",
+    "name": "Carlton",
+    "boundary_year": 2021,
+    "geography_type": "SA2",
+    "is_comparable": true,
+    "eligibility_note": "Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable."
+  },
+  "indicators": [
+    {
+      "key": "rent_weekly",
+      "label": "Median weekly rent reported in 2021 Census",
+      "unit": "AUD/week",
+      "raw_value": 365.0,
+      "score": null,
+      "rating": null,
+      "reference_period": "2021 Census",
+      "start_year": 2021,
+      "end_year": 2021,
+      "method_version": "census-g02-direct-v2",
+      "method_status": "source_definition",
+      "explanation": "Median weekly rent reported in the 2021 Census; not current advertised rent.",
+      "geography": {
+        "type": "SA2",
+        "code": "206041117",
+        "boundary_year": 2021
+      },
+      "quality": {
+        "status": "available",
+        "reason": "Historical reported rent; not current advertised rent.",
+        "coverage_fraction": null
+      },
+      "sources": [
+        {
+          "source_id": "abs-census-2021-g02",
+          "publisher": "Australian Bureau of Statistics",
+          "dataset_name": "2021 Census GCP Victoria SA2 G02",
+          "url": "https://www.abs.gov.au/census/find-census-data/datapacks",
+          "reference_period": "2021 Census",
+          "boundary_year": 2021,
+          "observation_date": "2021-08-10",
+          "licence": "CC BY 4.0",
+          "limitation": "Reported occupied-private-dwelling rent; excludes rent-free, visitor-only and other non-classifiable households; not current advertised rent.",
+          "roles": [
+            "raw_measure"
+          ]
+        },
+        {
+          "source_id": "abs-sa2-2021",
+          "publisher": "Australian Bureau of Statistics",
+          "dataset_name": "ASGS Edition 3 SA2 2021 GDA2020 boundaries",
+          "url": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files",
+          "reference_period": "2021 boundary edition",
+          "boundary_year": 2021,
+          "observation_date": null,
+          "licence": "CC BY 4.0",
+          "limitation": "SA2 boundaries do not necessarily match suburbs. Area calculations use EPSG:7855.",
+          "roles": [
+            "boundary"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "transport_access",
+      "label": "Area-weighted morning access index (sample method)",
+      "unit": "access_index",
+      "raw_value": 41.81820604886178,
+      "score": null,
+      "rating": null,
+      "reference_period": "Morning access index; live snapshot retrieved 2026-09-08",
+      "start_year": null,
+      "end_year": null,
+      "method_version": "ptal-area-mean-sample-v1",
+      "method_status": "sample_only",
+      "explanation": "Area-level transport access over covered land; not a commute time or access from a property.",
+      "geography": {
+        "type": "SA2",
+        "code": "206041117",
+        "boundary_year": 2021
+      },
+      "quality": {
+        "status": "limited",
+        "reason": "Sample area-weighted raw index over covered land only. Weighting and minimum coverage are unapproved; no approved benchmark or percentile. Layer observation date unverified.",
+        "coverage_fraction": 0.999999999999953
+      },
+      "sources": [
+        {
+          "source_id": "abs-sa2-2021",
+          "publisher": "Australian Bureau of Statistics",
+          "dataset_name": "ASGS Edition 3 SA2 2021 GDA2020 boundaries",
+          "url": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files",
+          "reference_period": "2021 boundary edition",
+          "boundary_year": 2021,
+          "observation_date": null,
+          "licence": "CC BY 4.0",
+          "limitation": "SA2 boundaries do not necessarily match suburbs. Area calculations use EPSG:7855.",
+          "roles": [
+            "boundary"
+          ]
+        },
+        {
+          "source_id": "dtp-ptal-snapshot",
+          "publisher": "Victorian Department of Transport and Planning",
+          "dataset_name": "PTAL Melbourne metro; WFS snapshot",
+          "url": "https://discover.data.vic.gov.au/en_AU/dataset/public-transport-accessibility-level-ptal-melbourne-metro",
+          "reference_period": "Live layer retrieved 8 September 2026; linked December 2025 fact sheet describes 2 April 2025 08:00-09:00 services",
+          "boundary_year": null,
+          "observation_date": null,
+          "licence": "CC BY 4.0",
+          "limitation": "Feature-level service dates absent; mapping to the linked fact-sheet snapshot needs publisher confirmation. Access index does not measure destination reachability or all-day access.",
+          "roles": [
+            "raw_measure"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "population_growth",
+      "label": "Estimated population change 2020-2025",
+      "unit": "percent",
+      "raw_value": 21.09753175173736,
+      "score": null,
+      "rating": null,
+      "reference_period": "30 June 2020 to 30 June 2025",
+      "start_year": 2020,
+      "end_year": 2025,
+      "method_version": "erp-growth-2020-2025-v1",
+      "method_status": "sample_only",
+      "explanation": "Historical estimated population change, not a forecast. 2025 estimates are preliminary.",
+      "geography": {
+        "type": "SA2",
+        "code": "206041117",
+        "boundary_year": 2021
+      },
+      "quality": {
+        "status": "available",
+        "reason": "2025 ERP is preliminary; historical estimated change, not a forecast.",
+        "coverage_fraction": null
+      },
+      "sources": [
+        {
+          "source_id": "abs-erp-2024-25",
+          "publisher": "Australian Bureau of Statistics",
+          "dataset_name": "Regional population 2024-25; Table 1 SA2 ERP 2001-2025",
+          "url": "https://www.abs.gov.au/statistics/people/population/regional-population/2024-25",
+          "reference_period": "Annual 30 June estimates, 2001-2025; released 31 March 2026",
+          "boundary_year": 2021,
+          "observation_date": null,
+          "licence": "CC BY 4.0",
+          "limitation": "2020-2021 final; 2022-2024 revised; 2025 preliminary. ERP differs from Census counts.",
+          "roles": [
+            "endpoints"
+          ]
+        },
+        {
+          "source_id": "abs-sa2-2021",
+          "publisher": "Australian Bureau of Statistics",
+          "dataset_name": "ASGS Edition 3 SA2 2021 GDA2020 boundaries",
+          "url": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files",
+          "reference_period": "2021 boundary edition",
+          "boundary_year": 2021,
+          "observation_date": null,
+          "licence": "CC BY 4.0",
+          "limitation": "SA2 boundaries do not necessarily match suburbs. Area calculations use EPSG:7855.",
+          "roles": [
+            "boundary"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "green_space_per_resident",
+      "label": "Selected public open space per resident (sample filter)",
+      "unit": "m2/person",
+      "raw_value": 11.089526501894259,
+      "score": null,
+      "rating": null,
+      "reference_period": "Undated unmaintained open-space inventory / 30 June 2025 ERP",
+      "start_year": null,
+      "end_year": null,
+      "method_version": "open-space-filter-sample-v1",
+      "method_status": "sample_only",
+      "explanation": "Selected open space per resident; not walking access, park quality or confirmed vegetation.",
+      "geography": {
+        "type": "SA2",
+        "code": "206041117",
+        "boundary_year": 2021
+      },
+      "quality": {
+        "status": "limited",
+        "reason": "Sample public-open-space filter includes sports grounds and natural open space that can include river land/water. Not confirmed vegetation or current access. Inventory completeness/date unverified. Denominator is preliminary 2025 ERP.",
+        "coverage_fraction": null
+      },
+      "sources": [
+        {
+          "source_id": "abs-erp-2024-25",
+          "publisher": "Australian Bureau of Statistics",
+          "dataset_name": "Regional population 2024-25; Table 1 SA2 ERP 2001-2025",
+          "url": "https://www.abs.gov.au/statistics/people/population/regional-population/2024-25",
+          "reference_period": "Annual 30 June estimates, 2001-2025; released 31 March 2026",
+          "boundary_year": 2021,
+          "observation_date": null,
+          "licence": "CC BY 4.0",
+          "limitation": "2020-2021 final; 2022-2024 revised; 2025 preliminary. ERP differs from Census counts.",
+          "roles": [
+            "denominator"
+          ]
+        },
+        {
+          "source_id": "abs-sa2-2021",
+          "publisher": "Australian Bureau of Statistics",
+          "dataset_name": "ASGS Edition 3 SA2 2021 GDA2020 boundaries",
+          "url": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files",
+          "reference_period": "2021 boundary edition",
+          "boundary_year": 2021,
+          "observation_date": null,
+          "licence": "CC BY 4.0",
+          "limitation": "SA2 boundaries do not necessarily match suburbs. Area calculations use EPSG:7855.",
+          "roles": [
+            "boundary"
+          ]
+        },
+        {
+          "source_id": "vpa-open-space-snapshot",
+          "publisher": "Victorian Planning Authority",
+          "dataset_name": "VPA Draft Open Space Data; ArcGIS snapshot",
+          "url": "https://discover.data.vic.gov.au/dataset/open-space",
+          "reference_period": "Unmaintained inventory; observation date unverified; retrieved 8 September 2026",
+          "boundary_year": null,
+          "observation_date": null,
+          "licence": "CC BY 4.0",
+          "limitation": "Current completeness and ground access unverified. Excludes some public open-space categories under the sample filter. Source CRS EPSG:3857; datum transformation accuracy stated as 3 m.",
+          "roles": [
+            "numerator"
+          ]
+        }
+      ]
+    }
+  ],
+  "population_history": [
+    {
+      "year": 2020,
+      "population": 20865,
+      "reference_date": "2020-06-30",
+      "revision_status": "final",
+      "source_id": "abs-erp-2024-25"
+    },
+    {
+      "year": 2021,
+      "population": 17064,
+      "reference_date": "2021-06-30",
+      "revision_status": "final",
+      "source_id": "abs-erp-2024-25"
+    },
+    {
+      "year": 2022,
+      "population": 17942,
+      "reference_date": "2022-06-30",
+      "revision_status": "revised",
+      "source_id": "abs-erp-2024-25"
+    },
+    {
+      "year": 2023,
+      "population": 21321,
+      "reference_date": "2023-06-30",
+      "revision_status": "revised",
+      "source_id": "abs-erp-2024-25"
+    },
+    {
+      "year": 2024,
+      "population": 23758,
+      "reference_date": "2024-06-30",
+      "revision_status": "revised",
+      "source_id": "abs-erp-2024-25"
+    },
+    {
+      "year": 2025,
+      "population": 25267,
+      "reference_date": "2025-06-30",
+      "revision_status": "preliminary",
+      "source_id": "abs-erp-2024-25"
+    }
+  ],
+  "population_sources": [
+    {
+      "source_id": "abs-erp-2024-25",
+      "publisher": "Australian Bureau of Statistics",
+      "dataset_name": "Regional population 2024-25; Table 1 SA2 ERP 2001-2025",
+      "url": "https://www.abs.gov.au/statistics/people/population/regional-population/2024-25",
+      "reference_period": "Annual 30 June estimates, 2001-2025; released 31 March 2026",
+      "boundary_year": 2021,
+      "observation_date": null,
+      "licence": "CC BY 4.0",
+      "limitation": "2020-2021 final; 2022-2024 revised; 2025 preliminary. ERP differs from Census counts."
+    }
+  ],
+  "meta": {
+    "data_mode": "real",
+    "data_version": "greater-melbourne-v1",
+    "method_version": "greater-melbourne-sample-v1-not-approved-for-publication",
+    "boundary_year": 2021,
+    "publication_ready": false,
+    "benchmark_count": null
+  }
+}
