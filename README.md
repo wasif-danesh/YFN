@@ -4,7 +4,7 @@
 
 Your Friendly Neighbourhood brings together housing, public transport, population and public open-space information so renters can compare areas and understand the trade-offs. It is designed for people unfamiliar with Melbourne, including new immigrants, international students and interstate migrants.
 
-The planned journey is **Home → Compare → Area Details**. Users can compare two or three Statistical Areas Level 2 (SA2s), inspect the underlying measures and see their source dates and limitations. SA2s do not necessarily match suburb boundaries. The project supports the themes of Sustainable Development Goal 11; its measures are not official UN indicators.
+The application journey is **Home → Compare → Area Details**. Users can compare two or three Statistical Areas Level 2 (SA2s), inspect the underlying measures and see their source dates and limitations. SA2s do not necessarily match suburb boundaries. The project supports the themes of Sustainable Development Goal 11; its measures are not official UN indicators.
 
 ## Project status
 
@@ -15,7 +15,7 @@ The planned journey is **Home → Compare → Area Details**. Users can compare 
 | SQLite, schema and ER diagram | Built and verified; **1,444 indicator rows** and **2,166 population-history rows** |
 | Data pipeline | Acquisition, offline processing and validation scripts implemented |
 | REST API | FastAPI implemented with four browser endpoints plus a hosting health check, response models and backend tests |
-| Frontend | Nuxt API test homepage implemented; final renter pages remain planned |
+| Frontend | Home with typeahead/Leaflet map, full Compare and Area Details, plus a separate API test console implemented |
 | GitHub checks | Database, backend, frontend unit/build and desktop/mobile browser checks configured |
 | Render | Root Blueprint ready for a Free-plan test deployment; see the Render guide |
 
@@ -88,7 +88,7 @@ The initial scope does not include accounts, semantic search, property listings,
 
 ## Repository structure
 
-The application workspaces are implemented. Home currently contains the API test console; the final renter pages and map remain planned.
+The application workspaces are implemented. Home contains the renter experience, Compare supports two or three areas, Area Details displays indicators and annual population history, and `/api-test-console` preserves the diagnostic page.
 
 ```text
 yfn/
@@ -105,11 +105,11 @@ yfn/
 │   ├── README.md
 │   ├── .env.example
 │   ├── app/                          # Nuxt 4 application source
-│   │   ├── pages/                    # Test Home; renter pages planned
+│   │   ├── pages/                    # Home, Compare, Area Details, API test console
 │   │   ├── components/               # Shared presentation components
 │   │   ├── utils/                    # Shared API request helpers
 │   │   └── assets/css/               # Tailwind and application styling
-│   ├── public/                       # Planned browser-public assets only
+│   ├── public/                       # Browser assets and verified display map
 │   ├── tests/                        # Unit/component and real API browser tests
 │   ├── nuxt.config.js                # Build and public API config
 │   ├── package.json                  # Scripts and pinned dependencies
@@ -167,10 +167,39 @@ Keep API dependencies separate from the GIS environment. Keep each application's
 
 - Git and access to the team's GitHub repository.
 - Python **3.12.14**, matching `.python-version` and the data build. Use a virtual environment for dependencies.
-- Node.js **24.20.0** and npm for frontend work, matching `.nvmrc`. Node 24 is an LTS release; the application must still validate its package compatibility when scaffolded. [Node.js releases](https://nodejs.org/en/about/previous-releases)
+- Node.js **24.20.0** and npm for frontend work, matching `.nvmrc`. The frontend has been built and tested with this version. [Node.js releases](https://nodejs.org/en/about/previous-releases)
 - `curl` on `PATH` for data acquisition. Frontend/API contributors do not need the full source downloads.
 
 Runtime pins are repository configuration; they do not install interpreters automatically. Confirm `python --version` and `node --version` in the environment you use. If you use nvm, run `nvm install` and `nvm use` from the repository root.
+
+### Install tools before first checkout
+
+Install Git, Python and Node.js before running the project commands. VS Code is the team's editor; its terminal uses the tools installed on your computer.
+
+| Tool | Purpose and setup |
+|---|---|
+| Git | Clone and pull the private repository. Obtain repository access from the maintainer. |
+| Python 3.12.14 | Runs FastAPI and backend tests. The root `.python-version` records the expected version; it does not install Python. |
+| Node.js 24.20.0 and npm | Run Nuxt, install frontend dependencies and generate the static site. Node installations include npm. |
+| nvm (optional) | Installs and switches Node versions. It is a separate tool, not an npm package required by the app. |
+| VS Code and a browser | Edit code, run two terminals and test the application. |
+
+For macOS/Linux, follow the [official nvm installation instructions](https://github.com/nvm-sh/nvm#installing-and-updating), then reopen your terminal. After cloning, `nvm install` and `nvm use` read the repository's `.nvmrc`. If you install the pinned Node version directly, skip the nvm commands.
+
+Native Windows uses the separate [nvm-windows project](https://github.com/nvm-windows/nvm). Use explicit versions: `nvm install 24.20.0` followed by `nvm use 24.20.0`. The bare nvm commands shown in the macOS/Linux workflow are not the Windows setup instructions. WSL users can follow the Linux workflow within WSL.
+
+Check the tools in a new terminal:
+
+```sh
+git --version
+node --version
+npm --version
+python3.12 --version
+```
+
+On Windows use `py -3.12 --version` for Python. If using nvm on macOS/Linux, `command -v nvm` should print `nvm`. A “command not found” error means the tool is not installed or loaded in that terminal; reopen the terminal after installation and follow the tool's setup instructions.
+
+No separate SQLite server, Docker, GIS tools or dataset downloads are required to run the frontend and API. The database is included. Pipeline dependencies are only needed by contributors rebuilding data.
 
 ### First checkout
 
@@ -198,7 +227,7 @@ Ignored raw snapshots must be retained by the data owner in a team-accessible ve
 
 ## Local application development
 
-**The backend and frontend test homepage are runnable now.** See the [backend guide](backend/README.md) for endpoint examples, file responsibilities and test instructions.
+**Use two terminals in VS Code: one for the API and one for the frontend.** Open your cloned project folder in VS Code first; both terminals must start at the repository root (the folder containing this README). The maintainer confirmed this setup works locally. The database and map boundaries are already included; no dataset downloads are needed. See the [backend guide](backend/README.md) for endpoint examples and tests.
 
 ### Backend terminal
 
@@ -209,26 +238,70 @@ python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r backend/requirements-dev.txt
 cp backend/.env.example backend/.env
+```
+
+Start the API and leave this terminal running:
+
+```sh
 python -m uvicorn backend.app.main:app --reload --env-file backend/.env --port 8000
 ```
 
 On Windows PowerShell, create the environment with `py -3.12 -m venv .venv`, activate it with `.venv\Scripts\Activate.ps1`, and copy the file with `Copy-Item backend/.env.example backend/.env`. The subsequent `python` commands are the same. If local policy prevents activation, invoke `.venv\Scripts\python.exe` directly.
 
-The development URLs are API `http://localhost:8000`, OpenAPI UI `http://localhost:8000/docs`, and health `http://localhost:8000/health`. The API must open `DATABASE_PATH` read-only and resolve relative paths from the repository root. The development example points to the existing sample database.
+The development URLs are API `http://localhost:8000`, OpenAPI UI `http://localhost:8000/docs`, and browser status `http://localhost:8000/api/v1/status`. The API must open `DATABASE_PATH` read-only and resolve relative paths from the repository root. The development example points to the existing sample database.
 
 ### Frontend terminal
 
-In a second terminal, from the repository root:
+Open a second terminal from the repository root. Use the Node version in `.nvmrc`. With nvm on macOS/Linux, run:
+
+```sh
+nvm install
+nvm use
+```
+
+First-time setup only (do not overwrite an existing `.env`):
 
 ```sh
 cp frontend/.env.example frontend/.env
 npm --prefix frontend ci
+```
+
+Start the frontend and leave this terminal running. Use `--prefix frontend`: the Python backend has no `package.json` and cannot be started with npm:
+
+```sh
 npm --prefix frontend run dev
 ```
 
 Use `Copy-Item` instead of `cp` on PowerShell. The expected frontend URL is `http://localhost:3000`. Commit `package-lock.json` and use `npm ci` for ordinary checkouts; use `npm install` only for intentional dependency changes and commit the resulting lockfile change.
 
-The homepage automatically calls health, search, compare and details and displays their HTTP status and JSON. Run `npm --prefix frontend test` for unit/component checks and `npm --prefix frontend run generate` for the static build. See [frontend instructions](frontend/README.md) for real API browser tests.
+The homepage searches areas and displays a clickable Greater Melbourne map. Compare shows up to three areas with historical rent differences and links to Area Details. Area Details includes an annual population chart, accessible data table and a return link that preserves the comparison. Visit `/api-test-console` for the four API checks and raw JSON. Run `npm --prefix frontend test` for unit/component checks and `npm --prefix frontend run generate` for the static build. See [frontend instructions](frontend/README.md) for real API browser tests.
+
+### Open the app
+
+- [Homepage](http://localhost:3000/)
+- [Compare areas](http://localhost:3000/compare)
+- [API test console](http://localhost:3000/api-test-console) — expect four successful checks
+- [API status](http://localhost:8000/api/v1/status)
+- [Interactive API documentation](http://localhost:8000/docs)
+
+Use **localhost** consistently. It is a different browser origin from `127.0.0.1`; the local environment examples already allow `http://localhost:3000`.
+
+### Start again on another day
+
+From the repository root, in terminal 1:
+
+```sh
+source .venv/bin/activate
+python -m uvicorn backend.app.main:app --reload --env-file backend/.env --port 8000
+```
+
+In terminal 2, select the pinned Node version (`nvm use` if using nvm), then run:
+
+```sh
+npm --prefix frontend run dev
+```
+
+On PowerShell, activate Python with `.venv\Scripts\Activate.ps1`. Press **Ctrl+C** in each terminal to stop its server. Do not recreate environments or recopy `.env` files each day. After pulling dependency changes, rerun the appropriate install command: `python -m pip install -r backend/requirements-dev.txt` or `npm --prefix frontend ci`.
 
 ### Configuration
 
@@ -324,7 +397,7 @@ The complete Greater Melbourne sample's measured offline rebuild took approximat
 
 ### Update the single application database
 
-Resolve the production method/coverage decisions, then build and validate the selected real dataset. Review value changes, null counts, geometry repairs, boundary compatibility, provenance and the schema/API contract. The API startup and Render build validate database integrity. Final publication approval remains separate from these technical checks; the current deployment is an explicitly labelled test console.
+Resolve the production method/coverage decisions, then build and validate the selected real dataset. Review value changes, null counts, geometry repairs, boundary compatibility, provenance and the schema/API contract. The API startup and Render build validate database integrity. Final publication approval remains separate from these technical checks; the current application retains provisional-data notices.
 
 For the initial small SQLite artifact, commit `data/greater-melbourne-v1/yfn.sqlite` and its matching manifest in the same PR. Reviewers should see a human-readable summary of the changes; do not rely on a binary diff alone. Do not hand-edit SQLite, copy it into the frontend's `public/` directory, or run acquisition on every code push. The database path stays the same locally and on Render. Git history preserves prior committed versions; no separate releases folder or database promotion step is needed.
 
@@ -357,7 +430,7 @@ The root [render.yaml](render.yaml) creates a Static Site and a Python Web Servi
 
 The frontend receives the API public URL through the Blueprint. SQLite is checked and packaged with the backend; only `frontend/.output/public` is published as web assets. No pipeline downloads or persistent disk are needed. Normal main-branch auto-deploys wait for GitHub checks, with separate frontend/backend path filters. Initial, manual and Blueprint configuration deployments still require verification.
 
-This configuration supports deployment, but the Free plan is for testing: idle API services sleep and take time to wake. Upgrade the API instance plan before requiring continuous production availability. The diagnostic homepage and provisional dataset are not the final renter release. [Render Free limitations](https://render.com/docs/free)
+This configuration supports deployment, but the Free plan is for testing: idle API services sleep and take time to wake. Upgrade the API instance plan before requiring continuous production availability. The provisional dataset still requires publication decisions before the final renter release. [Render Free limitations](https://render.com/docs/free)
 
 ## Testing and troubleshooting
 
@@ -369,7 +442,8 @@ This configuration supports deployment, but the Free plan is for testing: idle A
 | API tests | Yes; backend dev dependencies required | `python -m pytest backend/tests -q` |
 | Frontend unit/build checks | Yes | `npm --prefix frontend test` and `npm --prefix frontend run generate` |
 | Desktop/mobile API integration | Yes | See [browser test setup](frontend/README.md#tests) |
-| User journey/accessibility | Planned | Test search/compare/details, keyboard use, direct links, loading/errors and missing values |
+| Home → Compare → Area Details journey | Yes | Keyboard search, map selection, selection/removal, population history, return navigation, direct reloads and failure states |
+| Map identity and integrity | Yes | `python scripts/check_homepage_map.py` |
 
 | Symptom | What to check |
 |---|---|

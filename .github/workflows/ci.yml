@@ -24,6 +24,7 @@ jobs:
         with:
           python-version-file: .python-version
       - run: python scripts/check_sample.py
+      - run: python scripts/check_homepage_map.py
 
   backend-tests:
     name: Backend API tests

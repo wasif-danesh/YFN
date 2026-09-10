@@ -2,7 +2,7 @@ import { readdir, readFile, access } from 'node:fs/promises'
 import { resolve, join } from 'node:path'
 
 const root = resolve('.output/public')
-for (const file of ['index.html', '200.html', '404.html']) await access(join(root, file))
+for (const file of ['index.html', '200.html', '404.html', 'compare/index.html', 'api-test-console/index.html', 'maps/greater-melbourne-sa2.geojson']) await access(join(root, file))
 async function inspect(dir) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
     const path = join(dir, entry.name)
@@ -11,5 +11,5 @@ async function inspect(dir) {
   }
 }
 await inspect(root)
-if (!(await readFile(join(root, 'index.html'), 'utf8')).includes('One page. Four API checks.')) throw new Error('Homepage was not prerendered')
+if (!(await readFile(join(root, 'index.html'), 'utf8')).includes('Find your place in Melbourne.')) throw new Error('Homepage was not prerendered')
 console.log('Static output checked: homepage, fallback pages, no database or backend files.')

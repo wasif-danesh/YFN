@@ -1,4 +1,5 @@
-# Deploys the explicitly labelled API test console, not the final renter UI.
+# Hosts the renter homepage, basic comparison and separate API test console.
+# Data remains provisional; retain noindex until publication is approved.
 # Root directory is omitted intentionally: both builds use the repository root.
 services:
   - type: web

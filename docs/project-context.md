@@ -105,3 +105,14 @@ The user selected the Free API plan for this test. Root `render.yaml` defines th
 ## Browser service check
 
 The frontend uses `/api/v1/status` for its Service health card. `/health` remains available for Render’s configured health check. Both routes run the same database readiness handler and return the same JSON and error responses. This change avoids the observed browser-profile block on `/health`; it cannot guarantee compatibility with every extension. Deploy the backend with the new route before deploying the frontend, then retry in the affected regular browser profile.
+
+## Renter homepage and preserved console — 9 September 2026
+
+The user requested the real homepage and approved including a simple working comparison page. Home now provides official-SA2 typeahead, the approved blue theme, four indicator introductions and a clickable Leaflet map. The map uses all 361 verified ABS 2021 SA2s, simplified for display only and matched to the database; it is not used for calculations. Search and map selections feed `/compare?sa2=...`, supporting one initial area and up to three selected areas with real API values, dates, nulls and sources. The full Area Details page remains future work.
+
+The existing four-request API console is preserved at `/api-test-console` and linked in the footer. Its browser readiness call remains `/api/v1/status`; Render retains `/health`. No data publication flags, CORS settings or runtime database paths change. The map builder is `pipeline/build_homepage_map.py`; the standard-library integrity check is `scripts/check_homepage_map.py`. See the frontend guide for rebuild and attribution details. Automated desktop/mobile tests cover the Home/Compare journey and retain the console checks.
+
+
+## Completed renter flow — 9 September 2026
+
+The user requested completion of Compare and creation of Area Details. Compare now supports up to three distinct eligible SA2s, four measures with explanations and source notes, compatible historical rent differences, and detail links. Area Details uses the existing API for all four indicators and annual population observations, including revision status, missing-year gaps and an accessible table. Return navigation preserves the ordered comparison through URL parameters. Dynamic detail-page reloads use the existing static fallback. No API shape, database, rating or publication status changed. Local verification passed 21 frontend unit/component tests, 10 desktop/mobile browser tests and static generation; no push or deployment was performed. Earlier notes describing Area Details as planned are superseded by this implementation.

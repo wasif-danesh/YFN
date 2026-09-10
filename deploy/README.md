@@ -1,4 +1,4 @@
-# Deploy the API test console to Render
+# Deploy Your Friendly Neighbourhood to Render
 
 The root [render.yaml](../render.yaml) is the single deployment definition. It creates `yfn-api` (Python Web Service, Free plan, Singapore region) and `yfn-web` (Static Site). Both build from the repository root. The user selected Free for this test; no service has been provisioned by writing the file.
 
@@ -39,10 +39,10 @@ The CORS setting uses `sync: false`, so the value you enter is retained outside 
 ## Verify your deployment
 
 - Open the API's `/health`. It should return HTTP 200 with `"status": "ok"` and `"database": "ready"`.
-- Open the frontend. Allow the API to wake, then expect **4 of 4 requests successful** with JSON in every card.
-- Search for `carl`, change the detail SA2 code, and try comparison with only one code. Expect an HTTP 422 error; restore `206041117,213031348` and retry successfully.
+- Open the frontend and test name search, map selection and comparison. Open `/api-test-console`, allow the API to wake, then expect **4 of 4 requests successful** with JSON in every card.
+- On `/api-test-console`, search for `carl`, change the detail SA2 code, and try comparison with only one code. Expect an HTTP 422 error; restore `206041117,213031348` and retry successfully.
 - Reload the homepage, check it on a phone, and confirm the API base shown is the public HTTPS API address. If JSON fails, inspect API logs, the exact CORS origin and the browser Network panel.
-- Confirm source dates, nulls and `publication_ready: false` remain visible. This is an explicitly labelled development console, not the final renter-facing data release.
+- Confirm source dates, nulls and `publication_ready: false` remain visible. The renter pages retain provisional-data notes; the API console preserves raw metadata. This is not final publication approval.
 - Record the Git commit and both live URLs in the team tracker. Health means the app/database are operational, not that provisional methods have been approved.
 
 ## Subsequent changes and recovery
@@ -62,3 +62,7 @@ Verified on 9 September 2026 with Python 3.12.14 and Node 24.20.0: 36 backend te
 ## Browser service check
 
 The frontend uses `/api/v1/status` for its Service health card. `/health` remains available for Render’s configured health check. Both routes run the same database readiness handler and return the same JSON and error responses. This change avoids the observed browser-profile block on `/health`; it cannot guarantee compatibility with every extension. Deploy the backend with the new route before deploying the frontend, then retry in the affected regular browser profile.
+
+## Homepage rollout
+
+The frontend now publishes Home at `/`, Compare at `/compare`, Area Details at `/areas/:sa2_code`, and the preserved diagnostic tool at `/api-test-console`. Existing Render service and CORS configuration can stay unchanged. After deploying, test search → selection → Compare, add/remove areas, open an area detail page, inspect population history, return to the same comparison, reload both comparison and detail URLs, and open the console directly. The browser service check still uses `/api/v1/status`; Render still probes `/health`. Street tiles require access to `tile.openstreetmap.org`; if unavailable, the static SA2 overlay and API search remain usable.

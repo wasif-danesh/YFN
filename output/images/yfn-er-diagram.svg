@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="2000" viewBox="0 0 2000 2000" role="img" aria-labelledby="title desc">
+  <title id="title">Your Friendly Neighbourhood database entity relationship diagram</title>
+  <desc id="desc">Entity relationship diagram for the yfn.sqlite database, showing ten tables, one summary view, primary keys, foreign keys, and one-to-many relationships.</desc>
+  <defs>
+    <style>
+      .canvas{fill:#f5f9ff}.title{font:700 42px Arial,sans-serif;fill:#102a56}.subtitle{font:20px Arial,sans-serif;fill:#526b91}.group{font:700 18px Arial,sans-serif;fill:#1765d8;letter-spacing:1px}.entity{fill:#fff;stroke:#b8cdea;stroke-width:2}.entity-head{fill:#1765d8}.view-head{fill:#536a8f}.name{font:700 22px Arial,sans-serif;fill:#fff}.field{font:16px Arial,sans-serif;fill:#19365f}.key{font:700 14px Arial,sans-serif;fill:#1765d8}.type{font:14px Arial,sans-serif;fill:#7487a4}.divider{stroke:#e0e9f5;stroke-width:1}.rel{fill:none;stroke:#5d7fa8;stroke-width:2.5}.derived{fill:none;stroke:#8b9db7;stroke-width:2.5;stroke-dasharray:9 7}.cardinality{font:700 15px Arial,sans-serif;fill:#405d83}.legend{font:16px Arial,sans-serif;fill:#405d83}.legend-box{fill:#eaf3ff;stroke:#b8cdea}.view{fill:#fbfdff;stroke:#9cafca;stroke-width:2;stroke-dasharray:8 5}.note{font:14px Arial,sans-serif;fill:#647b9c}.section-line{stroke:#cfddf0;stroke-width:2}
+    </style>
+    <marker id="many" markerWidth="14" markerHeight="14" refX="13" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M13 7 L1 1 M13 7 L1 7 M13 7 L1 13" fill="none" stroke="#5d7fa8" stroke-width="1.8"/>
+    </marker>
+  </defs>
+  <rect class="canvas" width="2000" height="2000"/>
+  <text id="diagram-title" class="title" x="70" y="72">Your Friendly Neighbourhood — Database ER Diagram</text>
+  <text class="subtitle" x="70" y="108">yfn.sqlite · Greater Melbourne SA2 data · 2021 boundaries</text>
+  <rect class="legend-box" x="1530" y="42" width="400" height="82" rx="10"/>
+  <text class="legend" x="1555" y="74"><tspan class="key">PK</tspan><tspan> primary key   </tspan><tspan class="key">FK</tspan><tspan> foreign key</tspan></text>
+  <path class="rel" d="M1555 99 H1620" marker-end="url(#many)"/><text class="legend" x="1640" y="105">one-to-many</text>
+
+  <text class="group" x="70" y="164">REFERENCE AND RELEASE METADATA</text>
+  <line class="section-line" x1="70" y1="177" x2="1930" y2="177"/>
+  <text class="group" x="70" y="535">CORE GEOGRAPHY AND OBSERVATIONS</text>
+  <line class="section-line" x1="70" y1="548" x2="1930" y2="548"/>
+  <text class="group" x="70" y="970">HISTORY, PROVENANCE AND DIAGNOSTICS</text>
+  <line class="section-line" x1="70" y1="983" x2="1930" y2="983"/>
+
+  <!-- Relationships are behind the entities. -->
+  <path class="rel" d="M250 432 V505 H205 V575" marker-end="url(#many)"/><text class="cardinality" x="260" y="454">1</text><text class="cardinality" x="212" y="567">many</text>
+  <path class="rel" d="M385 432 V500 H555 V575" marker-end="url(#many)"/><text class="cardinality" x="395" y="454">1</text><text class="cardinality" x="562" y="567">many</text>
+  <path class="rel" d="M820 432 V510 H1060 V575" marker-end="url(#many)"/><text class="cardinality" x="830" y="454">1</text><text class="cardinality" x="1067" y="567">many</text>
+  <path class="rel" d="M1230 432 V510 H1250 V575" marker-end="url(#many)"/><text class="cardinality" x="1240" y="454">1</text><text class="cardinality" x="1258" y="567">many</text>
+  <path class="rel" d="M835 750 H920" marker-end="url(#many)"/><text class="cardinality" x="850" y="741">1</text><text class="cardinality" x="877" y="741">many</text>
+  <path class="rel" d="M585 925 V1030 H280 V1050" marker-end="url(#many)"/><text class="cardinality" x="595" y="950">1</text><text class="cardinality" x="288" y="1042">many</text>
+  <path class="rel" d="M690 925 V1025 H690 V1050"/><text class="cardinality" x="700" y="950">1</text><text class="cardinality" x="700" y="1042">0..1</text>
+  <path class="rel" d="M1135 925 V1025 H1120 V1050" marker-end="url(#many)"/><text class="cardinality" x="1145" y="950">1</text><text class="cardinality" x="1128" y="1042">many</text>
+  <path class="rel" d="M1360 925 V1015 H1630 V1050" marker-end="url(#many)"/><text class="cardinality" x="1370" y="950">1</text><text class="cardinality" x="1638" y="1042">many</text>
+  <path class="rel" d="M470 432 V990 H390 V1050" marker-end="url(#many)"/><text class="cardinality" x="480" y="454">1</text>
+  <path class="rel" d="M540 432 V1010 H1010 V1050" marker-end="url(#many)"/>
+  <path class="rel" d="M610 432 V995 H1510 V1050" marker-end="url(#many)"/>
+  <path class="derived" d="M790 925 V1445 H930"/><path class="derived" d="M1270 925 V1445 H930"/><text class="note" x="742" y="1432">derived from</text>
+
+  <!-- data_sources -->
+  <g transform="translate(70 205)"><rect class="entity" width="600" height="227" rx="12"/><path class="entity-head" d="M12 0H588Q600 0 600 12V52H0V12Q0 0 12 0"/><text class="name" x="22" y="34">data_sources</text>
+    <text class="key" x="22" y="82">PK</text><text class="field" x="62" y="82">source_id</text><text class="type" x="448" y="82">TEXT</text><line class="divider" x1="20" y1="96" x2="580" y2="96"/>
+    <text class="field" x="22" y="122">publisher · dataset_name · url</text><text class="type" x="448" y="122">TEXT</text>
+    <text class="field" x="22" y="154">reference_period · observation_date</text><text class="type" x="448" y="154">TEXT</text>
+    <text class="field" x="22" y="186">boundary_year</text><text class="type" x="448" y="186">INTEGER</text>
+    <text class="field" x="22" y="218">licence · limitation</text><text class="type" x="448" y="218">TEXT</text></g>
+
+  <!-- indicators -->
+  <g transform="translate(720 205)"><rect class="entity" width="350" height="227" rx="12"/><path class="entity-head" d="M12 0H338Q350 0 350 12V52H0V12Q0 0 12 0"/><text class="name" x="22" y="34">indicators</text>
+    <text class="key" x="22" y="82">PK</text><text class="field" x="62" y="82">indicator_key</text><text class="type" x="270" y="82">TEXT</text><line class="divider" x1="20" y1="96" x2="330" y2="96"/>
+    <text class="field" x="22" y="132">label</text><text class="type" x="270" y="132">TEXT</text>
+    <text class="field" x="22" y="174">unit</text><text class="type" x="270" y="174">TEXT</text></g>
+
+  <!-- methods -->
+  <g transform="translate(1120 205)"><rect class="entity" width="350" height="227" rx="12"/><path class="entity-head" d="M12 0H338Q350 0 350 12V52H0V12Q0 0 12 0"/><text class="name" x="22" y="34">methods</text>
+    <text class="key" x="22" y="82">PK</text><text class="field" x="62" y="82">method_id</text><text class="type" x="270" y="82">TEXT</text><line class="divider" x1="20" y1="96" x2="330" y2="96"/>
+    <text class="field" x="22" y="132">approval_status</text><text class="type" x="270" y="132">TEXT</text>
+    <text class="field" x="22" y="174">definition</text><text class="type" x="270" y="174">TEXT</text></g>
+
+  <!-- sample_release -->
+  <g transform="translate(1520 205)"><rect class="entity" width="410" height="227" rx="12"/><path class="entity-head" d="M12 0H398Q410 0 410 12V52H0V12Q0 0 12 0"/><text class="name" x="22" y="34">sample_release</text>
+    <text class="key" x="22" y="82">PK</text><text class="field" x="62" y="82">release_id</text><text class="type" x="322" y="82">TEXT</text><line class="divider" x1="20" y1="96" x2="390" y2="96"/>
+    <text class="field" x="22" y="132">data_mode</text><text class="type" x="322" y="132">TEXT</text>
+    <text class="field" x="22" y="169">publication_ready</text><text class="type" x="322" y="169">INTEGER</text>
+    <text class="field" x="22" y="206">manifest_json</text><text class="type" x="322" y="206">TEXT</text></g>
+
+  <!-- source_files -->
+  <g transform="translate(70 575)"><rect class="entity" width="360" height="350" rx="12"/><path class="entity-head" d="M12 0H348Q360 0 360 12V52H0V12Q0 0 12 0"/><text class="name" x="22" y="34">source_files</text>
+    <text class="key" x="22" y="82">PK</text><text class="field" x="62" y="82">file_id</text><text class="type" x="282" y="82">TEXT</text><line class="divider" x1="20" y1="96" x2="340" y2="96"/>
+    <text class="key" x="22" y="128">FK</text><text class="field" x="62" y="128">source_id</text><text class="type" x="282" y="128">TEXT</text>
+    <text class="field" x="22" y="174">path</text><text class="type" x="282" y="174">TEXT</text>
+    <text class="field" x="22" y="214">resource_url</text><text class="type" x="282" y="214">TEXT</text>
+    <text class="field" x="22" y="254">sha256</text><text class="type" x="282" y="254">TEXT</text>
+    <text class="field" x="22" y="294">downloaded_at</text><text class="type" x="282" y="294">TEXT</text>
+    <text class="field" x="22" y="334">bytes</text><text class="type" x="282" y="334">INTEGER</text></g>
+
+  <!-- areas -->
+  <g transform="translate(470 575)"><rect class="entity" width="365" height="350" rx="12"/><path class="entity-head" d="M12 0H353Q365 0 365 12V52H0V12Q0 0 12 0"/><text class="name" x="22" y="34">areas</text>
+    <text class="key" x="22" y="82">PK</text><text class="field" x="62" y="82">sa2_code</text><text class="type" x="290" y="82">TEXT</text><line class="divider" x1="20" y1="96" x2="345" y2="96"/>
+    <text class="field" x="22" y="126">name · gccsa_code</text><text class="type" x="290" y="126">TEXT</text>
+    <text class="field" x="22" y="165">boundary_year</text><text class="type" x="290" y="165">INTEGER</text>
+    <text class="field" x="22" y="204">official_area_sq_km</text><text class="type" x="290" y="204">REAL</text>
+    <text class="field" x="22" y="243">calculated_area_m2</text><text class="type" x="290" y="243">REAL</text>
+    <text class="field" x="22" y="282">area_crs · eligibility_note</text><text class="type" x="290" y="282">TEXT</text>
+    <text class="field" x="22" y="321">is_comparable</text><text class="type" x="290" y="321">INTEGER</text>
+    <text class="key" x="22" y="344">FK</text><text class="field" x="62" y="344">source_id</text><text class="type" x="290" y="344">TEXT</text></g>
+
+  <!-- observations -->
+  <g transform="translate(920 575)"><rect class="entity" width="610" height="350" rx="12"/><path class="entity-head" d="M12 0H598Q610 0 610 12V52H0V12Q0 0 12 0"/><text class="name" x="22" y="34">observations</text>
+    <text class="key" x="22" y="82">PK · FK</text><text class="field" x="105" y="82">sa2_code</text><text class="type" x="510" y="82">TEXT</text>
+    <text class="key" x="22" y="114">PK · FK</text><text class="field" x="105" y="114">indicator_key</text><text class="type" x="510" y="114">TEXT</text><line class="divider" x1="20" y1="128" x2="590" y2="128"/>
+    <text class="field" x="22" y="157">raw_value · score</text><text class="type" x="510" y="157">REAL</text>
+    <text class="field" x="22" y="188">rating · reference_period</text><text class="type" x="510" y="188">TEXT</text>
+    <text class="field" x="22" y="219">start_year · end_year</text><text class="type" x="510" y="219">INTEGER</text>
+    <text class="field" x="22" y="250">quality_status · quality_note</text><text class="type" x="510" y="250">TEXT</text>
+    <text class="field" x="22" y="281">coverage_fraction</text><text class="type" x="510" y="281">REAL</text>
+    <text class="key" x="22" y="322">FK</text><text class="field" x="62" y="322">method_id</text><text class="type" x="510" y="322">TEXT</text>
+    <text class="note" x="22" y="344">One row per area and indicator</text></g>
+
+  <!-- population_history -->
+  <g transform="translate(70 1050)"><rect class="entity" width="430" height="280" rx="12"/><path class="entity-head" d="M12 0H418Q430 0 430 12V52H0V12Q0 0 12 0"/><text class="name" x="22" y="34">population_history</text>
+    <text class="key" x="22" y="82">PK · FK</text><text class="field" x="105" y="82">sa2_code</text><text class="type" x="350" y="82">TEXT</text>
+    <text class="key" x="22" y="114">PK</text><text class="field" x="62" y="114">year</text><text class="type" x="350" y="114">INTEGER</text><line class="divider" x1="20" y1="128" x2="410" y2="128"/>
+    <text class="field" x="22" y="158">population</text><text class="type" x="350" y="158">INTEGER</text>
+    <text class="field" x="22" y="191">reference_date · revision_status</text><text class="type" x="350" y="191">TEXT</text>
+    <text class="key" x="22" y="226">FK</text><text class="field" x="62" y="226">source_id</text><text class="type" x="350" y="226">TEXT</text>
+    <text class="field" x="22" y="260">source_locator</text><text class="type" x="350" y="260">TEXT</text></g>
+
+  <!-- area_diagnostics -->
+  <g transform="translate(540 1050)"><rect class="entity" width="350" height="280" rx="12"/><path class="entity-head" d="M12 0H338Q350 0 350 12V52H0V12Q0 0 12 0"/><text class="name" x="22" y="34">area_diagnostics</text>
+    <text class="key" x="22" y="82">PK · FK</text><text class="field" x="105" y="82">sa2_code</text><text class="type" x="276" y="82">TEXT</text><line class="divider" x1="20" y1="96" x2="330" y2="96"/>
+    <text class="field" x="22" y="128">PTAL counts and coverage</text>
+    <text class="field" x="22" y="165">park counts and union area</text>
+    <text class="field" x="22" y="202">overlap removed</text>
+    <text class="field" x="22" y="239">space per resident</text>
+    <text class="field" x="22" y="269">inventory coverage</text></g>
+
+  <!-- observation_sources -->
+  <g transform="translate(930 1050)"><rect class="entity" width="430" height="280" rx="12"/><path class="entity-head" d="M12 0H418Q430 0 430 12V52H0V12Q0 0 12 0"/><text class="name" x="22" y="34">observation_sources</text>
+    <text class="key" x="22" y="82">PK · FK</text><text class="field" x="105" y="82">sa2_code</text><text class="type" x="350" y="82">TEXT</text>
+    <text class="key" x="22" y="114">PK · FK</text><text class="field" x="105" y="114">indicator_key</text><text class="type" x="350" y="114">TEXT</text>
+    <text class="key" x="22" y="146">PK · FK</text><text class="field" x="105" y="146">source_id</text><text class="type" x="350" y="146">TEXT</text>
+    <text class="key" x="22" y="178">PK</text><text class="field" x="62" y="178">role</text><text class="type" x="350" y="178">TEXT</text><line class="divider" x1="20" y1="192" x2="410" y2="192"/>
+    <text class="note" x="22" y="226">Links each observation to one or more</text>
+    <text class="note" x="22" y="250">source datasets and records its role.</text></g>
+
+  <!-- observation_components -->
+  <g transform="translate(1400 1050)"><rect class="entity" width="530" height="280" rx="12"/><path class="entity-head" d="M12 0H518Q530 0 530 12V52H0V12Q0 0 12 0"/><text class="name" x="22" y="34">observation_components</text>
+    <text class="key" x="22" y="82">PK · FK</text><text class="field" x="105" y="82">sa2_code · indicator_key</text><text class="type" x="445" y="82">TEXT</text>
+    <text class="key" x="22" y="114">PK</text><text class="field" x="62" y="114">component_key</text><text class="type" x="445" y="114">TEXT</text><line class="divider" x1="20" y1="128" x2="510" y2="128"/>
+    <text class="field" x="22" y="160">value</text><text class="type" x="445" y="160">REAL</text>
+    <text class="field" x="22" y="193">unit · reference_period</text><text class="type" x="445" y="193">TEXT</text>
+    <text class="key" x="22" y="228">FK</text><text class="field" x="62" y="228">source_id</text><text class="type" x="445" y="228">TEXT</text>
+    <text class="note" x="22" y="260">Inputs retained behind a calculated observation.</text></g>
+
+  <!-- summary view -->
+  <g transform="translate(930 1390)"><rect class="view" width="610" height="145" rx="12"/><path class="view-head" d="M12 0H598Q610 0 610 12V52H0V12Q0 0 12 0"/><text class="name" x="22" y="34">v_area_summary  [VIEW]</text>
+    <text class="field" x="22" y="84">One summary row per SA2 with four indicator values</text>
+    <text class="field" x="22" y="115">and their quality / coverage fields.</text>
+    <text class="note" x="22" y="137">Derived from areas + observations; stores no independent data.</text></g>
+</svg>

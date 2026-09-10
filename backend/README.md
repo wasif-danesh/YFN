@@ -4,7 +4,7 @@ FastAPI reads the single [SQLite database](../data/greater-melbourne-v1/yfn.sqli
 
 ## Start locally
 
-Run from the repository root with Python 3.12:
+For the complete API and frontend workflow, follow [Local application development](../README.md#local-application-development). Run from the repository root with Python 3.12:
 
 ```sh
 python3.12 -m venv .venv
@@ -55,7 +55,7 @@ Empty/whitespace search lists names alphabetically. Exact matches rank first, th
 
 Compare accepts one comma-separated `sa2` parameter without spaces. A single selected area is a frontend state: fetch Details while prompting for another area. Details can describe an ineligible area, but Compare rejects it. The frontend preserves selection in the URL when navigating back from Details.
 
-The homepage map will use a separate simplified static GeoJSON file and the same SA2 codes. No map endpoint or frontend component is implemented here.
+The homepage map uses a separate verified display-only GeoJSON asset with the same SA2 codes. It is rendered by the frontend with Leaflet; no map API endpoint is needed. See the frontend guide for rebuilding the asset.
 
 ## JSON and data meaning
 

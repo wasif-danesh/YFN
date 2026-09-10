@@ -7,16 +7,16 @@ const apiBase = process.env.NUXT_PUBLIC_API_BASE
 export default defineNuxtConfig({
   compatibilityDate: '2026-09-09',
   devtools: { enabled: false },
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/main.css', '~/assets/css/renter.css'],
   vite: { plugins: [tailwindcss()] },
   runtimeConfig: { public: { apiBase } },
   app: { head: {
-    title: 'API test console | Your Friendly Neighbourhood',
+    title: 'Your Friendly Neighbourhood',
     htmlAttrs: { lang: 'en' },
     meta: [
-      { name: 'description', content: 'Development console for testing the four Your Friendly Neighbourhood API endpoints.' },
+      { name: 'description', content: 'Explore Greater Melbourne and compare areas with Your Friendly Neighbourhood.' },
       { name: 'robots', content: 'noindex, nofollow' },
     ],
   } },
-  nitro: { preset: 'static' },
+  nitro: { preset: 'static', prerender: { routes: ['/', '/compare', '/api-test-console'] } },
 })
