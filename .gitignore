@@ -52,6 +52,9 @@ data/**/staging/
 *.part
 
 # Local tooling
+/tmp/
+/output/
+/docs/
 /AGENTS.md
 /Agents.md
 /Codex-README.md

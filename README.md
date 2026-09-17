@@ -10,7 +10,7 @@ The application journey is **Home → Compare → Area Details**. Users can comp
 
 | Component | Current state |
 |---|---|
-| Requirements and wireframes | Available in [project documentation](docs/requirements.md) and [references](docs/references/README.md) |
+| Assessment documents and wireframes | Maintained separately in the PGP; not required to build or run this repository |
 | Real development data | Prepared for all **361 Greater Melbourne SA2s**, using 2021 boundaries |
 | SQLite, schema and ER diagram | Built and verified; **1,444 indicator rows** and **2,166 population-history rows** |
 | Data pipeline | Acquisition, offline processing and validation scripts implemented |
@@ -155,11 +155,12 @@ yfn/
 │   └── export_api_contract.py        # OpenAPI and frontend response examples
 ├── deploy/
 │   └── README.md                    # Render UI setup and recovery guide
-├── docs/                            # Requirements, decisions and original references
-└── render.yaml                      # Active deployment definition for the test console
+└── render.yaml                      # Frontend and API deployment definition
 ```
 
 Keep API dependencies separate from the GIS environment. Keep each application's tests with that application. Shared contract examples belong in `contracts/`; do not maintain different mock shapes in the UI and API. Existing pipeline paths are preserved because the source manifests, tests and rebuild evidence refer to them.
+
+`contracts/` is development and test support: backend tests compare the exported OpenAPI schema with the running app, and frontend comparison tests import its response examples. Keep it with the source. Assessment reports, presentation files, wireframes and document-generation scratch files belong outside this repository in the PGP or a separate working folder. Local dependencies, caches and raw downloads remain ignored by Git; do not include them in a source ZIP.
 
 ## Clone and verify the project
 
@@ -215,7 +216,7 @@ On Windows, the equivalent check is `py -3.12 scripts/check_sample.py`.
 
 The check works now using only Python's standard library. It verifies the committed sample hashes, CSV/table counts, release metadata, missing values and SQLite integrity. It does not download datasets or re-run spatial processing. A full source rebuild is a separate workflow below.
 
-Read [requirements](docs/requirements.md), [project decisions](docs/project-context.md) and the [API/data proposal](docs/data-and-api.md) before starting a feature. Start with the checked-in real sample; do not spend time reproducing raw downloads just to develop a page or endpoint.
+Read this guide, the relevant [frontend](frontend/README.md) or [backend](backend/README.md) guide and the [API contract](contracts/README.md) before starting a feature. Start with the checked-in real dataset; raw downloads are not needed just to develop a page or endpoint. Assessment requirements and wireframes are maintained separately in the PGP.
 
 ### What belongs in Git
 
@@ -459,15 +460,15 @@ This configuration supports deployment, but the Free plan is for testing: idle A
 
 ## Project documentation and responsibilities
 
-- [Project context and decisions](docs/project-context.md)
-- [Requirements and page corrections](docs/requirements.md)
-- [Data preparation and API proposal](docs/data-and-api.md)
+- [Frontend development and tests](frontend/README.md)
+- [Backend development and tests](backend/README.md)
+- [Shared API contract](contracts/README.md)
 - [Real-data package, ER diagram and verification](data/greater-melbourne-v1/README.md)
-- [Original reference documents and wireframes](docs/references/README.md)
+- [Render deployment and recovery](deploy/README.md)
 
 The proposal lists Andrew Tran, Sanskrita DSarma, Tin Nguyen and Wasif Danesh. Assign current workstream owners in the team's tracker; this guide does not assign individual responsibilities. Coordinate frontend, API, data and integration/QA work through the shared contract and review process.
 
-Keep this README current when startup commands, dependency pins, source releases, environment settings or deployments change. Preserve original reference documents and record decisions separately; a recommendation in an older attachment is not evidence of current team approval.
+Keep this README current when startup commands, dependency pins, source releases, environment settings or deployments change. Keep original assessment documents and wireframes in the separate PGP; a recommendation in an older attachment is not evidence of current team approval.
 
 ## Licence
 
