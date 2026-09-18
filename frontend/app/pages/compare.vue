@@ -174,9 +174,11 @@ onBeforeUnmount(() => {
             >Clear selection</NuxtLink
           >
         </div>
-        <p v-if="loading" class="comparison-feedback" role="status">
-          Loading your areas… The service may take a moment to wake up.
-        </p>
+        <LoadingStatus
+          v-if="loading"
+          class="comparison-feedback"
+          label="Loading your areas…"
+        />
         <div v-else-if="error" class="comparison-feedback">
           <p role="alert">{{ error }}</p>
           <button class="text-button" @click="load">Try again</button>

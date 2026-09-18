@@ -1,4 +1,5 @@
 <script setup>
+import { endpointUrl, requestJson } from '~/utils/api.js'
 const config = useRuntimeConfig()
 const selected = ref(null)
 useSeoMeta({
@@ -28,6 +29,14 @@ const categories = [
     text: 'Compare selected open space per resident.',
   },
 ]
+onMounted(() => {
+  // Wake the free-plan API while the visitor reads the page; search handles any failure.
+  try {
+    requestJson(endpointUrl(config.public.apiBase, 'health')).catch(() => {})
+  } catch {
+    /* An invalid API setting is reported by the search itself. */
+  }
+})
 </script>
 <template>
   <div class="renter-site">
@@ -48,6 +57,7 @@ const categories = [
           <p>Search by name or choose an area on the map.</p>
           <AreaSearch
             :api-base="config.public.apiBase"
+            loading-hint="You can explore the map in the meantime."
             @select="selected = $event"
           />
           <div v-if="selected" class="selected-area" aria-live="polite">

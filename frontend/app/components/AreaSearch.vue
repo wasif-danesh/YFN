@@ -1,11 +1,13 @@
 <script setup>
 import { ref, watch, nextTick, onBeforeUnmount } from 'vue'
 import { endpointUrl, requestJson } from '../utils/api.js'
+import LoadingStatus from './LoadingStatus.vue'
 const props = defineProps({
   apiBase: { type: String, required: true },
   id: { type: String, default: 'area-search' },
   excluded: { type: Array, default: () => [] },
   label: { type: String, default: 'Search for an area' },
+  loadingHint: { type: String, default: '' },
 })
 const emit = defineEmits(['select'])
 const query = ref(''),
@@ -137,7 +139,12 @@ onBeforeUnmount(() => {
       />
     </div>
     <div v-if="open" class="search-menu">
-      <p v-if="loading" role="status" class="search-message">Finding areas…</p>
+      <LoadingStatus
+        v-if="loading"
+        class="search-message"
+        label="Loading areas…"
+        :hint="loadingHint"
+      />
       <div v-else-if="error" class="search-message">
         <p role="alert">{{ error }}</p>
         <button class="text-button" @click="search">Try again</button>

@@ -78,9 +78,11 @@ onBeforeUnmount(() => {
       <NuxtLink :to="returnLocation" class="back-link"
         >← Back to comparison</NuxtLink
       >
-      <p v-if="loading" class="comparison-feedback" role="status">
-        Loading area details…
-      </p>
+      <LoadingStatus
+        v-if="loading"
+        class="comparison-feedback"
+        label="Loading area details…"
+      />
       <div v-else-if="error" class="comparison-feedback">
         <h1>Area details unavailable</h1>
         <p role="alert">{{ error }}</p>
