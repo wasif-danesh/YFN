@@ -2,7 +2,7 @@
 
 **A Greater Melbourne area-comparison website for renters finding their feet in a new city.**
 
-Your Friendly Neighbourhood brings together housing, public transport, population and public open-space information so renters can compare areas and understand the trade-offs. It is designed for people unfamiliar with Melbourne, including new immigrants, international students and interstate migrants.
+Your Friendly Neighbourhood brings together housing, public transport, population and public open-space information so renters can compare areas and understand the trade-offs. It is designed for newly arrived migrant families settling in Melbourne, who have not yet built up local knowledge of the city.
 
 The application journey is **Home → Compare → Area Details**. Users can compare two or three Statistical Areas Level 2 (SA2s), inspect the underlying measures and see their source dates and limitations. SA2s do not necessarily match suburb boundaries. The project supports the themes of Sustainable Development Goal 11; its measures are not official UN indicators.
 
@@ -15,13 +15,13 @@ The application journey is **Home → Compare → Area Details**. Users can comp
 | SQLite, schema and ER diagram | Built and verified; **1,444 indicator rows** and **2,166 population-history rows** |
 | Data pipeline | Acquisition, offline processing and validation scripts implemented |
 | REST API | FastAPI implemented with four browser endpoints plus a hosting health check, response models and backend tests |
-| Frontend | Home with typeahead/Leaflet map, full Compare and Area Details, plus a separate API test console implemented |
+| Frontend | Home with typeahead/Leaflet map, full Compare and Area Details, a staged loading message while the free API wakes, plus a separate API test console implemented |
 | GitHub checks | Database, backend, frontend unit/build and desktop/mobile browser checks configured |
-| Render | Root Blueprint ready for a Free-plan test deployment; see the Render guide |
+| Render | Deployed on the free plan: [website](https://yfn-web.onrender.com/) and [API](https://yfn-api.onrender.com/api/v1/status); see the Render guide |
 
 The real dataset is suitable for development and schema design. Transport aggregation, coverage eligibility and the open-space filter remain provisional. `publication_ready=false` is preserved. Application development can proceed while the team resolves these definitions.
 
-The maintainer has created a GitHub repository. Substitute its URL in the clone command below. No external deployment has been performed by this implementation.
+The repository is at [github.com/wasif-danesh/YFN](https://github.com/wasif-danesh/YFN). The application is deployed on Render's free plan: the website is at [yfn-web.onrender.com](https://yfn-web.onrender.com/) and the API at [yfn-api.onrender.com](https://yfn-api.onrender.com/api/v1/status).
 
 ## Simple team workflow
 
@@ -134,7 +134,7 @@ yfn/
 ├── pipeline/
 │   ├── acquire_greater_melbourne.py  # Network acquisition; resumable cache
 │   ├── build_greater_melbourne.py    # Offline transformations and SQLite build
-│   ├── greater_melbourne_schema.sql  # Executable sample schema
+│   ├── greater_melbourne_schema.sql  # Executable database schema
 │   ├── melbourne_*.py                # Source and spatial helpers
 │   ├── document_greater_melbourne.py # Schema/coverage documentation
 │   ├── verify_greater_melbourne_rebuild.py
@@ -204,17 +204,17 @@ No separate SQLite server, Docker, GIS tools or dataset downloads are required t
 
 ### First checkout
 
-Replace `YOUR_GITHUB_REPOSITORY_URL` with the actual HTTPS or SSH clone URL supplied by the maintainer:
+Clone the repository, then run the bundled data check:
 
 ```sh
-git clone YOUR_GITHUB_REPOSITORY_URL yfn
+git clone https://github.com/wasif-danesh/YFN.git yfn
 cd yfn
 python3 scripts/check_sample.py
 ```
 
 On Windows, the equivalent check is `py -3.12 scripts/check_sample.py`.
 
-The check works now using only Python's standard library. It verifies the committed sample hashes, CSV/table counts, release metadata, missing values and SQLite integrity. It does not download datasets or re-run spatial processing. A full source rebuild is a separate workflow below.
+The check works now using only Python's standard library. It verifies the committed data hashes, CSV/table counts, release metadata, missing values and SQLite integrity. It does not download datasets or re-run spatial processing. A full source rebuild is a separate workflow below.
 
 Read this guide, the relevant [frontend](frontend/README.md) or [backend](backend/README.md) guide and the [API contract](contracts/README.md) before starting a feature. Start with the checked-in real dataset; raw downloads are not needed just to develop a page or endpoint. Assessment requirements and wireframes are maintained separately in the PGP.
 
@@ -249,7 +249,7 @@ python -m uvicorn backend.app.main:app --reload --env-file backend/.env --port 8
 
 On Windows PowerShell, create the environment with `py -3.12 -m venv .venv`, activate it with `.venv\Scripts\Activate.ps1`, and copy the file with `Copy-Item backend/.env.example backend/.env`. The subsequent `python` commands are the same. If local policy prevents activation, invoke `.venv\Scripts\python.exe` directly.
 
-The development URLs are API `http://localhost:8000`, OpenAPI UI `http://localhost:8000/docs`, and browser status `http://localhost:8000/api/v1/status`. The API must open `DATABASE_PATH` read-only and resolve relative paths from the repository root. The development example points to the existing sample database.
+The development URLs are API `http://localhost:8000`, OpenAPI UI `http://localhost:8000/docs`, and browser status `http://localhost:8000/api/v1/status`. The API must open `DATABASE_PATH` read-only and resolve relative paths from the repository root. The development example points to the included database.
 
 ### Frontend terminal
 
@@ -317,7 +317,7 @@ The backend implements these settings and parses CORS as a JSON array. An origin
 
 ## Database and API contract
 
-Start with the [SQLite sample](data/greater-melbourne-v1/yfn.sqlite), [ER diagram](data/greater-melbourne-v1/schema-guide.md), [column dictionary](data/greater-melbourne-v1/data-dictionary.md) and [SQL schema](pipeline/greater_melbourne_schema.sql).
+Start with the [SQLite database](data/greater-melbourne-v1/yfn.sqlite), [ER diagram](data/greater-melbourne-v1/schema-guide.md), [column dictionary](data/greater-melbourne-v1/data-dictionary.md) and [SQL schema](pipeline/greater_melbourne_schema.sql).
 
 | Tables | Purpose |
 |---|---|
@@ -327,9 +327,9 @@ Start with the [SQLite sample](data/greater-melbourne-v1/yfn.sqlite), [ER diagra
 | `data_sources`, `source_files` | Dataset provenance and exact downloaded resources |
 | `observation_sources`, `observation_components` | Multiple contributing sources, numerators and denominators |
 | `methods`, `area_diagnostics` | Calculation definitions, spatial coverage and sensitivity evidence |
-| `sample_release` | Metadata for the current sample database file |
+| `sample_release` | Metadata for the current database release |
 
-Keep SA2 codes as strings and preserve nulls. Unknown is not zero. The two zero-population SA2s remain in the sample but are excluded by its provisional comparison flag. The sample supports one boundary edition and one current observation per indicator/area per database release. Future release/history requirements must be reflected consistently in the keys.
+Keep SA2 codes as strings and preserve nulls. Unknown is not zero. The two zero-population SA2s remain in the database but are excluded by its provisional comparison flag. The database supports one boundary edition and one current observation per indicator/area per database release. Future release/history requirements must be reflected consistently in the keys.
 
 The implemented REST endpoints are:
 
@@ -353,13 +353,13 @@ See the [implemented contract](contracts/README.md), [OpenAPI](contracts/openapi
 | [DataVic PTAL Melbourne metro](https://discover.data.vic.gov.au/en_AU/dataset/public-transport-accessibility-level-ptal-melbourne-metro) | `sum_ai_8_9` spatial access index | 360 numeric aggregates, some with very small coverage; no approved ratings |
 | [DataVic Open Space](https://discover.data.vic.gov.au/dataset/open-space) | Selected public-open-space polygons divided by ERP | Unmaintained/undated inventory; filter includes sports land and can include water; 354 ratios |
 
-The sample records these sources as CC BY 4.0 and retains source-specific limitations and attribution. Project software uses the [MIT licence](LICENSE). Third-party datasets and reference documents retain their respective licences and attribution requirements; the MIT licence does not replace those terms.
+The database records these sources as CC BY 4.0 and retains source-specific limitations and attribution. Project software uses the [MIT licence](LICENSE). Third-party datasets and reference documents retain their respective licences and attribution requirements; the MIT licence does not replace those terms.
 
-See the [sample report](data/greater-melbourne-v1/README.md) and [acquisition manifest](data/greater-melbourne-v1/acquisition.json) for exact resources, hashes and methods. Source validation includes 14 independent QuickStats checks, exact reconciliation of six annual Greater Melbourne population totals, and complete spatial-layer count/ID checks. All four indicator rows are retained for each area even when a value is unavailable.
+See the [data package report](data/greater-melbourne-v1/README.md) and [acquisition manifest](data/greater-melbourne-v1/acquisition.json) for exact resources, hashes and methods. Source validation includes 14 independent QuickStats checks, exact reconciliation of six annual Greater Melbourne population totals, and complete spatial-layer count/ID checks. All four indicator rows are retained for each area even when a value is unavailable.
 
 ## Data preparation and refreshes
 
-### Work with the existing sample
+### Work with the included database
 
 Frontend and backend contributors use the same checked-in `data/greater-melbourne-v1/yfn.sqlite`. The frontend requests JSON from FastAPI; only the backend opens SQLite. Test fixtures may be in memory and must never silently replace unavailable real data.
 
@@ -394,7 +394,7 @@ python pipeline/verify_greater_melbourne_rebuild.py
 
 The pipeline uses assertions for validation: do not run it with Python `-O`. Full tests require the raw snapshots; `scripts/check_sample.py` is the separate clean-clone check. Download timestamps and changed source inventories can alter the manifest, so rerun only the offline builder when checking byte-identical reproduction.
 
-The complete Greater Melbourne sample's measured offline rebuild took approximately 53 seconds in the original environment. That excludes downloads and is not a timing guarantee for other machines.
+The complete Greater Melbourne offline rebuild took approximately 53 seconds in the original environment. That excludes downloads and is not a timing guarantee for other machines.
 
 ### Update the single application database
 
@@ -437,7 +437,7 @@ This configuration supports deployment, but the Free plan is for testing: idle A
 
 | Check | Available now? | Command or implementation requirement |
 |---|---|---|
-| Committed sample consistency | Yes; no downloads | `python scripts/check_sample.py` |
+| Committed data consistency | Yes; no downloads | `python scripts/check_sample.py` |
 | Full source/calculation tests | Yes; data dependencies and snapshots required | `python -m unittest discover -s pipeline -p 'test_*.py' -v` |
 | Reproducible offline build | Yes; matching source snapshots required | `python pipeline/verify_greater_melbourne_rebuild.py` |
 | API tests | Yes; backend dev dependencies required | `python -m pytest backend/tests -q` |
@@ -448,7 +448,7 @@ This configuration supports deployment, but the Free plan is for testing: idle A
 
 | Symptom | What to check |
 |---|---|
-| API cards show loading or a network error | Wait for the Free API to wake, then retry; inspect API health and CORS |
+| API cards show loading or a network error | The free API sleeps when idle; the page shows a spinner and explains the wait, so allow up to a minute before retrying. If it persists, inspect API health and CORS |
 | `No module named backend` | Run the documented Uvicorn command from the repository root, with the backend virtual environment activated |
 | API cannot find the database | Start from repo root; inspect `DATABASE_PATH`; do not set Render Root Directory to `backend/` with a root-level data dependency |
 | Browser reports CORS errors | Check the exact frontend origin, JSON parsing of the allowlist and the public API URL |
