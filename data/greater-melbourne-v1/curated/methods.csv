@@ -1,0 +1,5 @@
+method_id,approval_status,definition
+census-g02-direct-v2,source_definition,Read Median_rent_weekly by SA2_CODE_2021. Preserve original tokens in the audit. The three zero entries are withheld as unavailable: zero is outside the 2021 RNTD scope and their QuickStats pages report no/very low population.
+erp-growth-2020-2025-v1,sample_only,100*(ERP_2025-ERP_2020)/ERP_2020 from one release; nonpositive/missing baseline returns null.
+ptal-area-mean-sample-v1,sample_only,"sum(intersection_m2*sum_ai_8_9)/sum(valid_intersection_m2); EPSG:7855. No percentile, rating or coverage eligibility threshold."
+open-space-filter-sample-v1,sample_only,"{""OS_TYPE"": ""Public open space"", ""OS_ACCESS"": ""Open"", ""OS_STATUS"": ""Existing"", ""OS_CATEGOR"": [""Parks and gardens"", ""Natural and semi-natural open space"", ""Recreation corridor"", ""Sportsfields and organised recreation""], ""aggregation"": ""union selected polygons, intersect SA2, divide square metres by 2025 ERP"", ""crs"": ""EPSG:7855""}"

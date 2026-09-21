@@ -1,0 +1,7 @@
+# Preserve checksummed text artifacts across macOS, Linux and Windows clones.
+* text=auto eol=lf
+*.sqlite binary
+*.pdf binary
+*.docx binary
+*.png binary
+*.zip binary

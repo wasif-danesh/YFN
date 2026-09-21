@@ -1,0 +1,362 @@
+sa2_code,name,boundary_year,gccsa_code,official_area_sq_km,calculated_area_m2,area_crs,is_comparable,eligibility_note,source_id
+206011106,Brunswick East,2021,2GMEL,2.1682,2167998.451839078,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206011107,Brunswick West,2021,2GMEL,3.1795,3178667.0515242172,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206011109,Pascoe Vale South,2021,2GMEL,2.9887,2988928.136666245,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206011495,Brunswick - North,2021,2GMEL,2.4091,2408738.450189732,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206011496,Brunswick - South,2021,2GMEL,2.7334,2733708.02601791,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206011497,Coburg - East,2021,2GMEL,3.7471,3746611.210502393,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206011498,Coburg - West,2021,2GMEL,3.1876,3187053.253762021,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206021110,Alphington - Fairfield,2021,2GMEL,2.8853,2884964.511879732,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206021112,Thornbury,2021,2GMEL,4.9972,4996935.896138901,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206021499,Northcote - East,2021,2GMEL,3.5134,3513479.7050430644,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206021500,Northcote - West,2021,2GMEL,2.6316,2631389.259204071,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206031113,Ascot Vale,2021,2GMEL,3.8361,3836150.670750758,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206031115,Flemington,2021,2GMEL,1.5808,1580897.1963042412,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206031116,Moonee Ponds,2021,2GMEL,4.3551,4355548.917716893,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206031501,Essendon (West) - Aberfeldie,2021,2GMEL,4.8886,4888945.682654568,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206031502,Essendon - East,2021,2GMEL,3.5543,3554485.243355272,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206041117,Carlton,2021,2GMEL,1.8187,1818205.8381134425,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206041118,Docklands,2021,2GMEL,2.444,2443695.9230298568,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206041119,East Melbourne,2021,2GMEL,2.8998,2899659.6156476145,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206041120,Flemington Racecourse,2021,2GMEL,1.7093,1709307.1228721559,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206041121,Kensington (Vic.),2021,2GMEL,2.147,2146982.91445397,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206041124,Parkville,2021,2GMEL,4.0491,4048708.027355277,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206041125,South Yarra - West,2021,2GMEL,1.5027,1502222.2543241538,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206041127,West Melbourne - Industrial,2021,2GMEL,6.1992,6199353.756776023,EPSG:7855,0,"Retained for complete geography coverage; 2025 ERP is zero/missing, so excluded from the sample renter comparison set.",abs-sa2-2021
+206041503,Melbourne CBD - East,2021,2GMEL,0.802,801785.0834650251,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206041504,Melbourne CBD - North,2021,2GMEL,0.5616,561494.3395572322,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206041505,Melbourne CBD - West,2021,2GMEL,1.0051,1005333.2936492868,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206041506,North Melbourne,2021,2GMEL,2.4248,2425252.559916196,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206041507,Royal Botanic Gardens Victoria,2021,2GMEL,1.3511,1351088.200596366,EPSG:7855,0,"Retained for complete geography coverage; 2025 ERP is zero/missing, so excluded from the sample renter comparison set.",abs-sa2-2021
+206041508,Southbank (West) - South Wharf,2021,2GMEL,0.8496,849835.3721750878,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206041509,Southbank - East,2021,2GMEL,0.804,803842.5516341922,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206041510,West Melbourne - Residential,2021,2GMEL,0.8247,824582.6171310915,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206051128,Albert Park,2021,2GMEL,4.6747,4675451.132721832,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206051129,Elwood,2021,2GMEL,2.553,2553507.8124464955,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206051130,Port Melbourne,2021,2GMEL,2.7894,2789070.115734684,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206051134,St Kilda East,2021,2GMEL,2.4135,2413147.024779577,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206051511,Port Melbourne Industrial,2021,2GMEL,7.6426,7642695.28550099,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206051512,South Melbourne,2021,2GMEL,1.8897,1889630.3745031357,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206051513,St Kilda - Central,2021,2GMEL,1.5375,1537613.7240889466,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206051514,St Kilda - West,2021,2GMEL,2.3637,2363735.134814597,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206061135,Armadale,2021,2GMEL,2.1835,2182790.1348123155,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206061136,Prahran - Windsor,2021,2GMEL,2.9053,2904489.4528979026,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206061138,Toorak,2021,2GMEL,4.3233,4323341.196810246,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206061515,South Yarra - North,2021,2GMEL,1.1696,1169588.1205543452,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206061516,South Yarra - South,2021,2GMEL,1.3475,1347806.6171579387,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206071139,Abbotsford,2021,2GMEL,1.7405,1740629.025377814,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206071140,Carlton North - Princes Hill,2021,2GMEL,2.3042,2304088.4046390904,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206071141,Collingwood,2021,2GMEL,1.2669,1267010.462939915,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206071142,Fitzroy,2021,2GMEL,1.3779,1377460.5795185543,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206071143,Fitzroy North,2021,2GMEL,2.5051,2504967.1995227817,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206071145,Clifton Hill - Alphington,2021,2GMEL,5.2089,5208342.060844936,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206071517,Richmond (South) - Cremorne,2021,2GMEL,4.2891,4288771.83495195,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+206071518,Richmond - North,2021,2GMEL,1.9233,1923595.3050105397,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207011146,Ashburton (Vic.),2021,2GMEL,2.8366,2836246.751335078,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207011147,Balwyn,2021,2GMEL,5.5851,5584971.600078988,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207011148,Balwyn North,2021,2GMEL,8.8492,8848160.56577819,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207011149,Camberwell,2021,2GMEL,7.2919,7290909.79760894,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207011150,Glen Iris - East,2021,2GMEL,5.7049,5704877.243684929,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207011152,Hawthorn East,2021,2GMEL,3.824,3824272.4912203653,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207011154,Kew East,2021,2GMEL,4.0154,4015302.364596197,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207011155,Surrey Hills (West) - Canterbury,2021,2GMEL,5.7026,5702012.308670495,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207011519,Hawthorn - North,2021,2GMEL,2.4558,2455658.4398440206,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207011520,Hawthorn - South,2021,2GMEL,3.2163,3216011.6442660163,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207011521,Kew - South,2021,2GMEL,4.3235,4322953.799970018,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207011522,Kew - West,2021,2GMEL,6.2106,6209705.989278751,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207021156,Bulleen,2021,2GMEL,6.6711,6670411.905845785,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207021157,Doncaster,2021,2GMEL,8.7738,8773244.517668,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207021159,Templestowe,2021,2GMEL,16.1176,16114902.619834172,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207021160,Templestowe Lower,2021,2GMEL,5.9386,5937488.674628687,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207021424,Doncaster East - North,2021,2GMEL,6.403,6402257.944830492,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207021425,Doncaster East - South,2021,2GMEL,4.7684,4767989.962844413,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207031161,Blackburn,2021,2GMEL,8.6076,8605918.863558155,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207031162,Blackburn South,2021,2GMEL,3.5966,3596190.1913425755,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207031163,Box Hill,2021,2GMEL,7.0123,7011467.635906093,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207031164,Box Hill North,2021,2GMEL,6.2087,6207573.86614349,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207031165,Burwood (Vic.),2021,2GMEL,5.0392,5038577.855604747,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207031166,Burwood East,2021,2GMEL,4.2629,4261720.373150725,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+207031167,Surrey Hills (East) - Mont Albert,2021,2GMEL,3.3279,3327567.6328410874,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208011168,Beaumaris,2021,2GMEL,5.9678,5967589.649324388,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208011169,Brighton (Vic.),2021,2GMEL,8.2004,8200203.057314385,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208011170,Brighton East,2021,2GMEL,5.6083,5607535.201830331,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208011171,Highett (West) - Cheltenham,2021,2GMEL,5.3198,5319200.7202402,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208011172,Hampton,2021,2GMEL,5.6847,5684605.55402354,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208011173,Sandringham - Black Rock,2021,2GMEL,6.4301,6429504.80195837,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208021174,Bentleigh - McKinnon,2021,2GMEL,6.2242,6224252.78533343,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208021176,Carnegie,2021,2GMEL,3.8045,3804359.9268902354,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208021177,Caulfield - North,2021,2GMEL,6.4189,6418842.188875705,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208021178,Caulfield - South,2021,2GMEL,4.7426,4742017.622300294,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208021179,Elsternwick,2021,2GMEL,2.8616,2861624.702217493,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208021180,Hughesdale,2021,2GMEL,2.0095,2009487.0673644086,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208021181,Murrumbeena,2021,2GMEL,2.5148,2514550.363971753,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208021182,Ormond - Glen Huntly,2021,2GMEL,2.9371,2936719.3976728893,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208021426,Bentleigh East - North,2021,2GMEL,4.5989,4598658.150537179,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208021427,Bentleigh East - South,2021,2GMEL,4.5882,4587620.401393411,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208031183,Aspendale Gardens - Waterways,2021,2GMEL,5.3073,5306508.0503522195,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208031184,Braeside,2021,2GMEL,9.0819,9080767.6009808,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208031185,Carrum - Patterson Lakes,2021,2GMEL,5.8242,5824096.498041001,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208031186,Chelsea - Bonbeach,2021,2GMEL,5.423,5422336.999055137,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208031187,Chelsea Heights,2021,2GMEL,3.1958,3195023.362950542,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208031188,Highett (East) - Cheltenham,2021,2GMEL,8.7376,8736083.505630568,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208031189,Edithvale - Aspendale,2021,2GMEL,5.1001,5099796.781421367,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208031190,Mentone,2021,2GMEL,4.45,4449167.635435694,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208031191,Moorabbin - Heatherton,2021,2GMEL,11.6997,11698837.531139705,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208031192,Moorabbin Airport,2021,2GMEL,3.0755,3075216.669536413,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208031193,Mordialloc - Parkdale,2021,2GMEL,7.9681,7967035.87698765,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208041194,Malvern - Glen Iris,2021,2GMEL,6.1552,6154948.306092753,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+208041195,Malvern East,2021,2GMEL,7.5666,7567251.841826231,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209011196,Bundoora - East,2021,2GMEL,4.0749,4074714.7799926545,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209011197,Greensborough,2021,2GMEL,10.0974,10095887.07484312,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209011198,Heidelberg - Rosanna,2021,2GMEL,6.3717,6371455.012317021,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209011199,Heidelberg West,2021,2GMEL,6.6912,6690936.112441852,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209011200,Ivanhoe,2021,2GMEL,5.0498,5049959.3658372825,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209011201,Ivanhoe East - Eaglemont,2021,2GMEL,4.2769,4277315.7401149655,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209011202,Montmorency - Briar Hill,2021,2GMEL,12.0278,12026295.755745396,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209011203,Viewbank - Yallambie,2021,2GMEL,10.2379,10237530.09346646,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209011204,Watsonia,2021,2GMEL,3.7857,3785228.2621721574,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209021205,Kingsbury,2021,2GMEL,9.0094,9008470.695915096,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209021428,Preston - East,2021,2GMEL,7.7457,7744420.942003213,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209021429,Preston - West,2021,2GMEL,3.5679,3567539.488779351,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209021523,Reservoir - North East,2021,2GMEL,4.788,4787793.841962125,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209021524,Reservoir - North West,2021,2GMEL,4.5297,4530057.533737241,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209021525,Reservoir - South East,2021,2GMEL,4.1783,4178369.9955098075,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209021526,Reservoir - South West,2021,2GMEL,5.6247,5624967.459710054,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209031209,Eltham,2021,2GMEL,19.4882,19484551.716349524,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209031210,Hurstbridge,2021,2GMEL,14.8421,14839304.97664026,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209031211,Kinglake,2021,2GMEL,319.504,319404469.4536734,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209031212,Panton Hill - St Andrews,2021,2GMEL,292.1978,292133467.9032173,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209031213,Plenty - Yarrambat,2021,2GMEL,29.117,29113397.13670872,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209031214,Research - North Warrandyte,2021,2GMEL,49.7946,49785384.17511963,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209031215,Wattle Glen - Diamond Creek,2021,2GMEL,26.8245,26820395.01049793,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041216,Bundoora - North,2021,2GMEL,4.715,4714039.568821731,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041217,Bundoora - West,2021,2GMEL,2.5601,2560522.990498909,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041220,Mill Park - North,2021,2GMEL,8.1362,8135139.547952602,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041221,Mill Park - South,2021,2GMEL,4.9298,4929577.491259919,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041223,Thomastown,2021,2GMEL,14.6852,14683708.886230096,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041224,Wallan,2021,2GMEL,507.7457,507704974.7410063,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041225,Whittlesea,2021,2GMEL,297.9798,297948222.76143056,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041431,Epping - East,2021,2GMEL,7.7691,7768401.630898746,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041432,Epping - South,2021,2GMEL,15.8714,15870886.224353513,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041433,Epping (Vic.) - West,2021,2GMEL,7.3573,7357188.948937592,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041435,South Morang - North,2021,2GMEL,13.7094,13708120.340915946,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041436,South Morang - South,2021,2GMEL,7.7445,7743972.713112275,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041437,Wollert,2021,2GMEL,53.892,53890011.71303226,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041527,Doreen - North,2021,2GMEL,9.4393,9438120.306053607,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041528,Doreen - South,2021,2GMEL,5.0223,5021685.579237294,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041529,Lalor - East,2021,2GMEL,3.3232,3322976.0288028726,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041530,Lalor - West,2021,2GMEL,8.7363,8736656.339012695,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041531,Mernda - North,2021,2GMEL,15.1961,15194393.236561406,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+209041532,Mernda - South,2021,2GMEL,8.6268,8626219.037421564,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210011226,Airport West,2021,2GMEL,3.7194,3720000.1603458016,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210011227,Essendon Airport,2021,2GMEL,3.3549,3355066.5942491945,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210011228,Keilor,2021,2GMEL,17.512,17513864.713791627,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210011230,Niddrie - Essendon West,2021,2GMEL,2.8027,2803158.859227845,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210011231,Strathmore,2021,2GMEL,4.1444,4144892.6911443905,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210011533,Avondale Heights,2021,2GMEL,5.4087,5408878.296055322,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210011534,Keilor East,2021,2GMEL,5.4828,5483820.138281094,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210021232,Gisborne,2021,2GMEL,211.057,211131505.33750132,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210021233,Macedon,2021,2GMEL,72.9902,73014883.97107753,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210021234,Riddells Creek,2021,2GMEL,83.3503,83370188.36358887,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210021235,Romsey,2021,2GMEL,624.7097,624814333.4874488,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210031236,Coburg North,2021,2GMEL,4.8779,4878153.304910326,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210031237,Fawkner,2021,2GMEL,5.0848,5084872.669514974,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210031439,Gowanbrae,2021,2GMEL,1.5225,1522773.1493211421,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210031440,Hadfield,2021,2GMEL,3.0502,3050365.389767584,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210031535,Glenroy - East,2021,2GMEL,6.2473,6247702.403900054,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210031536,Glenroy - West,2021,2GMEL,2.6109,2611095.7299408787,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210031537,Oak Park,2021,2GMEL,2.3533,2353830.8605503095,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210031538,Pascoe Vale,2021,2GMEL,4.631,4630118.611682812,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210041240,Sunbury,2021,2GMEL,129.5487,129569148.82732762,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210041539,Diggers Rest,2021,2GMEL,51.8922,51904065.29361066,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210041540,Sunbury - South,2021,2GMEL,41.4496,41457245.89878654,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210041541,Sunbury - West,2021,2GMEL,37.7941,37803114.09500551,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210051242,Broadmeadows,2021,2GMEL,8.8268,8826804.96406874,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210051243,Campbellfield - Coolaroo,2021,2GMEL,18.1867,18186770.268558096,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210051245,Gladstone Park - Westmeadows,2021,2GMEL,13.936,13937720.092398599,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210051246,Greenvale - Bulla,2021,2GMEL,95.906,95915621.42270541,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210051247,Meadow Heights,2021,2GMEL,4.6252,4625431.802630498,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210051248,Melbourne Airport,2021,2GMEL,30.3848,30387801.75659102,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210051250,Tullamarine,2021,2GMEL,3.8595,3859821.398602174,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210051441,Craigieburn - Central,2021,2GMEL,3.9685,3968562.485328337,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210051442,Craigieburn - North,2021,2GMEL,13.3514,13351986.745955193,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210051443,Craigieburn - South,2021,2GMEL,11.9142,11914524.854686527,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210051445,Mickleham - Yuroke,2021,2GMEL,70.8359,70839340.33547084,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210051542,Craigieburn - North West,2021,2GMEL,1.9198,1919668.6963246572,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210051543,Craigieburn - West,2021,2GMEL,4.089,4089633.5879550665,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210051544,Roxburgh Park (South) - Somerton,2021,2GMEL,8.8762,8876257.394236533,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+210051545,Roxburgh Park - North,2021,2GMEL,3.4138,3414268.7614240255,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211011251,Bayswater,2021,2GMEL,8.0437,8041862.153451531,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211011254,Knoxfield - Scoresby,2021,2GMEL,15.2651,15262104.990297183,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211011255,Lysterfield,2021,2GMEL,18.494,18489246.896974597,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211011256,Rowville - Central,2021,2GMEL,8.2003,8198601.271614133,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211011257,Rowville - North,2021,2GMEL,4.1688,4167579.6305844155,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211011258,Rowville - South,2021,2GMEL,9.3532,9351500.686197862,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211011259,Wantirna,2021,2GMEL,8.3064,8304688.523318087,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211011260,Wantirna South,2021,2GMEL,13.3559,13353313.851667484,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211011446,Boronia,2021,2GMEL,11.2631,11260795.394918421,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211011447,Ferntree Gully - North,2021,2GMEL,6.9851,6983567.774144074,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211011448,Ferntree Gully (South) - Upper Ferntree Gully,2021,2GMEL,9.1499,9148040.80622617,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211011449,The Basin,2021,2GMEL,5.7163,5714603.488166237,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211021261,Donvale - Park Orchards,2021,2GMEL,20.8028,20798856.760576025,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211021262,Warrandyte - Wonga Park,2021,2GMEL,45.7591,45749743.06997809,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211031263,Bayswater North,2021,2GMEL,9.909,9906917.335194785,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211031265,Croydon Hills - Warranwood,2021,2GMEL,9.492,9489999.53603233,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211031266,Ringwood,2021,2GMEL,9.9105,9908942.420793246,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211031267,Ringwood East,2021,2GMEL,9.3929,9390989.574092183,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211031268,Ringwood North,2021,2GMEL,4.7307,4729944.801691337,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211031450,Croydon - East,2021,2GMEL,8.0982,8096487.344050592,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211031451,Croydon - West,2021,2GMEL,6.7979,6796536.499701735,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211031452,Croydon South,2021,2GMEL,2.856,2855215.328699706,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211041269,Forest Hill,2021,2GMEL,4.0702,4069874.235308179,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211041270,Mitcham (Vic.),2021,2GMEL,6.6271,6625853.0202834755,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211041271,Nunawading,2021,2GMEL,5.0785,5077369.686351434,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211041272,Vermont,2021,2GMEL,4.6098,4608632.237059253,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211041273,Vermont South,2021,2GMEL,6.184,6182917.706101034,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211051274,Belgrave - Selby,2021,2GMEL,55.652,55635750.23177518,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211051275,Chirnside Park,2021,2GMEL,22.2024,22196963.389579233,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211051276,Healesville - Yarra Glen,2021,2GMEL,369.5236,369389871.4112492,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211051277,Kilsyth,2021,2GMEL,8.2426,8240125.443670158,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211051278,Lilydale - Coldstream,2021,2GMEL,109.3817,109348464.77770314,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211051279,Monbulk - Silvan,2021,2GMEL,68.5553,68531621.48514622,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211051280,Montrose,2021,2GMEL,10.5431,10540295.638982551,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211051281,Mooroolbark,2021,2GMEL,12.5434,12540577.964104895,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211051282,Mount Dandenong - Olinda,2021,2GMEL,81.8993,81875354.32504663,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211051283,Mount Evelyn,2021,2GMEL,16.9894,16984598.526512053,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211051284,Upwey - Tecoma,2021,2GMEL,8.8907,8888818.171763346,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211051285,Wandin - Seville,2021,2GMEL,111.7555,111716524.19325787,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+211051286,Yarra Valley,2021,2GMEL,729.7582,729416424.2360982,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212011289,Emerald - Cockatoo,2021,2GMEL,371.6241,371473321.7634766,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212011546,Beaconsfield - Officer,2021,2GMEL,33.2503,33240512.452327333,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212011547,Bunyip - Garfield,2021,2GMEL,365.9627,365796819.02159405,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212011548,Koo Wee Rup,2021,2GMEL,414.663,414496052.8254729,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212011549,Pakenham - North East,2021,2GMEL,18.929,18921723.835684564,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212011550,Pakenham - North West,2021,2GMEL,24.6776,24669135.952071026,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212011551,Pakenham - South East,2021,2GMEL,30.9414,30929071.899177656,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212011552,Pakenham - South West,2021,2GMEL,22.2782,22270203.382404696,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212021293,Berwick - North,2021,2GMEL,19.748,19742013.89935242,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212021295,Doveton,2021,2GMEL,5.1935,5192127.2514665425,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212021297,Hallam,2021,2GMEL,8.0565,8054544.526365474,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212021299,Narre Warren North,2021,2GMEL,34.4086,34399266.458361425,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212021453,Endeavour Hills - North,2021,2GMEL,14.4746,14471221.250897102,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212021454,Endeavour Hills - South,2021,2GMEL,5.5873,5586362.366270293,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212021455,Narre Warren - North East,2021,2GMEL,4.874,4872825.981389505,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212021456,Narre Warren - South West,2021,2GMEL,9.3054,9303106.641506337,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212021553,Berwick - South East,2021,2GMEL,9.8836,9881007.039636366,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212021554,Berwick - South West,2021,2GMEL,4.9713,4970234.444099293,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212031300,Cranbourne,2021,2GMEL,13.027,13023697.398300303,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212031303,Cranbourne South,2021,2GMEL,81.662,81641107.48166172,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212031304,Cranbourne West,2021,2GMEL,12.898,12895460.174072431,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212031306,Lynbrook - Lyndhurst,2021,2GMEL,7.3583,7356633.171504898,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212031308,Pearcedale - Tooradin,2021,2GMEL,98.5112,98485395.43066853,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212031457,Narre Warren South - East,2021,2GMEL,6.2204,6218866.661218055,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212031458,Narre Warren South - West,2021,2GMEL,6.7771,6775130.998001967,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212031555,Clyde North - North,2021,2GMEL,6.8833,6881370.043268766,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212031556,Clyde North - South,2021,2GMEL,19.6543,19648386.00077177,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212031557,Cranbourne East - North,2021,2GMEL,11.0254,11022668.814463556,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212031558,Cranbourne East - South,2021,2GMEL,5.3272,5325931.880879202,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212031559,Cranbourne North - East,2021,2GMEL,5.4545,5453390.445221567,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212031560,Cranbourne North - West,2021,2GMEL,4.7849,4783872.223280327,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212031561,Hampton Park - East,2021,2GMEL,8.2189,8217005.334827474,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212031562,Hampton Park - West,2021,2GMEL,5.1234,5122393.363632041,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212041309,Clarinda - Oakleigh South,2021,2GMEL,6.3227,6322034.527187906,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212041310,Clayton South,2021,2GMEL,7.938,7937506.5910541555,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212041312,Dandenong North,2021,2GMEL,9.459,9456414.846497035,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212041313,Dingley Village,2021,2GMEL,7.2437,7242515.485504768,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212041316,Noble Park North,2021,2GMEL,3.7574,3757144.679628116,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212041317,Springvale,2021,2GMEL,11.1052,11104062.178506278,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212041318,Springvale South,2021,2GMEL,4.56,4559131.652132633,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212041459,Noble Park - East,2021,2GMEL,3.7671,3767025.8586455216,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212041460,Noble Park - West,2021,2GMEL,4.7946,4792975.1873054765,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212041563,Dandenong - North,2021,2GMEL,8.041,8039762.892151254,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212041564,Dandenong - South,2021,2GMEL,53.7832,53773201.856598176,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212041565,Keysborough - North,2021,2GMEL,6.6053,6603806.914921744,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212041566,Keysborough - South,2021,2GMEL,23.6738,23671042.1403963,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212051319,Ashwood - Chadstone,2021,2GMEL,6.7088,6708074.779365226,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212051321,Glen Waverley - East,2021,2GMEL,9.1645,9162407.412959445,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212051322,Glen Waverley - West,2021,2GMEL,7.6758,7674462.007852851,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212051323,Mount Waverley - North,2021,2GMEL,6.484,6483022.335140424,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212051324,Mount Waverley - South,2021,2GMEL,8.7006,8699887.494946865,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212051325,Mulgrave,2021,2GMEL,10.7189,10716830.107818706,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212051326,Oakleigh - Huntingdale,2021,2GMEL,10.1702,10168978.648373974,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212051327,Wheelers Hill,2021,2GMEL,10.4394,10437007.041966898,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212051567,Clayton (North) - Notting Hill,2021,2GMEL,5.2293,5228754.452727938,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+212051568,Clayton - Central,2021,2GMEL,4.1819,4181183.760136116,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213011328,Ardeer - Albion,2021,2GMEL,4.5883,4588826.328743671,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213011329,Cairnlea,2021,2GMEL,4.4061,4406408.3875599755,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213011331,Delahey,2021,2GMEL,3.5055,3506016.210550076,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213011332,Keilor Downs,2021,2GMEL,7.6597,7660695.621441732,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213011333,Kings Park (Vic.),2021,2GMEL,4.4323,4432641.593629854,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213011334,St Albans - North,2021,2GMEL,6.5225,6523076.4812427275,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213011335,St Albans - South,2021,2GMEL,6.2647,6265971.11803749,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213011336,Sunshine,2021,2GMEL,4.732,4732315.184077983,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213011337,Sunshine North,2021,2GMEL,8.0239,8023690.3653401295,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213011338,Sunshine West,2021,2GMEL,12.9688,12970421.138334455,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213011339,Sydenham,2021,2GMEL,3.9479,3948924.1666261167,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213011340,Taylors Lakes,2021,2GMEL,18.4632,18465492.494071234,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213011569,Deer Park,2021,2GMEL,8.0769,8077725.935265062,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213011570,Derrimut,2021,2GMEL,13.2579,13259618.43317424,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213021341,Altona,2021,2GMEL,17.6826,17684794.42652539,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213021342,Altona Meadows,2021,2GMEL,10.5419,10543500.001366876,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213021343,Altona North,2021,2GMEL,16.1844,16185856.319204617,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213021344,Newport,2021,2GMEL,8.8407,8840551.021927781,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213021345,Seabrook,2021,2GMEL,1.6199,1620150.0770981975,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213021346,Williamstown,2021,2GMEL,7.3463,7347310.7440506825,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213031347,Braybrook,2021,2GMEL,7.4843,7485450.562735516,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213031348,Footscray,2021,2GMEL,4.9671,4967394.437054503,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213031349,Maribyrnong,2021,2GMEL,5.4934,5493483.703272544,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213031350,Seddon - Kingsville,2021,2GMEL,1.6803,1680157.9926825291,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213031351,West Footscray - Tottenham,2021,2GMEL,5.9807,5981449.977021078,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213031352,Yarraville,2021,2GMEL,5.62,5620757.364758102,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213041353,Bacchus Marsh,2021,2GMEL,196.2983,196385569.86960134,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213041358,Melton West,2021,2GMEL,24.2021,24210816.92712684,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213041359,Rockbank - Mount Cottrell,2021,2GMEL,125.7609,125791166.58341536,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213041360,Taylors Hill,2021,2GMEL,5.9679,5968460.554672035,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213041461,Burnside,2021,2GMEL,2.552,2552522.0304505527,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213041462,Burnside Heights,2021,2GMEL,1.9954,1995428.4303387408,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213041463,Caroline Springs,2021,2GMEL,6.9526,6953295.985445503,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213041571,Brookfield,2021,2GMEL,10.6929,10696855.112335242,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213041572,Cobblebank - Strathtulloh,2021,2GMEL,19.7593,19765235.704986326,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213041573,Eynesbury - Exford,2021,2GMEL,69.4885,69514386.66108444,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213041574,Fraser Rise - Plumpton,2021,2GMEL,58.7312,58744610.45831718,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213041575,Hillside,2021,2GMEL,7.8166,7818009.347694176,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213041576,Kurunjang - Toolern Vale,2021,2GMEL,120.8438,120881565.03128147,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213041577,Melton,2021,2GMEL,9.8614,9864509.210315987,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213041578,Melton South - Weir Views,2021,2GMEL,11.0206,11024464.10683816,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051361,Hoppers Crossing - North,2021,2GMEL,10.9136,10915489.95541416,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051362,Hoppers Crossing - South,2021,2GMEL,7.0114,7012411.291086383,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051363,Laverton,2021,2GMEL,22.2451,22247857.523458567,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051368,Werribee - South,2021,2GMEL,114.0332,114061568.75474545,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051464,Point Cook - East,2021,2GMEL,19.0354,19038876.077667378,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051466,Point Cook - South,2021,2GMEL,9.4219,9423764.503272457,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051467,Werribee - East,2021,2GMEL,7.7569,7758550.952581476,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051468,Werribee - West,2021,2GMEL,127.6631,127706792.79712063,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051579,Manor Lakes - Quandong,2021,2GMEL,72.0339,72061457.11977044,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051580,Point Cook - North East,2021,2GMEL,5.5527,5553754.333189792,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051581,Point Cook - North West,2021,2GMEL,2.938,2938320.8068420514,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051582,Tarneit (West) - Mount Cottrell,2021,2GMEL,36.7062,36716040.969700664,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051583,Tarneit - Central,2021,2GMEL,7.9607,7962262.636681405,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051584,Tarneit - North,2021,2GMEL,14.3452,14348846.52801175,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051585,Tarneit - South,2021,2GMEL,3.1301,3131081.569716801,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051586,Truganina - North,2021,2GMEL,17.5191,17522625.93532779,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051587,Truganina - South East,2021,2GMEL,4.2675,4268579.814583367,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051588,Truganina - South West,2021,2GMEL,5.3778,5378279.992549598,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051589,Wyndham Vale - North,2021,2GMEL,51.2497,51266693.954419345,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+213051590,Wyndham Vale - South,2021,2GMEL,4.9575,4958582.026600572,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214011370,Carrum Downs,2021,2GMEL,20.308,20304377.744867586,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214011371,Frankston,2021,2GMEL,11.6244,11623324.516726205,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214011372,Frankston North,2021,2GMEL,13.2382,13236428.300387546,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214011373,Frankston South,2021,2GMEL,14.5603,14558506.377721045,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214011374,Langwarrin,2021,2GMEL,37.6199,37612740.48261166,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214011375,Seaford (Vic.),2021,2GMEL,12.4321,12429921.13927914,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214011376,Skye - Sandhurst,2021,2GMEL,19.8152,19811442.200921636,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214021377,Dromana,2021,2GMEL,45.0575,45055849.64248765,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214021378,Flinders,2021,2GMEL,287.3793,287365393.9417798,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214021379,Hastings - Somers,2021,2GMEL,108.8841,108866920.37225933,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214021381,Mount Eliza,2021,2GMEL,23.2077,23205769.817743734,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214021382,Mount Martha,2021,2GMEL,30.2094,30207786.888713147,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214021383,Point Nepean,2021,2GMEL,67.1876,67193972.17514583,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214021384,Rosebud - McCrae,2021,2GMEL,23.7957,23795705.43288063,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214021385,Somerville,2021,2GMEL,117.354,117335417.57596211,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214021591,Mornington - East,2021,2GMEL,14.6884,14687577.723222086,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021
+214021592,Mornington - West,2021,2GMEL,6.4044,6403891.050654103,EPSG:7855,1,Spatial Greater Melbourne SA2 with positive 2025 ERP; individual indicators may be unavailable.,abs-sa2-2021

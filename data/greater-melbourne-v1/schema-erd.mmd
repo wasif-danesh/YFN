@@ -1,0 +1,96 @@
+erDiagram
+    direction LR
+    dataSources["data_sources"] {
+        TEXT source_id PK
+        TEXT publisher
+        TEXT dataset_name
+        TEXT reference_period
+        TEXT observation_date "Nullable"
+        TEXT licence
+    }
+    sourceFiles["source_files"] {
+        TEXT file_id PK
+        TEXT source_id FK
+        TEXT resource_url
+        TEXT sha256
+        TEXT downloaded_at
+    }
+    areas {
+        TEXT sa2_code PK "2021 edition; nine-digit text"
+        TEXT name
+        INTEGER boundary_year
+        TEXT gccsa_code
+        INTEGER is_comparable "Sample positive-population rule"
+        REAL calculated_area_m2
+        TEXT source_id FK
+    }
+    indicators {
+        TEXT indicator_key PK
+        TEXT label
+        TEXT unit
+    }
+    methods {
+        TEXT method_id PK
+        TEXT approval_status
+        TEXT definition
+    }
+    observations {
+        TEXT sa2_code PK, FK
+        TEXT indicator_key PK, FK
+        REAL raw_value "Nullable"
+        REAL score "Nullable; withheld in this sample"
+        TEXT quality_status
+        TEXT quality_note
+        REAL coverage_fraction "Nullable; unknown differs from zero"
+        TEXT reference_period
+        TEXT method_id FK
+    }
+    populationHistory["population_history"] {
+        TEXT sa2_code PK, FK
+        INTEGER year PK
+        INTEGER population "Nullable; zero preserved"
+        TEXT revision_status
+        TEXT source_id FK
+        TEXT source_locator
+    }
+    observationSources["observation_sources"] {
+        TEXT sa2_code PK, FK
+        TEXT indicator_key PK, FK
+        TEXT source_id PK, FK
+        TEXT role PK
+    }
+    observationComponents["observation_components"] {
+        TEXT sa2_code PK, FK
+        TEXT indicator_key PK, FK
+        TEXT component_key PK
+        REAL value "Nullable"
+        TEXT unit
+        TEXT reference_period
+        TEXT source_id FK
+    }
+    areaDiagnostics["area_diagnostics"] {
+        TEXT sa2_code PK, FK
+        REAL ptal_coverage_fraction
+        INTEGER park_included_feature_count
+        REAL park_union_area_m2
+        REAL park_overlap_removed_m2
+        REAL open_space_inventory_coverage_fraction "Unknown; null"
+    }
+    sampleRelease["sample_release"] {
+        TEXT release_id PK
+        TEXT data_mode "Real"
+        INTEGER publication_ready "False"
+        TEXT manifest_json "Applies to this whole database file"
+    }
+    dataSources ||--o{ sourceFiles : contains
+    dataSources ||..o{ areas : defines
+    areas ||--o{ observations : has
+    indicators ||--o{ observations : identifies
+    methods ||..o{ observations : calculates
+    areas ||--o{ populationHistory : has
+    dataSources ||..o{ populationHistory : estimates
+    observations ||--o{ observationSources : cites
+    dataSources ||--o{ observationSources : supports
+    observations ||--o{ observationComponents : derives_from
+    dataSources ||..o{ observationComponents : supplies
+    areas ||--o| areaDiagnostics : has

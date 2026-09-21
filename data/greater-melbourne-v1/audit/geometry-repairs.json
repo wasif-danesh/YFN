@@ -1,0 +1,56 @@
+[
+  {
+    "source": "open-space",
+    "feature_id": "9800",
+    "area_before_m2": 10007.936631996059,
+    "area_after_m2": 10007.936631996054
+  },
+  {
+    "source": "open-space",
+    "feature_id": "9923",
+    "area_before_m2": 35331.55561250772,
+    "area_after_m2": 35331.55561250773
+  },
+  {
+    "source": "open-space",
+    "feature_id": "12663",
+    "area_before_m2": 27457.315085365506,
+    "area_after_m2": 27457.315085365517
+  },
+  {
+    "source": "open-space",
+    "feature_id": "18207",
+    "area_before_m2": 1770.1808461221974,
+    "area_after_m2": 1770.180846122198
+  },
+  {
+    "source": "open-space",
+    "feature_id": "20200",
+    "area_before_m2": 20441.758946671926,
+    "area_after_m2": 20441.75894667192
+  },
+  {
+    "source": "open-space",
+    "feature_id": "28805",
+    "area_before_m2": 37615.377910981,
+    "area_after_m2": 37615.37791098102
+  },
+  {
+    "source": "open-space",
+    "feature_id": "36059",
+    "area_before_m2": 28544.88819539294,
+    "area_after_m2": 28544.88819539295
+  },
+  {
+    "source": "open-space",
+    "feature_id": "38133",
+    "area_before_m2": 12235.733900636535,
+    "area_after_m2": 12235.733842041082
+  },
+  {
+    "source": "open-space",
+    "feature_id": "38640",
+    "area_before_m2": 251625.77960790318,
+    "area_after_m2": 251625.77960790327
+  }
+]

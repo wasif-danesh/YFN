@@ -1,0 +1,13 @@
+{
+  "source_url": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files/SA2_2021_AUST_SHP_GDA2020.zip",
+  "source_sha256": "c4dc5bac209f01177eaa0715d27f32cdb09ab5784fb82979741556d2f8e6d148",
+  "licence": "CC BY 4.0",
+  "attribution": "Australian Bureau of Statistics, ASGS Edition 3, 2021 SA2 boundaries",
+  "boundary_year": 2021,
+  "feature_count": 361,
+  "eligible_count": 359,
+  "output_crs": "EPSG:4326",
+  "simplification": "Shapely coverage_simplify, tolerance 30 in EPSG:7855; shared edges preserved. Display only, never use for indicator calculations.",
+  "sha256": "5587fd277f1613fd68d868d553a41cc3ce9ab9d99051d2e7ac7418c1c3ba4fe6",
+  "bytes": 1411017
+}

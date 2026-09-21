@@ -1,0 +1,5 @@
+indicator_key,label,unit
+rent_weekly,Median weekly rent reported in 2021 Census,AUD/week
+transport_access,Area-weighted morning access index (sample method),access_index
+population_growth,Estimated population change 2020-2025,percent
+green_space_per_resident,Selected public open space per resident (sample filter),m2/person

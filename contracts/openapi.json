@@ -1,0 +1,925 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Your Friendly Neighbourhood API",
+    "description": "Read-only Greater Melbourne data. Spatial measures remain provisional; inspect meta and quality notes.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "summary": "Health",
+        "description": "Technical readiness only; publication approval is reported separately in data meta.",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/status": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "summary": "Health",
+        "description": "Technical readiness only; publication approval is reported separately in data meta.",
+        "operationId": "health_api_v1_status_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/areas": {
+      "get": {
+        "tags": [
+          "Areas"
+        ],
+        "summary": "Search Areas",
+        "description": "Search comparable official SA2 names; an empty query lists names alphabetically.",
+        "operationId": "search_areas_api_v1_areas_get",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 100,
+              "default": "",
+              "title": "Query"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 50,
+              "minimum": 1,
+              "default": 20,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/compare": {
+      "get": {
+        "tags": [
+          "Areas"
+        ],
+        "summary": "Compare Areas",
+        "description": "Compare two or three distinct eligible codes, preserving the requested order.",
+        "operationId": "compare_areas_api_v1_compare_get",
+        "parameters": [
+          {
+            "name": "sa2",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 29,
+              "title": "Sa2"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompareResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v1/areas/{sa2_code}": {
+      "get": {
+        "tags": [
+          "Areas"
+        ],
+        "summary": "Area Details",
+        "description": "Area indicators and annual population counts, including source and revision notes.",
+        "operationId": "area_details_api_v1_areas__sa2_code__get",
+        "parameters": [
+          {
+            "name": "sa2_code",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]{9}$",
+              "title": "Sa2 Code"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetailsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Area": {
+        "properties": {
+          "sa2_code": {
+            "type": "string",
+            "pattern": "^[0-9]{9}$",
+            "title": "Sa2 Code"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "boundary_year": {
+            "type": "integer",
+            "title": "Boundary Year"
+          },
+          "geography_type": {
+            "type": "string",
+            "const": "SA2",
+            "title": "Geography Type",
+            "default": "SA2"
+          },
+          "is_comparable": {
+            "type": "boolean",
+            "title": "Is Comparable"
+          },
+          "eligibility_note": {
+            "type": "string",
+            "title": "Eligibility Note"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "sa2_code",
+          "name",
+          "boundary_year",
+          "is_comparable",
+          "eligibility_note"
+        ],
+        "title": "Area"
+      },
+      "AreaIndicators": {
+        "properties": {
+          "area": {
+            "$ref": "#/components/schemas/Area"
+          },
+          "indicators": {
+            "items": {
+              "$ref": "#/components/schemas/IndicatorValue"
+            },
+            "type": "array",
+            "title": "Indicators"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "area",
+          "indicators"
+        ],
+        "title": "AreaIndicators"
+      },
+      "CompareResponse": {
+        "properties": {
+          "areas": {
+            "items": {
+              "$ref": "#/components/schemas/AreaIndicators"
+            },
+            "type": "array",
+            "title": "Areas"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "areas",
+          "meta"
+        ],
+        "title": "CompareResponse"
+      },
+      "DetailsResponse": {
+        "properties": {
+          "area": {
+            "$ref": "#/components/schemas/Area"
+          },
+          "indicators": {
+            "items": {
+              "$ref": "#/components/schemas/IndicatorValue"
+            },
+            "type": "array",
+            "title": "Indicators"
+          },
+          "population_history": {
+            "items": {
+              "$ref": "#/components/schemas/PopulationPoint"
+            },
+            "type": "array",
+            "title": "Population History"
+          },
+          "population_sources": {
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "type": "array",
+            "title": "Population Sources"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "area",
+          "indicators",
+          "population_history",
+          "population_sources",
+          "meta"
+        ],
+        "title": "DetailsResponse"
+      },
+      "Error": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "Error"
+      },
+      "ErrorResponse": {
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/Error"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "title": "ErrorResponse"
+      },
+      "Geography": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "SA2",
+            "title": "Type",
+            "default": "SA2"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "boundary_year": {
+            "type": "integer",
+            "title": "Boundary Year"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "code",
+          "boundary_year"
+        ],
+        "title": "Geography"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "ok",
+            "title": "Status",
+            "default": "ok"
+          },
+          "database": {
+            "type": "string",
+            "const": "ready",
+            "title": "Database",
+            "default": "ready"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "HealthResponse"
+      },
+      "IndicatorSource": {
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "title": "Source Id"
+          },
+          "publisher": {
+            "type": "string",
+            "title": "Publisher"
+          },
+          "dataset_name": {
+            "type": "string",
+            "title": "Dataset Name"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url"
+          },
+          "reference_period": {
+            "type": "string",
+            "title": "Reference Period"
+          },
+          "boundary_year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Boundary Year"
+          },
+          "observation_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observation Date"
+          },
+          "licence": {
+            "type": "string",
+            "title": "Licence"
+          },
+          "limitation": {
+            "type": "string",
+            "title": "Limitation"
+          },
+          "roles": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Roles"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "source_id",
+          "publisher",
+          "dataset_name",
+          "url",
+          "reference_period",
+          "boundary_year",
+          "observation_date",
+          "licence",
+          "limitation",
+          "roles"
+        ],
+        "title": "IndicatorSource"
+      },
+      "IndicatorValue": {
+        "properties": {
+          "key": {
+            "type": "string",
+            "enum": [
+              "rent_weekly",
+              "transport_access",
+              "population_growth",
+              "green_space_per_resident"
+            ],
+            "title": "Key"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "unit": {
+            "type": "string",
+            "title": "Unit"
+          },
+          "raw_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Raw Value"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 100.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "rating": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rating"
+          },
+          "reference_period": {
+            "type": "string",
+            "title": "Reference Period"
+          },
+          "start_year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start Year"
+          },
+          "end_year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End Year"
+          },
+          "method_version": {
+            "type": "string",
+            "title": "Method Version"
+          },
+          "method_status": {
+            "type": "string",
+            "enum": [
+              "source_definition",
+              "sample_only"
+            ],
+            "title": "Method Status"
+          },
+          "explanation": {
+            "type": "string",
+            "title": "Explanation"
+          },
+          "geography": {
+            "$ref": "#/components/schemas/Geography"
+          },
+          "quality": {
+            "$ref": "#/components/schemas/Quality"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/IndicatorSource"
+            },
+            "type": "array",
+            "title": "Sources"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "key",
+          "label",
+          "unit",
+          "raw_value",
+          "score",
+          "rating",
+          "reference_period",
+          "start_year",
+          "end_year",
+          "method_version",
+          "method_status",
+          "explanation",
+          "geography",
+          "quality",
+          "sources"
+        ],
+        "title": "IndicatorValue"
+      },
+      "Meta": {
+        "properties": {
+          "data_mode": {
+            "type": "string",
+            "const": "real",
+            "title": "Data Mode"
+          },
+          "data_version": {
+            "type": "string",
+            "title": "Data Version"
+          },
+          "method_version": {
+            "type": "string",
+            "title": "Method Version"
+          },
+          "boundary_year": {
+            "type": "integer",
+            "title": "Boundary Year"
+          },
+          "publication_ready": {
+            "type": "boolean",
+            "title": "Publication Ready"
+          },
+          "benchmark_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Benchmark Count"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "data_mode",
+          "data_version",
+          "method_version",
+          "boundary_year",
+          "publication_ready",
+          "benchmark_count"
+        ],
+        "title": "Meta"
+      },
+      "PopulationPoint": {
+        "properties": {
+          "year": {
+            "type": "integer",
+            "title": "Year"
+          },
+          "population": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Population"
+          },
+          "reference_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Reference Date"
+          },
+          "revision_status": {
+            "type": "string",
+            "enum": [
+              "final",
+              "revised",
+              "preliminary"
+            ],
+            "title": "Revision Status"
+          },
+          "source_id": {
+            "type": "string",
+            "title": "Source Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "year",
+          "population",
+          "reference_date",
+          "revision_status",
+          "source_id"
+        ],
+        "title": "PopulationPoint"
+      },
+      "Quality": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "available",
+              "limited",
+              "unavailable"
+            ],
+            "title": "Status"
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason"
+          },
+          "coverage_fraction": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Coverage Fraction"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "reason",
+          "coverage_fraction"
+        ],
+        "title": "Quality"
+      },
+      "SearchResponse": {
+        "properties": {
+          "areas": {
+            "items": {
+              "$ref": "#/components/schemas/Area"
+            },
+            "type": "array",
+            "title": "Areas"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "areas",
+          "meta"
+        ],
+        "title": "SearchResponse"
+      },
+      "Source": {
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "title": "Source Id"
+          },
+          "publisher": {
+            "type": "string",
+            "title": "Publisher"
+          },
+          "dataset_name": {
+            "type": "string",
+            "title": "Dataset Name"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url"
+          },
+          "reference_period": {
+            "type": "string",
+            "title": "Reference Period"
+          },
+          "boundary_year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Boundary Year"
+          },
+          "observation_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observation Date"
+          },
+          "licence": {
+            "type": "string",
+            "title": "Licence"
+          },
+          "limitation": {
+            "type": "string",
+            "title": "Limitation"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "source_id",
+          "publisher",
+          "dataset_name",
+          "url",
+          "reference_period",
+          "boundary_year",
+          "observation_date",
+          "licence",
+          "limitation"
+        ],
+        "title": "Source"
+      }
+    }
+  }
+}

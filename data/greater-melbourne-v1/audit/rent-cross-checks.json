@@ -1,0 +1,128 @@
+[
+  {
+    "sa2_code": "206011106",
+    "datapack_rent_token": "421",
+    "quickstats_rent": 421,
+    "quickstats_status": "published_median",
+    "snapshot_file": "quickstats-206011106.html",
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/206011106",
+    "result": "match"
+  },
+  {
+    "sa2_code": "206041117",
+    "datapack_rent_token": "365",
+    "quickstats_rent": 365,
+    "quickstats_status": "published_median",
+    "snapshot_file": "quickstats-206041117.html",
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/206041117",
+    "result": "match"
+  },
+  {
+    "sa2_code": "206041127",
+    "datapack_rent_token": "0",
+    "quickstats_rent": null,
+    "quickstats_status": "no_or_very_low_census_population",
+    "snapshot_file": "quickstats-206041127.html",
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/206041127",
+    "result": "zero_withheld_consistent_with_no_population_notice"
+  },
+  {
+    "sa2_code": "206041507",
+    "datapack_rent_token": "0",
+    "quickstats_rent": null,
+    "quickstats_status": "no_or_very_low_census_population",
+    "snapshot_file": "quickstats-206041507.html",
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/206041507",
+    "result": "zero_withheld_consistent_with_no_population_notice"
+  },
+  {
+    "sa2_code": "207011155",
+    "datapack_rent_token": "475",
+    "quickstats_rent": 475,
+    "quickstats_status": "published_median",
+    "snapshot_file": "quickstats-207011155.html",
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/207011155",
+    "result": "match"
+  },
+  {
+    "sa2_code": "209021524",
+    "datapack_rent_token": "371",
+    "quickstats_rent": 371,
+    "quickstats_status": "published_median",
+    "snapshot_file": "quickstats-209021524.html",
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/209021524",
+    "result": "match"
+  },
+  {
+    "sa2_code": "210011227",
+    "datapack_rent_token": "0",
+    "quickstats_rent": null,
+    "quickstats_status": "no_or_very_low_census_population",
+    "snapshot_file": "quickstats-210011227.html",
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/210011227",
+    "result": "zero_withheld_consistent_with_no_population_notice"
+  },
+  {
+    "sa2_code": "210051442",
+    "datapack_rent_token": "371",
+    "quickstats_rent": 371,
+    "quickstats_status": "published_median",
+    "snapshot_file": "quickstats-210051442.html",
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/210051442",
+    "result": "match"
+  },
+  {
+    "sa2_code": "212021454",
+    "datapack_rent_token": "383",
+    "quickstats_rent": 383,
+    "quickstats_status": "published_median",
+    "snapshot_file": "quickstats-212021454.html",
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/212021454",
+    "result": "match"
+  },
+  {
+    "sa2_code": "212051567",
+    "datapack_rent_token": "380",
+    "quickstats_rent": 380,
+    "quickstats_status": "published_median",
+    "snapshot_file": "quickstats-212051567.html",
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/212051567",
+    "result": "match"
+  },
+  {
+    "sa2_code": "212051568",
+    "datapack_rent_token": "401",
+    "quickstats_rent": 401,
+    "quickstats_status": "published_median",
+    "snapshot_file": "quickstats-212051568.html",
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/212051568",
+    "result": "match"
+  },
+  {
+    "sa2_code": "213021344",
+    "datapack_rent_token": "460",
+    "quickstats_rent": 460,
+    "quickstats_status": "published_median",
+    "snapshot_file": "quickstats-213021344.html",
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/213021344",
+    "result": "match"
+  },
+  {
+    "sa2_code": "213031348",
+    "datapack_rent_token": "355",
+    "quickstats_rent": 355,
+    "quickstats_status": "published_median",
+    "snapshot_file": "quickstats-213031348.html",
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/213031348",
+    "result": "match"
+  },
+  {
+    "sa2_code": "214021592",
+    "datapack_rent_token": "410",
+    "quickstats_rent": 410,
+    "quickstats_status": "published_median",
+    "snapshot_file": "quickstats-214021592.html",
+    "url": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/214021592",
+    "result": "match"
+  }
+]

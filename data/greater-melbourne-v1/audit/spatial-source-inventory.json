@@ -1,0 +1,8 @@
+{
+  "ptal_unique_features": 360662,
+  "open_space_unique_features": 38810,
+  "ptal_counts_stable": true,
+  "park_id_inventory_stable": true,
+  "no_duplicate_ids": true,
+  "all_source_geometries_present_and_valid_after_documented_repairs": true
+}
