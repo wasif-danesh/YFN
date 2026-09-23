@@ -28,6 +28,9 @@ test('complete comparison links to population history and restores selection aft
   await expect(
     page.getByRole('heading', { name: 'Carlton', exact: true }),
   ).toBeVisible()
+  await expect(
+    page.getByRole('link', { name: 'API test console' }),
+  ).toHaveCount(0)
   await expect(page.locator('.population-table')).toContainText('25,267')
   await expect(page.locator('.population-summary')).toContainText('4,402')
   await expect(page.locator('.population-table')).toContainText('preliminary')
@@ -51,6 +54,9 @@ test('complete comparison links to population history and restores selection aft
     .click()
   await expect(page.locator('.comparison-table')).toContainText('Footscray')
   expect(new URL(page.url()).searchParams.get('sa2')).toBe(selection)
+  // With 2+ areas already selected, the search/map panel starts collapsed
+  // to a compact chip bar so the comparison sits above the fold.
+  await page.getByRole('button', { name: 'Edit areas' }).click()
   await page.getByRole('button', { name: 'Add a third area' }).click()
   await expect(page.getByRole('combobox')).toBeFocused()
   await page.getByRole('combobox').fill('clayton')

@@ -70,18 +70,31 @@ async function load() {
     if (!disposed && current === revision) loading.value = false
   }
 }
+const activeCode = ref(null)
+// The search/map panel takes real estate that pushes the comparison below
+// the fold. Once an area is picked, collapse it to a compact chip bar by
+// default; "Edit areas" re-expands it. Only stays open with nothing picked
+// yet, since that's when the panel is the only thing to interact with.
+const panelOpen = ref(codes.value.length === 0)
+watch(
+  () => codes.value.length,
+  (length, previous) => {
+    if (length >= 1 && previous === 0) panelOpen.value = false
+    if (length === 0) panelOpen.value = true
+  },
+)
 async function add(area) {
-  if (
-    codes.value.length >= 3 ||
-    codes.value.includes(area.sa2_code) ||
-    !area.is_comparable
-  )
+  if (codes.value.includes(area.sa2_code)) {
+    activeCode.value = area.sa2_code
     return
+  }
+  if (codes.value.length >= 3 || !area.is_comparable) return
   knownAreas.value[area.sa2_code] = area.name
   await router.push({
     path: '/compare',
     query: { sa2: [...codes.value, area.sa2_code].join(',') },
   })
+  activeCode.value = area.sa2_code
   message.value = `${area.name} added. ${codes.value.length} of 3 areas selected.`
   await nextTick()
   // Adding a third removes the search control; move focus to a persistent heading.
@@ -95,6 +108,7 @@ async function remove(code) {
     path: '/compare',
     query: remaining.length ? { sa2: remaining.join(',') } : {},
   })
+  activeCode.value = remaining.at(-1) || null
   message.value = `${name} removed. ${remaining.length} of 3 areas selected.`
   await nextTick()
   search.value?.focusInput()
@@ -119,29 +133,78 @@ onBeforeUnmount(() => {
         <h1>Compare Melbourne areas</h1>
         <p>See how two or three areas differ across the same four measures.</p>
       </section>
-      <section
-        class="comparison-controls completed-controls"
-        aria-labelledby="selection-title"
-      >
-        <h2 id="selection-title" tabindex="-1">
-          {{
-            codes.length === 1
-              ? 'Add another area to compare'
-              : 'Choose your areas'
-          }}
-        </h2>
-        <AreaSearch
-          v-if="codes.length < 3"
-          ref="search"
-          id="compare-search"
-          label="Add an area"
-          :api-base="config.public.apiBase"
-          :excluded="codes"
-          @select="add"
-        />
-        <p v-else class="selection-limit">
-          Three areas selected. Remove one to choose another.
-        </p>
+      <div v-if="panelOpen" class="explore-panel">
+        <section
+          class="comparison-controls completed-controls search-panel"
+          aria-labelledby="selection-title"
+        >
+          <div class="panel-heading-row">
+            <h2 id="selection-title" tabindex="-1">
+              {{
+                codes.length === 1
+                  ? 'Add another area to compare'
+                  : 'Choose your areas'
+              }}
+            </h2>
+            <button
+              v-if="codes.length >= 1"
+              class="text-button icon-button"
+              aria-label="Collapse and show comparison"
+              @click="panelOpen = false"
+            >
+              Collapse <SiteIcon name="chevron-up" />
+            </button>
+          </div>
+          <AreaSearch
+            v-if="codes.length < 3"
+            ref="search"
+            id="compare-search"
+            label="Add an area"
+            :api-base="config.public.apiBase"
+            :excluded="codes"
+            @select="add"
+          />
+          <p v-else class="selection-limit">
+            Three areas selected. Remove one to choose another.
+          </p>
+          <div class="area-chips">
+            <button
+              v-for="code in codes"
+              :key="code"
+              @click="remove(code)"
+              :aria-label="`Remove ${knownAreas[code] || code}`"
+            >
+              {{ knownAreas[code] || code }}<SiteIcon name="close" /></button
+            ><button
+              v-if="codes.length > 0 && codes.length < 3"
+              class="add-another"
+              @click="search?.focusInput()"
+            >
+              + {{
+                codes.length === 2 ? 'Add a third area' : 'Add another area'
+              }}
+            </button>
+          </div>
+          <div class="selection-summary">
+            <span>{{ codes.length }} of 3 areas selected</span>
+          </div>
+          <p class="sr-only" role="status">{{ message }}</p>
+        </section>
+        <div class="map-panel">
+          <ClientOnly
+            ><AreaMap
+              :selected-codes="codes"
+              :active-code="activeCode"
+              @select="add"
+            /><template #fallback
+              ><div class="map-placeholder" role="status">
+                Loading the Greater Melbourne map…
+              </div></template
+            ></ClientOnly
+          >
+        </div>
+      </div>
+      <div v-else class="compact-selection">
         <div class="area-chips">
           <button
             v-for="code in codes"
@@ -149,21 +212,13 @@ onBeforeUnmount(() => {
             @click="remove(code)"
             :aria-label="`Remove ${knownAreas[code] || code}`"
           >
-            {{ knownAreas[code] || code }}<SiteIcon name="close" /></button
-          ><button
-            v-if="codes.length > 0 && codes.length < 3"
-            class="add-another"
-            @click="search?.focusInput()"
-          >
-            + {{ codes.length === 2 ? 'Add a third area' : 'Add another area' }}
+            {{ knownAreas[code] || code }}<SiteIcon name="close" />
           </button>
         </div>
-        <div class="selection-summary">
-          <span>{{ codes.length }} of 3 areas selected</span
-          ><span>Transport and open-space measures are provisional.</span>
-        </div>
-        <p class="sr-only" role="status">{{ message }}</p>
-      </section>
+        <button class="outline-button icon-button" @click="panelOpen = true">
+          Edit areas <SiteIcon name="chevron-down" />
+        </button>
+      </div>
       <section aria-labelledby="comparison-title" :aria-busy="loading">
         <div class="comparison-section-heading">
           <h2 id="comparison-title">Your comparison</h2>
@@ -248,9 +303,12 @@ onBeforeUnmount(() => {
         <strong>Compare with context</strong>
         <p>
           SA2s may cover part of a suburb or several suburbs. Unknown values are
-          shown as “Not available”. There is no overall best-area score. Check
-          current listings and your own travel needs alongside these dated
-          measures.
+          shown as “Not available”. We don’t score or rank areas overall — a
+          higher rent doesn’t make an area worse, and a higher access index
+          doesn’t make it better on balance. For each measure, though, a higher
+          value does mean more of that specific thing (more transport access,
+          more open space, more population growth). Check current listings and
+          your own travel needs alongside these dated measures.
         </p>
       </aside>
     </main>

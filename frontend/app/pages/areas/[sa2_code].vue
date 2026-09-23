@@ -106,6 +106,28 @@ onBeforeUnmount(() => {
             SA2 statistical areas may cover part of a suburb or several suburbs.
           </p>
         </section>
+        <section
+          v-if="data.area.is_comparable"
+          aria-labelledby="area-map-title"
+        >
+          <h2 id="area-map-title" class="detail-section-title">
+            Where it is
+          </h2>
+          <div class="detail-map">
+            <ClientOnly
+              ><AreaMap
+                :selected-codes="[data.area.sa2_code]"
+                :active-code="data.area.sa2_code"
+                instructions=""
+                :show-attribution="false"
+              /><template #fallback
+                ><div class="map-placeholder" role="status">
+                  Loading the map…
+                </div></template
+              ></ClientOnly
+            >
+          </div>
+        </section>
         <aside
           v-if="!data.area.is_comparable"
           class="comparison-feedback"
@@ -141,9 +163,9 @@ onBeforeUnmount(() => {
         <aside class="data-note">
           <strong>Keep these measures in context</strong>
           <p>
-            Census rent is historical. Transport and open-space measures remain
-            provisional. Area-wide measures do not describe access from an
-            individual rental property.
+            Census rent is historical. Transport coverage varies, and
+            open-space results reflect selected public records. Area-wide
+            measures do not describe access from an individual rental property.
           </p>
         </aside>
         <div class="detail-actions">

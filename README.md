@@ -15,7 +15,7 @@ The application journey is **Home → Compare → Area Details**. Users can comp
 | SQLite, schema and ER diagram | Built and verified; **1,444 indicator rows** and **2,166 population-history rows** |
 | Data pipeline | Acquisition, offline processing and validation scripts implemented |
 | REST API | FastAPI implemented with four browser endpoints plus a hosting health check, response models and backend tests |
-| Frontend | Home with typeahead/Leaflet map, full Compare and Area Details, a staged loading message while the free API wakes, plus a separate API test console implemented |
+| Frontend | Home with combined two-to-three-area typeahead/Leaflet selection, full Compare and Area Details, a staged loading message while the free API wakes, plus a separate API test console implemented |
 | GitHub checks | Database, backend, frontend unit/build and desktop/mobile browser checks configured |
 | Render | Deployed on the free plan: [website](https://yfn-web.onrender.com/) and [API](https://yfn-api.onrender.com/api/v1/status); see the Render guide |
 
@@ -88,7 +88,7 @@ The initial scope does not include accounts, semantic search, property listings,
 
 ## Repository structure
 
-The application workspaces are implemented. Home contains the renter experience, Compare supports two or three areas, Area Details displays indicators and annual population history, and `/api-test-console` preserves the diagnostic page.
+The application workspaces are implemented. Home lets renters select two or three areas using search and the map before continuing, Compare displays those areas, Area Details displays indicators and annual population history, and `/api-test-console` preserves the unlinked diagnostic page.
 
 ```text
 yfn/
@@ -275,7 +275,7 @@ npm --prefix frontend run dev
 
 Use `Copy-Item` instead of `cp` on PowerShell. The expected frontend URL is `http://localhost:3000`. Commit `package-lock.json` and use `npm ci` for ordinary checkouts; use `npm install` only for intentional dependency changes and commit the resulting lockfile change.
 
-The homepage searches areas and displays a clickable Greater Melbourne map. Compare shows up to three areas with historical rent differences and links to Area Details. Area Details includes an annual population chart, accessible data table and a return link that preserves the comparison. Visit `/api-test-console` for the four API checks and raw JSON. Run `npm --prefix frontend test` for unit/component checks and `npm --prefix frontend run generate` for the static build. See [frontend instructions](frontend/README.md) for real API browser tests.
+The homepage combines search and the clickable Greater Melbourne map so renters can select, review and remove two or three areas before comparing them. Compare shows the selected areas with historical rent differences and links to Area Details. Area Details includes an annual population chart, accessible data table and a return link that preserves the comparison. Visit `/api-test-console` directly for the four API checks and raw JSON. Run `npm --prefix frontend test` for unit/component checks and `npm --prefix frontend run generate` for the static build. See [frontend instructions](frontend/README.md) for real API browser tests.
 
 ### Open the app
 

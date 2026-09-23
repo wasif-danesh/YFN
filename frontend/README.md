@@ -4,12 +4,12 @@ Nuxt 4, Vue, JavaScript, Tailwind and Leaflet power **Your Friendly Neighbourhoo
 
 | Route | Purpose |
 |---|---|
-| `/` | Renter homepage: area typeahead, interactive Greater Melbourne map and four indicator introductions |
+| `/` | Renter homepage: select two or three areas through typeahead and the interactive Greater Melbourne map |
 | `/compare?sa2=206041117,213031348` | Comparison: one selected area can be inspected while adding a second; up to three areas, dated values, nulls and source notes |
 | `/areas/206041117` | Area Details: four indicators, annual population chart/table and source notes; optional `compare` query preserves the selected areas |
 | `/api-test-console` | Preserved developer console: four API requests, raw JSON, HTTP status and retry controls |
 
-Home follows the approved blue mockup, using verified ABS boundaries instead of illustrative geography. Compare and Area Details complete the renter journey with dated measures, rent differences, population history and selection-preserving return navigation. Data remains provisional and the site stays `noindex` until publication decisions are resolved.
+Home follows the approved blue design, using verified ABS boundaries and allowing two or three areas to be combined from search and map selections before comparison. Compare and Area Details complete the renter journey with dated measures, rent differences, population history and selection-preserving return navigation. Data remains provisional and the site stays `noindex` until publication decisions are resolved.
 
 ## Run locally
 
@@ -28,7 +28,7 @@ Open `http://localhost:3000`. On PowerShell, use `Copy-Item` instead of `cp`. Th
 
 | File | Responsibility |
 |---|---|
-| `app/pages/index.vue` | Renter homepage and selected area |
+| `app/pages/index.vue` | Renter homepage and ordered two-to-three-area selection |
 | `app/pages/compare.vue` | URL selection, comparison requests, values and source notes |
 | `app/pages/areas/[sa2_code].vue` | Dynamic area details, request states and comparison return link |
 | `app/components/ComparisonTable.vue`, `IndicatorValue.vue` | Shared measure presentation, null/provisional flags and source notes |
@@ -66,7 +66,7 @@ npx --prefix frontend playwright install chromium
 npm --prefix frontend run test:e2e
 ```
 
-On Windows activate with `.venv\Scripts\Activate.ps1`. Stop any existing server on ports 8000 or 4173 before browser tests: Playwright starts and stops its own API and static preview server. Generate the site with the default local API URL for these tests. The tests exercise the console, keyboard area search, map selection, one-to-three-area comparison, removal, direct-link reload, population history, return navigation, unavailable values, invalid selection and map failure on desktop and mobile. Street tiles are deliberately blocked in automated journey tests to avoid depending on a third-party service; real boundary data and API responses are used. Screenshots and failure traces are saved under ignored `frontend/test-results/`.
+On Windows activate with `.venv\Scripts\Activate.ps1`. Stop any existing server on ports 8000 or 4173 before browser tests: Playwright starts and stops its own API and static preview server. Generate the site with the default local API URL for these tests. The tests exercise the console, combined keyboard-search/map selection on Home, two-to-three-area comparison, removal, direct-link reload, population history, return navigation, unavailable values, invalid selection and map failure on desktop and mobile. Street tiles are deliberately blocked in automated journey tests to avoid depending on a third-party service; real boundary data and API responses are used. Screenshots and failure traces are saved under ignored `frontend/test-results/`.
 
 To inspect the generated build manually, run `npm --prefix frontend run preview` and open `http://127.0.0.1:4173`. Add that exact origin to the local backend CORS allowlist and restart the API first. The preview server is for local testing; Render hosts the generated files directly.
 
@@ -101,7 +101,7 @@ The homepage change passed 13 frontend unit/component tests, 6 desktop/mobile br
 
 ## Compare and Area Details behaviour
 
-Compare accepts one starting area and up to three distinct eligible SA2s. The ordered selection lives in the `sa2` query parameter. Detail links carry that selection in `compare`; Back to comparison restores it. No session storage or additional database is needed. Dynamic detail URLs use the existing Render rewrite to `/200.html`, including direct visits and reloads.
+Home collects two or three distinct eligible SA2s and passes their ordered codes to Compare. Compare also accepts one starting area for compatible direct links. The ordered selection lives in the `sa2` query parameter. Detail links carry that selection in `compare`; Back to comparison restores it. No session storage or additional database is needed. Dynamic detail URLs use the existing Render rewrite to `/200.html`, including direct visits and reloads.
 
 Rent differences use only available observations with matching units, reference periods and methods. They describe historical Census rent, not current prices or predicted savings. Population charts use the API’s actual annual observations, break lines across missing years and show revision status in a table. Unknown values stay unavailable. No overall score or ranking is added.
 

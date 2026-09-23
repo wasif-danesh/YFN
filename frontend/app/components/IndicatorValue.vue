@@ -1,6 +1,16 @@
 <script setup>
 import { formatIndicator, displayUnit } from '../utils/areas.js'
-defineProps({ indicator: { type: Object, default: null } })
+defineProps({
+  indicator: { type: Object, default: null },
+  // 0–1, this area's value relative to the highest among the areas being
+  // compared. Omitted when there are fewer than two valid values to compare,
+  // so the bar never implies a rating or a benchmark on its own.
+  ratio: { type: Number, default: null },
+  // A plain-language read of an otherwise unfamiliar raw number, relative to
+  // the other areas in this comparison only (e.g. "Higher than Preston -
+  // East") — never a rating against an outside benchmark.
+  note: { type: String, default: null },
+})
 function coverage(value) {
   return new Intl.NumberFormat('en-AU', {
     style: 'percent',
@@ -15,10 +25,14 @@ function coverage(value) {
       <span v-if="indicator.raw_value !== null" class="measure-unit">{{
         displayUnit(indicator.unit)
       }}</span>
+      <span
+        v-if="ratio !== null"
+        class="measure-bar"
+        aria-hidden="true"
+        ><span class="measure-bar-fill" :style="{ width: `${ratio * 100}%` }"
+      /></span>
+      <p v-if="note" class="measure-note">{{ note }}</p>
       <p class="measure-period">{{ indicator.reference_period }}</p>
-      <span v-if="indicator.quality.status === 'limited'" class="quality-label"
-        >Provisional</span
-      >
       <p v-if="indicator.raw_value === null" class="missing-note">
         {{
           indicator.quality.reason ||

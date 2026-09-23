@@ -1,7 +1,19 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import 'leaflet/dist/leaflet.css'
-const props = defineProps({ selectedCode: { type: String, default: null } })
+const props = defineProps({
+  selectedCodes: { type: Array, default: () => [] },
+  activeCode: { type: String, default: null },
+  // Set to '' on a read-only, single-area map where picking areas isn't offered.
+  instructions: {
+    type: String,
+    default: 'Choose up to three areas. Use search for keyboard selection.',
+  },
+  // Set to false only where the ABS boundary attribution already appears
+  // elsewhere on the same page (CC BY 4.0 requires it to appear somewhere,
+  // not on every instance of the map).
+  showAttribution: { type: Boolean, default: true },
+})
 const emit = defineEmits(['select'])
 const container = ref(null),
   loading = ref(true),
@@ -15,7 +27,7 @@ let map,
 const layers = new Map()
 const controller = new AbortController()
 function style(feature) {
-  const selected = feature.properties.sa2_code === props.selectedCode
+  const selected = props.selectedCodes.includes(feature.properties.sa2_code)
   return {
     color: selected ? '#0754c9' : '#6486ad',
     weight: selected ? 2.5 : 1,
@@ -28,6 +40,7 @@ function style(feature) {
   }
 }
 function popup(layer) {
+  map?.closePopup()
   if (layer.getPopup()) {
     layer.openPopup()
     return
@@ -42,24 +55,21 @@ function popup(layer) {
     ? 'SA2 area · 2021 boundaries'
     : 'Not available for comparison'
   content.append(note)
-  if (area.is_comparable) {
-    const link = document.createElement('a')
-    link.href = `/compare?sa2=${encodeURIComponent(area.sa2_code)}`
-    link.textContent = 'Compare this area →'
-    link.className = 'map-compare-link'
-    content.append(link)
-  }
   layer.bindPopup(content, { maxWidth: 240 }).openPopup()
 }
-function showSelected() {
+function showSelection() {
   if (!boundaries) return
   boundaries.setStyle(style)
-  const layer = layers.get(props.selectedCode)
+  if (!props.activeCode) {
+    if (!props.selectedCodes.length) reset()
+    return
+  }
+  const layer = layers.get(props.activeCode)
   if (!layer) return
   layer.bringToFront()
   map.fitBounds(layer.getBounds(), {
     padding: [70, 70],
-    maxZoom: 13,
+    maxZoom: 10.5,
     animate: false,
   })
   popup(layer)
@@ -111,14 +121,14 @@ async function load() {
           popup(layer)
         })
         layer.on('mouseover', () => {
-          if (feature.properties.sa2_code !== props.selectedCode)
+          if (!props.selectedCodes.includes(feature.properties.sa2_code))
             layer.setStyle({ fillOpacity: 0.5, weight: 2 })
         })
         layer.on('mouseout', () => layer.setStyle(style(feature)))
       },
     }).addTo(map)
     reset()
-    showSelected()
+    showSelection()
     // Search provides an equivalent keyboard route without 361 polygon tab stops.
     boundaries.eachLayer((layer) => {
       const path = layer.getElement()
@@ -141,7 +151,11 @@ async function load() {
     if (!disposed) loading.value = false
   }
 }
-watch(() => props.selectedCode, showSelected)
+watch(
+  () => [props.selectedCodes, props.activeCode],
+  showSelection,
+  { deep: true },
+)
 onMounted(load)
 onBeforeUnmount(() => {
   disposed = true
@@ -157,7 +171,7 @@ onBeforeUnmount(() => {
       ref="container"
       class="map-canvas"
       aria-label="Interactive Greater Melbourne SA2 map"
-      aria-describedby="map-instructions"
+      :aria-describedby="instructions ? 'map-instructions' : undefined"
     ></div>
     <button v-if="!loading && !error" class="map-reset" @click="reset">
       Reset view
@@ -171,10 +185,12 @@ onBeforeUnmount(() => {
     <p v-if="tileError && !error" class="tile-notice" role="status">
       Street map tiles couldn’t load. Area boundaries still work.
     </p>
-    <div class="map-caption">
-      <span id="map-instructions"
-        >Choose an area to begin. Use search for keyboard selection.</span
+    <div v-if="instructions || showAttribution" class="map-caption">
+      <span v-if="instructions" id="map-instructions">{{
+        instructions
+      }}</span
       ><a
+        v-if="showAttribution"
         href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files"
         target="_blank"
         rel="noopener noreferrer"

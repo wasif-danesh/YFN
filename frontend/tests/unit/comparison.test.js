@@ -53,7 +53,6 @@ it('shows nulls, zero and source/coverage limitations explicitly', () => {
   wrapper = mount(IndicatorValue, { props: { indicator } })
   expect(wrapper.get('.measure-value').text()).toBe('0')
   expect(wrapper.text()).toContain('12.5%')
-  expect(wrapper.text()).toContain('Provisional')
   expect(wrapper.findAll('a').length).toBeGreaterThan(0)
   wrapper.unmount()
 })

@@ -54,7 +54,7 @@ onMounted(runAll)
       <div class="eyebrow">DEVELOPER WORKSPACE</div>
       <h1>One page. Four API checks.</h1>
       <p class="intro">Test the connection between our frontend, FastAPI service and Greater Melbourne database.</p>
-      <aside class="notice"><strong>Test interface — not the renter homepage.</strong> Real development data is shown below. Transport and open-space measures remain provisional; a healthy API does not mean the data is approved for publication.</aside>
+      <aside class="notice"><strong>Test interface — not the renter homepage.</strong> Real development data is shown below. A healthy response confirms that the service and database are available.</aside>
 
       <section class="controls" aria-labelledby="request-settings">
         <div class="section-heading"><div><h2 id="request-settings">Request settings</h2><p>Calls run automatically when this page opens.</p></div>

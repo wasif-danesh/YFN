@@ -16,6 +16,9 @@ test('home search, map selection, comparison and reload work with real data', as
   await expect(
     page.getByRole('heading', { name: 'Find your place in Melbourne.' }),
   ).toBeVisible()
+  await expect(
+    page.getByRole('link', { name: 'API test console' }),
+  ).toHaveCount(0)
   await expect(page.locator('path[data-sa2]')).toHaveCount(361)
   const search = page.getByRole('combobox')
   await search.fill('carl')
@@ -23,9 +26,24 @@ test('home search, map selection, comparison and reload work with real data', as
   await search.press('ArrowDown')
   await search.press('Enter')
   await expect(page.locator('.selected-area')).toContainText('Carlton')
-  const polygon = page.locator('path[data-sa2="206041117"]')
-  await polygon.click({ force: true })
-  await expect(page.locator('.leaflet-popup-content')).toContainText('Carlton')
+  await expect(
+    page.getByRole('link', { name: 'Compare 2 areas' }),
+  ).toHaveCount(0)
+  const polygon = page.locator('path[data-sa2="213031348"]')
+  await polygon.dispatchEvent('click')
+  await expect(page.locator('.selected-area')).toContainText('Footscray')
+  await expect(page.locator('.selected-area')).toContainText('2 of 3 selected')
+  await page.getByRole('combobox').fill('clayton')
+  await page
+    .getByRole('option', { name: 'Clayton - Central SA2 area', exact: true })
+    .click()
+  await expect(page.locator('.selected-area')).toContainText('3 of 3 selected')
+  await expect(page.getByRole('combobox')).toHaveCount(0)
+  await page
+    .getByRole('button', { name: 'Remove Clayton - Central' })
+    .click()
+  await expect(page.locator('.selected-area')).toContainText('2 of 3 selected')
+  await expect(page.getByRole('combobox')).toBeVisible()
   await expect(page.locator('.tile-notice')).toBeVisible()
   expect(
     await page.evaluate(
@@ -38,17 +56,21 @@ test('home search, map selection, comparison and reload work with real data', as
   })
   await page
     .locator('.selected-area')
-    .getByRole('link', { name: 'Compare this area' })
+    .getByRole('link', { name: 'Compare 2 areas' })
     .click()
-  await expect(page).toHaveURL(/compare\?sa2=206041117/)
+  await expect(page).toHaveURL(/\/compare\?sa2=/)
+  expect(new URL(page.url()).searchParams.get('sa2')).toBe(
+    '206041117,213031348',
+  )
   await expect(page.locator('.comparison-table')).toContainText('$365')
-  await page.getByRole('combobox').fill('footscray')
-  await page
-    .getByRole('option', { name: 'Footscray SA2 area', exact: true })
-    .click()
+  await expect(
+    page.getByRole('link', { name: 'API test console' }),
+  ).toHaveCount(0)
   await expect(page.locator('.comparison-table')).toContainText('Footscray')
   await expect(page.locator('.comparison-table')).toContainText('2021 Census')
-  await expect(page.locator('.comparison-table')).toContainText('Provisional')
+  await expect(page.locator('.comparison-table')).toContainText(
+    'Source & coverage notes',
+  )
   await page.reload()
   await expect(page.locator('.comparison-table')).toContainText('Carlton')
   await expect(page.locator('.comparison-table')).toContainText('Footscray')
@@ -56,6 +78,9 @@ test('home search, map selection, comparison and reload work with real data', as
     path: `test-results/compare-${test.info().project.name}.png`,
     fullPage: true,
   })
+  // With 2+ areas already selected, the search/map panel starts collapsed
+  // to a compact chip bar so the comparison sits above the fold.
+  await page.getByRole('button', { name: 'Edit areas' }).click()
   await page.getByRole('combobox').fill('clayton')
   await page.getByRole('option').first().click()
   await expect(
