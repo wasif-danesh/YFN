@@ -84,6 +84,9 @@ class GreaterMelbourneChecks(unittest.TestCase):
             for k in ['rent_2021_aud_week','erp_2020','erp_2025','population_growth_2020_2025_percent','transport_raw_index_sample','selected_open_space_m2']:
                 self.assertTrue(math.isclose(a[k],now[a['sa2_code']][k],rel_tol=1e-9,abs_tol=0.01),(a['name'],k))
 
+    @unittest.skipUnless(
+        all((BASE/r['file']).exists() for r in json.loads((BASE/'acquisition.json').read_text()).values()),
+        'raw source snapshots are large and kept out of Git; run this check where they are saved')
     def test_all_raw_snapshots_and_database_provenance(self):
         manifest=json.loads((BASE/'acquisition.json').read_text())
         self.assertEqual(self.db.execute('SELECT count(*) FROM source_files').fetchone()[0],len(manifest))
