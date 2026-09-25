@@ -329,7 +329,7 @@ Start with the [SQLite database](data/greater-melbourne-v1/yfn.sqlite), [ER diag
 | `methods`, `area_diagnostics` | Calculation definitions, spatial coverage and sensitivity evidence |
 | `sample_release` | Metadata for the current database release |
 
-Keep SA2 codes as strings and preserve nulls. Unknown is not zero. The two zero-population SA2s remain in the database but are excluded by its provisional comparison flag. The database supports one boundary edition and one current observation per indicator/area per database release. Future release/history requirements must be reflected consistently in the keys.
+Keep SA2 codes as strings and preserve nulls. Unknown is not zero. The two zero-population SA2s remain in the database but are excluded by the project's comparison-eligibility rule because per-resident measures cannot be calculated for them. The database supports one boundary edition and one current observation per indicator/area per database release. Future release/history requirements must be reflected consistently in the keys.
 
 The implemented REST endpoints are:
 
@@ -398,7 +398,7 @@ The complete Greater Melbourne offline rebuild took approximately 53 seconds in 
 
 ### Update the single application database
 
-The production method and coverage decisions are made. Build and validate the selected real dataset. Review value changes, null counts, geometry repairs, boundary compatibility, provenance and the schema/API contract. The API startup and Render build validate database integrity. Final publication approval remains separate from these technical checks.
+The project method and coverage decisions are made, and the committed release is approved for publication in this project. Build and validate the selected real dataset, then review value changes, null counts, geometry repairs, boundary compatibility, provenance and the schema/API contract. The API startup and Render build validate database integrity. These technical checks do not replace the displayed source dates, coverage notes or limitations.
 
 For the initial small SQLite artifact, commit `data/greater-melbourne-v1/yfn.sqlite` and its matching manifest in the same PR. Reviewers should see a human-readable summary of the changes; do not rely on a binary diff alone. Do not hand-edit SQLite, copy it into the frontend's `public/` directory, or run acquisition on every code push. The database path stays the same locally and on Render. Git history preserves prior committed versions; no separate releases folder or database promotion step is needed.
 
@@ -431,7 +431,7 @@ The root [render.yaml](render.yaml) creates a Static Site and a Python Web Servi
 
 The frontend receives the API public URL through the Blueprint. SQLite is checked and packaged with the backend; only `frontend/.output/public` is published as web assets. No pipeline downloads or persistent disk are needed. Normal main-branch auto-deploys wait for GitHub checks, with separate frontend/backend path filters. Initial, manual and Blueprint configuration deployments still require verification.
 
-This configuration supports deployment, but the Free plan is for testing: idle API services sleep and take time to wake. Upgrade the API instance plan before requiring continuous production availability. The dataset still needs a publication decision before the final renter release. [Render Free limitations](https://render.com/docs/free)
+This configuration supports the project's public demonstration deployment. On Render's Free plan, the idle API service can sleep and take time to wake, so the frontend provides retry and recovery states. Continuous production availability would require a paid instance, but it is outside this university project's scope. [Render Free limitations](https://render.com/docs/free)
 
 ## Testing and troubleshooting
 

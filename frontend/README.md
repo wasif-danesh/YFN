@@ -105,4 +105,4 @@ Home collects two or three distinct eligible SA2s and passes their ordered codes
 
 Rent differences use only available observations with matching units, reference periods and methods. They describe historical Census rent, not current prices or predicted savings. Population charts use the API’s actual annual observations, break lines across missing years and show revision status in a table. Unknown values stay unavailable. No overall score or ranking is added.
 
-The completed pages pass 34 unit/component tests, 10 desktop/mobile browser tests and static generation locally. The tests use the maintained SQLite database; missing-data fixtures are intercepted only inside tests. These checks do not imply deployment or approval of provisional data.
+The completed pages pass 34 unit/component tests, 10 desktop/mobile browser tests and static generation locally. The tests use the maintained, publication-ready SQLite release; missing-data fixtures are intercepted only inside tests. Passing checks confirm expected application behaviour but do not remove the source dates, coverage constraints or limitations shown to users.

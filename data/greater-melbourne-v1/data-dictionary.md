@@ -4,7 +4,7 @@ Generated from the delivered SQLite schema. See [executable SQL](../../pipeline/
 
 ## `areas`
 
-One spatial 2021 Greater Melbourne SA2 per row; identity and provisional comparison eligibility.
+One spatial 2021 Greater Melbourne SA2 per row, with identity and project comparison eligibility.
 
 Rows: 361.
 

@@ -20,7 +20,7 @@ erDiagram
         TEXT name
         INTEGER boundary_year
         TEXT gccsa_code
-        INTEGER is_comparable "Sample positive-population rule"
+        INTEGER is_comparable "Project eligibility rule: positive 2025 population"
         REAL calculated_area_m2
         TEXT source_id FK
     }
@@ -38,7 +38,7 @@ erDiagram
         TEXT sa2_code PK, FK
         TEXT indicator_key PK, FK
         REAL raw_value "Nullable"
-        REAL score "Nullable; withheld in this sample"
+        REAL score "Nullable; no score is supplied"
         TEXT quality_status
         TEXT quality_note
         REAL coverage_fraction "Nullable; unknown differs from zero"

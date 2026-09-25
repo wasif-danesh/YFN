@@ -34,7 +34,7 @@ def create_app(settings: Settings | None = None):
         yield
 
     app = FastAPI(title="Your Friendly Neighbourhood API", version="1.0.0", lifespan=lifespan,
-                  description="Read-only Greater Melbourne data. Spatial measures remain provisional; inspect meta and quality notes.")
+                  description="Read-only Greater Melbourne renter-comparison data. Methods are approved for this project release; inspect dates, coverage and quality notes before interpreting values.")
     app.state.settings = settings
     app.add_middleware(CORSMiddleware, allow_origins=list(settings.cors_allowed_origins),
                        allow_methods=["GET"], allow_headers=["Accept", "Content-Type"], allow_credentials=False)

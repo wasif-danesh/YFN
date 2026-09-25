@@ -11,7 +11,7 @@ def main():
     db=sqlite3.connect(f'file:{BASE / "yfn.sqlite"}?mode=ro',uri=True)
     db.row_factory=sqlite3.Row
     purposes={
-        'areas':'One spatial 2021 Greater Melbourne SA2 per row; identity and provisional comparison eligibility.',
+        'areas':'One spatial 2021 Greater Melbourne SA2 per row, with identity and project comparison eligibility.',
         'indicators':'Four reusable measure labels and units.',
         'methods':'Versioned calculation definitions and their approval status.',
         'observations':'One current measure per area/indicator in this database release; value, quality, period and method.',
@@ -62,7 +62,7 @@ Solid identifying relationships indicate a parent key forms part of a child's pr
 
 ## Design decisions supported by the real data
 
-1. **Retain geography independently of indicator availability.** Two SA2s have zero residents. Keep them for traceability while a provisional eligibility flag controls comparison use.
+1. **Retain geography independently of indicator availability.** Two SA2s have zero residents. Keep them for traceability while the project eligibility rule excludes them from comparisons that require per-resident measures.
 2. **Separate raw input tokens from display values.** Three source rent zeros become unavailable medians; original tokens remain in the audit. Zero population remains a genuine integer zero.
 3. **Keep coverage independent of value and quality.** A numeric PTAL average can cover less than 1% of an SA2. Open-space inventory completeness is unknown even when a polygon is present. Both need explicit handling.
 4. **Store numerator and denominator.** Large public-open-space ratios can reflect a tiny resident population. The denominator must be inspectable, not hidden behind a rounded ratio.

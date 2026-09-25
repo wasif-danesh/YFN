@@ -25,7 +25,7 @@ erDiagram
         TEXT name
         INTEGER boundary_year
         TEXT gccsa_code
-        INTEGER is_comparable "Sample positive-population rule"
+        INTEGER is_comparable "Project eligibility rule: positive 2025 population"
         REAL calculated_area_m2
         TEXT source_id FK
     }
@@ -43,7 +43,7 @@ erDiagram
         TEXT sa2_code PK, FK
         TEXT indicator_key PK, FK
         REAL raw_value "Nullable"
-        REAL score "Nullable; withheld in this sample"
+        REAL score "Nullable; no score is supplied"
         TEXT quality_status
         TEXT quality_note
         REAL coverage_fraction "Nullable; unknown differs from zero"
@@ -116,7 +116,7 @@ Solid identifying relationships indicate a parent key forms part of a child's pr
 
 ## Design decisions supported by the real data
 
-1. **Retain geography independently of indicator availability.** Two SA2s have zero residents. Keep them for traceability while a provisional eligibility flag controls comparison use.
+1. **Retain geography independently of indicator availability.** Two SA2s have zero residents. Keep them for traceability while the project eligibility rule excludes them from comparisons that require per-resident measures.
 2. **Separate raw input tokens from display values.** Three source rent zeros become unavailable medians; original tokens remain in the audit. Zero population remains a genuine integer zero.
 3. **Keep coverage independent of value and quality.** A numeric PTAL average can cover less than 1% of an SA2. Open-space inventory completeness is unknown even when a polygon is present. Both need explicit handling.
 4. **Store numerator and denominator.** Large public-open-space ratios can reflect a tiny resident population. The denominator must be inspectable, not hidden behind a rounded ratio.

@@ -1,6 +1,7 @@
-"""Validate committed sample artifacts without downloads or GIS dependencies.
+"""Validate committed dataset artifacts without downloads or GIS dependencies.
 
-This is a source-snapshot consistency check, not a production release approval.
+This verifies artifact consistency; project publication status comes from the
+checked manifest and matching database release metadata.
 """
 import csv
 import hashlib
@@ -54,5 +55,5 @@ def check_sample(base=BASE):
 
 if __name__=='__main__':
     count=check_sample()
-    print(f'PASS: {count} SA2s, {count*4} indicator rows; committed sample hashes and SQLite integrity verified.')
-    print('Scope: committed sample only. Raw acquisition, spatial recomputation, application tests and production approval are separate checks.')
+    print(f'PASS: {count} SA2s, {count*4} indicator rows; committed release hashes and SQLite integrity verified.')
+    print('Scope: committed release artifacts only. Raw acquisition, spatial recomputation and application tests are separate checks.')
