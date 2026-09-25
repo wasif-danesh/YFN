@@ -3,25 +3,9 @@ import {
   comparisonMeasures,
   getIndicator,
   comparisonNote,
+  barRatio,
 } from '../utils/comparison.js'
-const props = defineProps({ entries: { type: Array, required: true } })
-// Values available for a measure across the areas being compared, so a bar
-// only appears when there is something to compare (2+ available values) —
-// never for a single area, and never implying a rating on its own.
-function ratiosFor(key) {
-  const values = props.entries
-    .map((entry) => getIndicator(entry, key))
-    .filter((indicator) => indicator && indicator.raw_value !== null)
-    .map((indicator) => indicator.raw_value)
-  const max = values.length >= 2 ? Math.max(...values) : null
-  return max > 0 ? max : null
-}
-function ratioFor(entry, key, max) {
-  if (max === null) return null
-  const indicator = getIndicator(entry, key)
-  if (!indicator || indicator.raw_value === null) return null
-  return indicator.raw_value / max
-}
+defineProps({ entries: { type: Array, required: true } })
 </script>
 <template>
   <p id="comparison-scroll-hint" class="comparison-scroll-hint">
@@ -73,7 +57,7 @@ function ratioFor(entry, key, max) {
           >
             <IndicatorValue
               :indicator="getIndicator(entry, row.key)"
-              :ratio="ratioFor(entry, row.key, ratiosFor(row.key))"
+              :ratio="barRatio(entries, row.key, entry.area.sa2_code)"
               :note="
                 row.showComparisonNote
                   ? comparisonNote(entries, row.key, entry.area.sa2_code)

@@ -67,3 +67,6 @@ Desktop.ini
 *.orig
 .idea/
 .vscode/
+
+# Nuxt static build symlink (recreated by `nuxt generate`)
+/frontend/dist

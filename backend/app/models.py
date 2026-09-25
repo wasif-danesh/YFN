@@ -66,7 +66,7 @@ class IndicatorValue(Model):
     start_year: int | None
     end_year: int | None
     method_version: str
-    method_status: Literal["source_definition", "sample_only"]
+    method_status: Literal["source_definition", "approved"]
     explanation: str
     geography: Geography
     quality: Quality

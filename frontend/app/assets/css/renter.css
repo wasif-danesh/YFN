@@ -249,7 +249,7 @@
 .selected-heading span {
   font-size: 9px;
   font-weight: 700;
-  color: #5376a4;
+  color: #3f5f8c;
   letter-spacing: 0.08em;
 }
 .selected-heading h3 {
@@ -471,7 +471,7 @@
 }
 .data-caption {
   font-size: 12px;
-  color: #607796;
+  color: #526886;
   margin-top: 16px;
 }
 .data-note {
@@ -506,7 +506,7 @@
   display: flex;
   gap: 20px;
   font-size: 11px;
-  color: #607796;
+  color: #526886;
 }
 .renter-footer > div a {
   text-underline-offset: 3px;
@@ -763,7 +763,7 @@
   display: block;
   font-size: 11px;
   font-weight: 400;
-  color: #607796;
+  color: #526886;
   margin-top: 8px;
 }
 .comparison-table tbody th {
@@ -911,7 +911,7 @@
   letter-spacing: -0.035em;
 }
 .comparison-scroll-hint {
-  color: #607796;
+  color: #526886;
   font-size: 12px;
   margin: 12px 0;
 }
@@ -950,7 +950,7 @@
 .row-subtitle {
   font-size: 11px;
   font-weight: 400;
-  color: #607796;
+  color: #526886;
   line-height: 1.6;
   margin: 10px 0 0;
 }
@@ -958,7 +958,7 @@
   padding: 16px 20px;
   margin: 0;
   font-size: 12px;
-  color: #607796;
+  color: #526886;
 }
 .missing-note {
   font-size: 12px;
@@ -1114,7 +1114,7 @@
 }
 .chart-description {
   font-size: 12px;
-  color: #607796;
+  color: #526886;
 }
 .population-chart {
   display: block;

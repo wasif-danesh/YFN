@@ -133,6 +133,7 @@ async function load() {
     boundaries.eachLayer((layer) => {
       const path = layer.getElement()
       if (path) {
+        path.setAttribute('role', 'img')
         path.setAttribute('aria-label', layer.feature.properties.name)
         path.dataset.sa2 = layer.feature.properties.sa2_code
       }

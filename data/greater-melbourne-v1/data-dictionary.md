@@ -168,7 +168,7 @@ Rows: 361.
 
 ## `sample_release`
 
-Metadata for the entire SQLite file; one release, real data and publication_ready=0.
+Metadata for the entire SQLite file; one release, real data and publication_ready=1.
 
 Rows: 1.
 

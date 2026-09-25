@@ -64,7 +64,7 @@ See the [contract guide](../contracts/README.md), [OpenAPI export](../contracts/
 - Numbers remain numeric and missing values remain JSON `null`.
 - Indicators include units, dates, method IDs/status, quality notes, source URLs and roles. Internal source file paths and workbook cells are not exposed.
 - `population_history` contains annual counts, not annual growth percentages. Years/revision status are explicit; `population_sources` contains their sources.
-- `meta.publication_ready` is currently false. Health reports technical readiness, not approval to publish. No ratings are invented for provisional transport measures.
+- `meta.publication_ready` is true because the methods are final. Health reports technical readiness only. No ratings are invented for the transport measure.
 - The API never writes SQLite, downloads datasets, calculates new indicators or falls back to dummy data. Connections close after each response and read one transaction snapshot.
 
 Errors have one shape:

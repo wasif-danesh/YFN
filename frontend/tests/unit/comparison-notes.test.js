@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
 import realResponse from '../../../contracts/examples/compare.json'
-import { comparisonNote } from '../../app/utils/comparison.js'
+import { comparisonNote, barRatio } from '../../app/utils/comparison.js'
 import IndicatorValue from '../../app/components/IndicatorValue.vue'
 
 const real = realResponse.areas
@@ -70,5 +70,26 @@ describe('measure bar and note rendering', () => {
       props: { indicator, note: 'Higher than Footscray' },
     })
     expect(wrapper.get('.measure-note').text()).toBe('Higher than Footscray')
+  })
+})
+
+describe('comparison bar ratio', () => {
+  it('scales each area to the highest value being compared', () => {
+    expect(barRatio(real, 'transport_access', carlton)).toBe(1)
+    expect(barRatio(real, 'transport_access', footscray)).toBeCloseTo(24.8 / 41.8, 2)
+  })
+  it('draws no bar for one area or a missing value', () => {
+    expect(barRatio(real.slice(0, 1), 'transport_access', carlton)).toBeNull()
+    const missing = clone()
+    setValue(missing[1], 'transport_access', null)
+    expect(barRatio(missing, 'transport_access', carlton)).toBeNull()
+    expect(barRatio(missing, 'transport_access', footscray)).toBeNull()
+  })
+  it('draws no bars when any value is negative, so a decline is never shown as a full bar', () => {
+    const entries = clone()
+    setValue(entries[0], 'population_growth', 21.1)
+    setValue(entries[1], 'population_growth', -17.6)
+    expect(barRatio(entries, 'population_growth', carlton)).toBeNull()
+    expect(barRatio(entries, 'population_growth', footscray)).toBeNull()
   })
 })

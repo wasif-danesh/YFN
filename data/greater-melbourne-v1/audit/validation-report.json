@@ -31,7 +31,8 @@
       "unavailable": 3
     },
     "transport_access": {
-      "limited": 360,
+      "available": 354,
+      "limited": 6,
       "unavailable": 1
     },
     "population_growth": {
@@ -39,7 +40,7 @@
       "unavailable": 2
     },
     "green_space_per_resident": {
-      "limited": 354,
+      "available": 354,
       "unavailable": 7
     }
   },
@@ -48,7 +49,7 @@
   "sqlite_integrity": "ok",
   "foreign_key_violations": 0,
   "limitations": [
-    "Transport weighting and open-space filter are sample methods, not production-approved.",
+    "Transport access covers only the part of an area the data covers, and the open-space figure can include river and lake frontage recorded as open space.",
     "Transport and open-space observation dates are not asserted from metadata update dates.",
     "Complete API query retrieval does not prove geographic inventory completeness or current ground truth.",
     "2025 population is preliminary; rent is 2021 Census reported rent.",

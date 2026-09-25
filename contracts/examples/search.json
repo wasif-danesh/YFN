@@ -20,9 +20,9 @@
   "meta": {
     "data_mode": "real",
     "data_version": "greater-melbourne-v1",
-    "method_version": "greater-melbourne-sample-v1-not-approved-for-publication",
+    "method_version": "greater-melbourne-v1",
     "boundary_year": 2021,
-    "publication_ready": false,
+    "publication_ready": true,
     "benchmark_count": null
   }
 }

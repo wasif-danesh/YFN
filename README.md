@@ -16,10 +16,10 @@ The application journey is **Home → Compare → Area Details**. Users can comp
 | Data pipeline | Acquisition, offline processing and validation scripts implemented |
 | REST API | FastAPI implemented with four browser endpoints plus a hosting health check, response models and backend tests |
 | Frontend | Home with combined two-to-three-area typeahead/Leaflet selection, full Compare and Area Details, a staged loading message while the free API wakes, plus a separate API test console implemented |
-| GitHub checks | Database, backend, frontend unit/build and desktop/mobile browser checks configured |
+| GitHub checks | Database, data pipeline, backend, frontend unit/build and desktop/mobile browser checks configured |
 | Render | Deployed on the free plan: [website](https://yfn-web.onrender.com/) and [API](https://yfn-api.onrender.com/api/v1/status); see the Render guide |
 
-The real dataset is suitable for development and schema design. Transport aggregation, coverage eligibility and the open-space filter remain provisional. `publication_ready=false` is preserved. Application development can proceed while the team resolves these definitions.
+The real dataset is suitable for development and schema design. The transport aggregation, its 50% coverage rule and the open-space filter are final. `publication_ready=true`, and the site is open to search engines. Only the developer API console stays `noindex`.
 
 The repository is at [github.com/wasif-danesh/YFN](https://github.com/wasif-danesh/YFN). The application is deployed on Render's free plan: the website is at [yfn-web.onrender.com](https://yfn-web.onrender.com/) and the API at [yfn-api.onrender.com](https://yfn-api.onrender.com/api/v1/status).
 
@@ -31,7 +31,7 @@ There is one database: [`data/greater-melbourne-v1/yfn.sqlite`](data/greater-mel
 2. Backend developers use the database path in `backend/.env.example`. Frontend developers call the API; they do not open SQLite.
 3. Only the data maintainer runs the acquisition/build commands. They commit the updated database, curated files, manifest and validation evidence together after checks pass.
 
-Local development and Render use the same database path. There are no `samples/` or `releases/` folders, no database selection step and no routine downloads for UI/API developers. The test console labels provisional data explicitly. The final renter release still requires resolving the documented methods.
+Local development and Render use the same database path. There are no `samples/` or `releases/` folders, no database selection step and no routine downloads for UI/API developers. The test console shows the raw metadata explicitly.
 
 ## Contents
 
@@ -398,7 +398,7 @@ The complete Greater Melbourne offline rebuild took approximately 53 seconds in 
 
 ### Update the single application database
 
-Resolve the production method/coverage decisions, then build and validate the selected real dataset. Review value changes, null counts, geometry repairs, boundary compatibility, provenance and the schema/API contract. The API startup and Render build validate database integrity. Final publication approval remains separate from these technical checks; the current application retains provisional-data notices.
+The production method and coverage decisions are made. Build and validate the selected real dataset. Review value changes, null counts, geometry repairs, boundary compatibility, provenance and the schema/API contract. The API startup and Render build validate database integrity. Final publication approval remains separate from these technical checks.
 
 For the initial small SQLite artifact, commit `data/greater-melbourne-v1/yfn.sqlite` and its matching manifest in the same PR. Reviewers should see a human-readable summary of the changes; do not rely on a binary diff alone. Do not hand-edit SQLite, copy it into the frontend's `public/` directory, or run acquisition on every code push. The database path stays the same locally and on Render. Git history preserves prior committed versions; no separate releases folder or database promotion step is needed.
 
@@ -431,7 +431,7 @@ The root [render.yaml](render.yaml) creates a Static Site and a Python Web Servi
 
 The frontend receives the API public URL through the Blueprint. SQLite is checked and packaged with the backend; only `frontend/.output/public` is published as web assets. No pipeline downloads or persistent disk are needed. Normal main-branch auto-deploys wait for GitHub checks, with separate frontend/backend path filters. Initial, manual and Blueprint configuration deployments still require verification.
 
-This configuration supports deployment, but the Free plan is for testing: idle API services sleep and take time to wake. Upgrade the API instance plan before requiring continuous production availability. The provisional dataset still requires publication decisions before the final renter release. [Render Free limitations](https://render.com/docs/free)
+This configuration supports deployment, but the Free plan is for testing: idle API services sleep and take time to wake. Upgrade the API instance plan before requiring continuous production availability. The dataset still needs a publication decision before the final renter release. [Render Free limitations](https://render.com/docs/free)
 
 ## Testing and troubleshooting
 

@@ -10,7 +10,7 @@ CREATE TABLE source_files (
  downloaded_at TEXT NOT NULL, bytes INTEGER NOT NULL CHECK(bytes>0)
 ) STRICT;
 CREATE TABLE methods (
- method_id TEXT PRIMARY KEY, approval_status TEXT NOT NULL CHECK(approval_status IN ('source_definition','sample_only')),
+ method_id TEXT PRIMARY KEY, approval_status TEXT NOT NULL CHECK(approval_status IN ('source_definition','approved')),
  definition TEXT NOT NULL
 ) STRICT;
 CREATE TABLE areas (
@@ -59,7 +59,7 @@ CREATE TABLE observation_components (
 ) STRICT;
 CREATE TABLE sample_release (
  release_id TEXT PRIMARY KEY, data_mode TEXT NOT NULL CHECK(data_mode='real'),
- publication_ready INTEGER NOT NULL CHECK(publication_ready=0), manifest_json TEXT NOT NULL
+ publication_ready INTEGER NOT NULL CHECK(publication_ready IN (0,1)), manifest_json TEXT NOT NULL
 ) STRICT;
 CREATE TABLE area_diagnostics (
  sa2_code TEXT PRIMARY KEY REFERENCES areas,

@@ -21,7 +21,7 @@ def main():
         'observation_sources':'Many-to-many provenance with the source role in each observation.',
         'observation_components':'Numerators, denominators and transport-weight components with their own source and period.',
         'area_diagnostics':'Spatial coverage, inventory area, overlap and water-filter sensitivity; unknown coverage stays null.',
-        'sample_release':'Metadata for the entire SQLite file; one release, real data and publication_ready=0.'}
+        'sample_release':'Metadata for the entire SQLite file; one release, real data and publication_ready=1.'}
     lines=['# Database column dictionary','',
         'Generated from the delivered SQLite schema. See [executable SQL](../../pipeline/greater_melbourne_schema.sql) for all CHECK constraints and view definitions. Identifiers are text. Blank numeric CSV cells load as SQL NULL.','']
     for table,purpose in purposes.items():
@@ -72,7 +72,7 @@ Solid identifying relationships indicate a parent key forms part of a child's pr
 
 The database stores one boundary edition and one current observation per area/indicator per release. For multiple boundary editions or observation releases in one database, extend the primary and foreign keys consistently (for example with a geography-edition identity and release ID). Do not merely add a year column while keeping an incompatible unique key.
 
-The schema is intentionally marked as a real-data sample, with `publication_ready=0`. Generalize the release metadata and approval rules when implementing the application's shared synthetic/real loader. `is_comparable` currently means positive 2025 ERP and does not approve transport scoring eligibility or a minimum population threshold. Source quality cannot be fixed by a database constraint.
+The release metadata records real data that the team has approved for publication (`publication_ready=1`). `is_comparable` currently means positive 2025 ERP and does not approve transport scoring eligibility or a minimum population threshold. Source quality cannot be fixed by a database constraint.
 
 No suburb-alias table is populated because a verified one-to-many suburb/SA2 mapping has not been acquired. The diagram does not invent one. The application can begin with official SA2 names, and a future alias relationship can be added with its own source and mapping basis.
 '''

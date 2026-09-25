@@ -16,7 +16,7 @@ Use string `sa2_code` identities. Search returns comparable official SA2 names, 
 
 Display indicators in API order: rent, transport, population growth, open space. Format numbers/units but do not recalculate indicators or replace null with zero. Compare and Details use identical indicator objects. Annual history contains counts sorted by actual year, with revision status and source information.
 
-Show dates and make quality/source notes discoverable. Current responses have `meta.publication_ready=false`; spatial methods remain provisional. Real example data is not approval to publish statistics. No unapproved scores are supplied.
+Show dates and make quality/source notes discoverable. Current responses have `meta.publication_ready=true`; the spatial methods are final. No scores are supplied.
 
 Errors are `{ "error": { "code": "...", "message": "..." } }`. Handle 404 for unknown areas, 422 for invalid inputs/selections and 503 with retry. A successful response may contain individual unavailable indicators.
 

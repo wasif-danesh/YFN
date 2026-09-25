@@ -15,7 +15,6 @@ export default defineNuxtConfig({
     htmlAttrs: { lang: 'en' },
     meta: [
       { name: 'description', content: 'Explore Greater Melbourne and compare areas with Your Friendly Neighbourhood.' },
-      { name: 'robots', content: 'noindex, nofollow' },
     ],
   } },
   nitro: { preset: 'static', prerender: { routes: ['/', '/compare', '/api-test-console'] } },

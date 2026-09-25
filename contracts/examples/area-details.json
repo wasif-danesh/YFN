@@ -64,7 +64,7 @@
     },
     {
       "key": "transport_access",
-      "label": "Area-weighted morning access index (sample method)",
+      "label": "Area-weighted morning access index",
       "unit": "access_index",
       "raw_value": 41.81820604886178,
       "score": null,
@@ -72,8 +72,8 @@
       "reference_period": "Morning access index; live snapshot retrieved 2026-09-08",
       "start_year": null,
       "end_year": null,
-      "method_version": "ptal-area-mean-sample-v1",
-      "method_status": "sample_only",
+      "method_version": "ptal-area-weighted-mean-v1",
+      "method_status": "approved",
       "explanation": "Area-level transport access over covered land; not a commute time or access from a property.",
       "geography": {
         "type": "SA2",
@@ -81,8 +81,8 @@
         "boundary_year": 2021
       },
       "quality": {
-        "status": "limited",
-        "reason": "Sample area-weighted raw index over covered land only. Weighting and minimum coverage are unapproved; no approved benchmark or percentile. Layer observation date unverified.",
+        "status": "available",
+        "reason": "Land-area-weighted average of the morning (8\u20139am) public transport access index over the part of this area the data covers. Not a commute time or access from a property.",
         "coverage_fraction": 0.999999999999953
       },
       "sources": [
@@ -127,7 +127,7 @@
       "start_year": 2020,
       "end_year": 2025,
       "method_version": "erp-growth-2020-2025-v1",
-      "method_status": "sample_only",
+      "method_status": "approved",
       "explanation": "Historical estimated population change, not a forecast. 2025 estimates are preliminary.",
       "geography": {
         "type": "SA2",
@@ -172,7 +172,7 @@
     },
     {
       "key": "green_space_per_resident",
-      "label": "Selected public open space per resident (sample filter)",
+      "label": "Public open space per resident",
       "unit": "m2/person",
       "raw_value": 11.089526501894259,
       "score": null,
@@ -180,8 +180,8 @@
       "reference_period": "Undated unmaintained open-space inventory / 30 June 2025 ERP",
       "start_year": null,
       "end_year": null,
-      "method_version": "open-space-filter-sample-v1",
-      "method_status": "sample_only",
+      "method_version": "open-space-public-filter-v1",
+      "method_status": "approved",
       "explanation": "Selected open space per resident; not walking access, park quality or confirmed vegetation.",
       "geography": {
         "type": "SA2",
@@ -189,8 +189,8 @@
         "boundary_year": 2021
       },
       "quality": {
-        "status": "limited",
-        "reason": "Sample public-open-space filter includes sports grounds and natural open space that can include river land/water. Not confirmed vegetation or current access. Inventory completeness/date unverified. Denominator is preliminary 2025 ERP.",
+        "status": "available",
+        "reason": "Public open space that is open and existing (parks and gardens, natural and semi-natural areas, recreation corridors and sports grounds), divided by 2025 population. It can include river and lake frontage recorded as open space, and does not show vegetation, park quality or walking access. The inventory has no publication date, and 2025 population is preliminary.",
         "coverage_fraction": null
       },
       "sources": [
@@ -299,9 +299,9 @@
   "meta": {
     "data_mode": "real",
     "data_version": "greater-melbourne-v1",
-    "method_version": "greater-melbourne-sample-v1-not-approved-for-publication",
+    "method_version": "greater-melbourne-v1",
     "boundary_year": 2021,
-    "publication_ready": false,
+    "publication_ready": true,
     "benchmark_count": null
   }
 }

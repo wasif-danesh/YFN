@@ -654,7 +654,7 @@
             "type": "string",
             "enum": [
               "source_definition",
-              "sample_only"
+              "approved"
             ],
             "title": "Method Status"
           },

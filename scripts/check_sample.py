@@ -30,7 +30,7 @@ def check_sample(base=BASE):
         expected=evidence['sha256_after'].get(filename)
         require(expected==hashlib.sha256((base/filename).read_bytes()).hexdigest(),f'Artifact hash mismatch: {filename}')
     require(hashlib.sha256((base/'acquisition.json').read_bytes()).hexdigest()==manifest['source_manifest_sha256'],'Acquisition manifest changed')
-    require(manifest['data_mode']=='real' and manifest['publication_ready'] is False,'Unexpected sample release mode')
+    require(manifest['data_mode']=='real' and manifest['publication_ready'] is True,'Unexpected release mode')
     db=sqlite3.connect((base/'yfn.sqlite').resolve().as_uri()+'?mode=ro',uri=True)
     try:
         require(db.execute('PRAGMA integrity_check').fetchone()[0]=='ok','SQLite integrity failed')

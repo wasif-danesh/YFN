@@ -39,6 +39,24 @@ export function getIndicator(entry, key) {
   return entry.indicators.find((indicator) => indicator.key === key)
 }
 
+// Width of a comparison bar (0-1) for one area, relative to the highest value
+// among the areas being compared. No bar when fewer than two values exist, or
+// when any value is negative (e.g. population decline), because a bar cannot
+// show a fall honestly and must never imply one.
+export function barRatio(entries, key, code) {
+  const values = entries
+    .map((entry) => getIndicator(entry, key)?.raw_value)
+    .filter((value) => value !== null && value !== undefined)
+  if (values.length < 2 || values.some((value) => value < 0)) return null
+  const max = Math.max(...values)
+  if (!(max > 0)) return null
+  const own = getIndicator(
+    entries.find((entry) => entry.area.sa2_code === code),
+    key,
+  )?.raw_value
+  return own === null || own === undefined ? null : own / max
+}
+
 // A plain-language read of a raw, unfamiliar number (e.g. a transport access
 // index) relative to the other areas in this comparison — never a rating or
 // a claim against an outside benchmark, only "higher/lower than what you're

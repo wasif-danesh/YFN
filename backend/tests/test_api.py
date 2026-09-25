@@ -39,7 +39,7 @@ def test_search_case_whitespace_order_and_limit(client):
     assert result["areas"][0]["sa2_code"] == CARLTON
     assert len(result["areas"]) == 2
     assert all(a["is_comparable"] for a in result["areas"])
-    assert result["meta"]["publication_ready"] is False
+    assert result["meta"]["publication_ready"] is True
     assert len(client.get("/api/v1/areas?limit=1").json()["areas"]) == 1
 
 
@@ -69,7 +69,7 @@ def test_details_and_compare_share_values_sources_and_order(client):
     assert values["rent_weekly"]["raw_value"] == 365
     assert values["rent_weekly"]["reference_period"] == "2021 Census"
     assert values["transport_access"]["score"] is None
-    assert values["transport_access"]["quality"]["status"] == "limited"
+    assert values["transport_access"]["quality"]["status"] == "available"
     for value in values.values():
         assert value["sources"] and value["method_version"]
         assert all(s["roles"] and s["url"] for s in value["sources"])

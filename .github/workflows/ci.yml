@@ -26,6 +26,19 @@ jobs:
       - run: python scripts/check_sample.py
       - run: python scripts/check_homepage_map.py
 
+  pipeline-tests:
+    name: Data pipeline tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version-file: .python-version
+          cache: pip
+          cache-dependency-path: pipeline/requirements-greater-melbourne.txt
+      - run: python -m pip install -r pipeline/requirements-greater-melbourne.txt pytest
+      - run: python -m pytest pipeline -q
+
   backend-tests:
     name: Backend API tests
     runs-on: ubuntu-latest

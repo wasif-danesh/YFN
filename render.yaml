@@ -1,5 +1,5 @@
 # Hosts the renter homepage, basic comparison and separate API test console.
-# Data remains provisional; retain noindex until publication is approved.
+# The site is published and indexable; only the developer API console stays noindex.
 # Root directory is omitted intentionally: both builds use the repository root.
 services:
   - type: web
@@ -55,7 +55,7 @@ services:
       - path: /*
         name: Referrer-Policy
         value: strict-origin-when-cross-origin
-      - path: /*
+      - path: /api-test-console*
         name: X-Robots-Tag
         value: noindex, nofollow
     routes:

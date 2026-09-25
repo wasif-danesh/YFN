@@ -38,7 +38,7 @@ The source G02 file contains `0` for West Melbourne - Industrial, Royal Botanic 
 
 ### Transport coverage
 
-All 360 numeric transport results are **limited, provisional area summaries**, not scores out of 100 or measures of access from a rental address. Macedon has no PTAL intersection and a null result. Outer areas can have very small covered fractions: for example, Romsey is approximately 0.32%, Gisborne 0.94% and Kinglake 1.91%. Do not interpret these covered-land averages as representative of their entire SA2s.
+Of the 360 numeric transport results, 354 are **available** and 6 are **limited** because the data covers less than half of the area. They are land-area-weighted averages, not scores out of 100 or measures of access from a rental address. Macedon has no PTAL intersection and a null result. Outer areas can have very small covered fractions: for example, Romsey is approximately 0.32%, Gisborne 0.94% and Kinglake 1.91%. Do not interpret these covered-land averages as representative of their entire SA2s.
 
 `coverage_fraction` is valid PTAL union area divided by SA2 area. Unknown land outside the source coverage is not assigned zero access. No minimum eligibility threshold or percentile has been silently selected. The full-area list is available for choosing a fixed benchmark later, but it is not itself an approved benchmark.
 
@@ -53,7 +53,7 @@ The sample retains the earlier explicit filter:
 - `OS_STATUS = Existing`
 - `OS_CATEGOR` in Parks and gardens; Natural and semi-natural open space; Recreation corridor; Sportsfields and organised recreation.
 
-Selected polygons are unioned before their area is counted, avoiding overlapping parcels being counted twice. Categories such as Conservation reserves are excluded by this sample filter; this is a consequential provisional choice, not a claim that they are unusable public space. Source attributes and exclusion reasons remain in the audit.
+Selected polygons are unioned before their area is counted, avoiding overlapping parcels being counted twice. Categories such as Conservation reserves are excluded by this filter; this is a deliberate choice, not a claim that they are unusable public space. Water bodies recorded as open space are included. Source attributes and exclusion reasons remain in the audit.
 
 Five SA2s have no selected inventory polygons: Moorabbin Airport, Essendon Airport, Gisborne, Macedon and Riddells Creek. With unknown inventory coverage, this cannot establish zero real open space. Their per-resident observations are null. Two additional areas have zero population. The diagnostic inventory area can be zero even while the displayed indicator is unavailable.
 

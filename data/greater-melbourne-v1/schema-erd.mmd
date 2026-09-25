@@ -79,7 +79,7 @@ erDiagram
     sampleRelease["sample_release"] {
         TEXT release_id PK
         TEXT data_mode "Real"
-        INTEGER publication_ready "False"
+        INTEGER publication_ready "True"
         TEXT manifest_json "Applies to this whole database file"
     }
     dataSources ||--o{ sourceFiles : contains

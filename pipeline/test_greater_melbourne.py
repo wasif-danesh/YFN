@@ -59,7 +59,7 @@ class GreaterMelbourneChecks(unittest.TestCase):
             if r['indicator_key']=='transport_access':
                 self.assertTrue(0<=r['coverage_fraction']<=1)
                 if r['coverage_fraction']==0:self.assertIsNone(r['raw_value'])
-                else:self.assertEqual(r['quality_status'],'limited')
+                else:self.assertEqual(r['quality_status'],'available' if r['coverage_fraction']>=0.5 else 'limited')
             if r['indicator_key']=='green_space_per_resident':self.assertIsNone(r['coverage_fraction'])
         self.assertEqual(self.db.execute("SELECT count(*) FROM observations WHERE indicator_key='transport_access' AND coverage_fraction=0").fetchone()[0],1)
 
@@ -93,7 +93,7 @@ class GreaterMelbourneChecks(unittest.TestCase):
         for r in self.db.execute('SELECT sa2_code,indicator_key FROM observations'):
             self.assertGreaterEqual(self.db.execute('SELECT count(*) FROM observation_sources WHERE sa2_code=? AND indicator_key=?',tuple(r)).fetchone()[0],2)
         release=self.db.execute('SELECT * FROM sample_release').fetchone()
-        self.assertEqual(release['data_mode'],'real');self.assertEqual(release['publication_ready'],0)
+        self.assertEqual(release['data_mode'],'real');self.assertEqual(release['publication_ready'],1)
 
     def test_spatial_repairs_and_independent_source_area_checks(self):
         repairs=json.loads((BASE/'audit/geometry-repairs.json').read_text())

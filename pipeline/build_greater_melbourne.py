@@ -38,7 +38,8 @@ AREA_CRS = 7855  # GDA2020 / MGA zone 55; appropriate for Melbourne.
 CATEGORIES = ['Parks and gardens','Natural and semi-natural open space',
               'Recreation corridor','Sportsfields and organised recreation']
 QUICKSTATS = {'206041117':365,'213031348':355,'212051568':401,'212051567':380}
-METHOD_VERSION = 'greater-melbourne-sample-v1-not-approved-for-publication'
+METHOD_VERSION = 'greater-melbourne-v1'
+TRANSPORT_MIN_COVERAGE = 0.5  # Below this share of the area, the transport figure is marked limited.
 TOLERANCE_M2 = 0.01  # Numerical topology tolerance, NOT a source coverage threshold.
 
 
@@ -114,15 +115,15 @@ def main():
     ]
     method_rows = [
         {'method_id':'census-g02-direct-v2','approval_status':'source_definition','definition':'Read Median_rent_weekly by SA2_CODE_2021. Preserve original tokens in the audit. The three zero entries are withheld as unavailable: zero is outside the 2021 RNTD scope and their QuickStats pages report no/very low population.'},
-        {'method_id':'erp-growth-2020-2025-v1','approval_status':'sample_only','definition':'100*(ERP_2025-ERP_2020)/ERP_2020 from one release; nonpositive/missing baseline returns null.'},
-        {'method_id':'ptal-area-mean-sample-v1','approval_status':'sample_only','definition':'sum(intersection_m2*sum_ai_8_9)/sum(valid_intersection_m2); EPSG:7855. No percentile, rating or coverage eligibility threshold.'},
-        {'method_id':'open-space-filter-sample-v1','approval_status':'sample_only','definition':json.dumps({'OS_TYPE':'Public open space','OS_ACCESS':'Open','OS_STATUS':'Existing','OS_CATEGOR':CATEGORIES,'aggregation':'union selected polygons, intersect SA2, divide square metres by 2025 ERP','crs':'EPSG:7855'})},
+        {'method_id':'erp-growth-2020-2025-v1','approval_status':'approved','definition':'100*(ERP_2025-ERP_2020)/ERP_2020 from one release; nonpositive/missing baseline returns null.'},
+        {'method_id':'ptal-area-weighted-mean-v1','approval_status':'approved','definition':'Land-area-weighted mean of the morning (8-9am) access index (sum_ai_8_9) over PTAL cells that intersect the SA2 (EPSG:7855). Only covered land counts and coverage is reported. Coverage below 50% is marked limited. No percentile, rating or benchmark.'},
+        {'method_id':'open-space-public-filter-v1','approval_status':'approved','definition':json.dumps({'OS_TYPE':'Public open space','OS_ACCESS':'Open','OS_STATUS':'Existing','OS_CATEGOR':CATEGORIES,'water_bodies':'included as recorded in the inventory','aggregation':'union selected polygons, intersect SA2, divide square metres by 2025 ERP','crs':'EPSG:7855'})},
     ]
     indicators = [
         {'indicator_key':'rent_weekly','label':'Median weekly rent reported in 2021 Census','unit':'AUD/week'},
-        {'indicator_key':'transport_access','label':'Area-weighted morning access index (sample method)','unit':'access_index'},
+        {'indicator_key':'transport_access','label':'Area-weighted morning access index','unit':'access_index'},
         {'indicator_key':'population_growth','label':'Estimated population change 2020-2025','unit':'percent'},
-        {'indicator_key':'green_space_per_resident','label':'Selected public open space per resident (sample filter)','unit':'m2/person'},
+        {'indicator_key':'green_space_per_resident','label':'Public open space per resident','unit':'m2/person'},
     ]
     areas=[]; history=[]; observations=[]; links=[]; components=[]; summaries=[]
     ptal_audit=[]; parks_audit=[]; spatial=[]; census_extract=[]; pop_extract=[]
@@ -209,7 +210,7 @@ def main():
             reasons=[]
             for field,value in [('OS_TYPE','Public open space'),('OS_ACCESS','Open'),('OS_STATUS','Existing')]:
                 if attrs[field]!=value:reasons.append(f'{field}={attrs[field]}')
-            if attrs['OS_CATEGOR'] not in CATEGORIES:reasons.append('category outside sample filter')
+            if attrs['OS_CATEGOR'] not in CATEGORIES:reasons.append('category not counted as open space')
             parks_audit.append({'sa2_code':code,'FID':fid,'source_file':p['source_file'],'VPA_ID':attrs['VPA_ID'],'park_name':(attrs['PARK_NAME'] or '').strip(),
                 'category':attrs['OS_CATEGOR'],'access':attrs['OS_ACCESS'],'land_type':attrs['OS_TYPE'],'status':attrs['OS_STATUS'],
                 'water_body':(attrs['WATER_BODY'] or '').strip() or None,'coastal':(attrs['COASTAL'] or '').strip() or None,
@@ -249,10 +250,10 @@ def main():
                 'coverage_fraction':cov,'method_id':method})
         obs('rent_weekly',rent,'census-g02-direct-v2','2021 Census',2021,2021,'available','Historical reported rent; not current advertised rent.' if rent is not None else 'Source G02 token is 0; median withheld. 2021 RNTD excludes zero rent and the area QuickStats reports no/very low population. This does not mean free rent.')
         obs('population_growth',pop_growth,'erp-growth-2020-2025-v1','30 June 2020 to 30 June 2025',2020,2025,'available','2025 ERP is preliminary; historical estimated change, not a forecast.' if pop_growth is not None else '2020 population is zero/missing or 2025 population is missing; percentage change is undefined.')
-        obs('transport_access',ptal,'ptal-area-mean-sample-v1','Morning access index; live snapshot retrieved 2026-09-08',None,None,'limited',
-            'Sample area-weighted raw index over covered land only. Weighting and minimum coverage are unapproved; no approved benchmark or percentile. Layer observation date unverified.' if ptal is not None else 'No valid PTAL polygon area intersects this SA2. Outside coverage is unknown, not zero access.',coverage)
-        obs('green_space_per_resident',green,'open-space-filter-sample-v1','Undated unmaintained open-space inventory / 30 June 2025 ERP',None,None,'limited',
-            ('Zero/missing 2025 population; per-resident value undefined. ' if not comparable else 'No selected open-space polygon intersects this SA2; inventory coverage is unknown, so no zero is asserted. ' if park_area==0 else '')+'Sample public-open-space filter includes sports grounds and natural open space that can include river land/water. Not confirmed vegetation or current access. Inventory completeness/date unverified. Denominator is preliminary 2025 ERP.')
+        obs('transport_access',ptal,'ptal-area-weighted-mean-v1','Morning access index; live snapshot retrieved 2026-09-08',None,None,'available' if coverage>=TRANSPORT_MIN_COVERAGE else 'limited',
+            ('Land-area-weighted average of the morning (8\u20139am) public transport access index over the part of this area the data covers. Not a commute time or access from a property.' if coverage>=TRANSPORT_MIN_COVERAGE else 'The transport data covers less than half of this area, so treat this figure with care. It is a land-area-weighted average of the morning (8\u20139am) access index over the covered part only.') if ptal is not None else 'No valid PTAL polygon area intersects this SA2. Outside coverage is unknown, not zero access.',coverage)
+        obs('green_space_per_resident',green,'open-space-public-filter-v1','Undated unmaintained open-space inventory / 30 June 2025 ERP',None,None,'available',
+            ('Zero/missing 2025 population; per-resident value undefined. ' if not comparable else 'No selected open-space polygon intersects this SA2; inventory coverage is unknown, so no zero is asserted. ' if park_area==0 else '')+'Public open space that is open and existing (parks and gardens, natural and semi-natural areas, recreation corridors and sports grounds), divided by 2025 population. It can include river and lake frontage recorded as open space, and does not show vegetation, park quality or walking access. The inventory has no publication date, and 2025 population is preliminary.')
         for key,pairs in {
             'rent_weekly':[('abs-census-2021-g02','raw_measure'),('abs-sa2-2021','boundary')],
             'population_growth':[('abs-erp-2024-25','endpoints'),('abs-sa2-2021','boundary')],
@@ -272,7 +273,7 @@ def main():
         summaries.append({'sa2_code':code,'name':name,'is_comparable':int(comparable),'rent_2021_aud_week':rent,'erp_2020':vals[2020],'erp_2025':vals[2025],
             'population_growth_2020_2025_percent':pop_growth,'transport_raw_index_sample':ptal,'transport_coverage_fraction':coverage,
             'selected_open_space_m2':park_area,'selected_open_space_m2_per_person_sample':green,'transport_score':None,
-            'spatial_method_status':'sample_only_not_approved_for_publication'})
+            'spatial_method_status':'methods_final'})
         if area_index%20==0 or area_index==len(features):
             print(f'Processed {area_index}/{len(features)} SA2s: {name}; PTAL coverage {coverage:.4f}',flush=True)
 
@@ -318,7 +319,7 @@ def main():
         'transport':{'layer':'open-data-platform:ptal_metro','numeric':'sum_ai_8_9','category':'category_8_9','geometry':'geom','crs':'EPSG:7844'},
         'open_space':{'layer':'VPA_Draft_Open_Space_Data','id':'FID','secondary_id':'VPA_ID','filter_fields':['OS_TYPE','OS_ACCESS','OS_STATUS','OS_CATEGOR'],'geometry':'rings','crs':'EPSG:3857'}})
     write_json(AUDIT/'spatial-source-inventory.json',source_index.inventory)
-    manifest={'data_mode':'real','release_id':'greater-melbourne-v1','purpose':'schema_design_sample','publication_ready':False,
+    manifest={'data_mode':'real','release_id':'greater-melbourne-v1','purpose':'renter_release','publication_ready':True,
         'method_version':METHOD_VERSION,'boundary_year':2021,'population_start_year':2020,'population_end_year':2025,
         'transport_benchmark_count':None,'transport_score_status':'withheld_no_approved_benchmark_or_method',
         'open_space_observation_date':None,'area_count':len(areas),'observation_count':len(observations),'population_history_count':len(history),
@@ -346,7 +347,7 @@ def main():
                 records=csv.DictReader(f);fields=records.fieldnames
                 query=f'INSERT INTO {name} ({",".join(fields)}) VALUES ({",".join("?" for _ in fields)})'
                 db.executemany(query,[[None if v=='' else v for v in r.values()] for r in records])
-        db.execute('INSERT INTO sample_release VALUES (?,?,?,?)',('greater-melbourne-v1','real',0,json.dumps(manifest)))
+        db.execute('INSERT INTO sample_release VALUES (?,?,?,?)',('greater-melbourne-v1','real',1,json.dumps(manifest)))
     assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
     assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
     assert db.execute('SELECT count(*) FROM observations').fetchone()[0]==4*len(areas)
@@ -368,7 +369,7 @@ def main():
         'source_hectare_exceptions':len(ha_outliers),
         'quality_counts':{key:dict(Counter(r['quality_status'] for r in observations if r['indicator_key']==key)) for key in [r['indicator_key'] for r in indicators]},
         'projection_vs_geodesic_relative_tolerance':0.002,'topology_tolerance_m2':TOLERANCE_M2,'sqlite_integrity':'ok','foreign_key_violations':0,
-        'limitations':['Transport weighting and open-space filter are sample methods, not production-approved.',
+        'limitations':['Transport access covers only the part of an area the data covers, and the open-space figure can include river and lake frontage recorded as open space.',
             'Transport and open-space observation dates are not asserted from metadata update dates.',
             'Complete API query retrieval does not prove geographic inventory completeness or current ground truth.',
             '2025 population is preliminary; rent is 2021 Census reported rent.',

@@ -9,7 +9,7 @@ test('API test console calls the real API, shows JSON, handles errors and reload
   await expect(page.getByText('4 of 4 requests successful')).toBeVisible()
   await expect(page.getByTestId('health').locator('pre')).toContainText('"database": "ready"')
   await expect(page.getByTestId('details').locator('pre')).toContainText('25267')
-  await expect(page.getByTestId('details').locator('pre')).toContainText('"publication_ready": false')
+  await expect(page.getByTestId('details').locator('pre')).toContainText('"publication_ready": true')
   await page.getByLabel('Comparison SA2 codes').fill('206041117')
   await page.getByRole('button', { name: 'Run Compare areas', exact: true }).click()
   await expect(page.getByTestId('compare')).toContainText('HTTP 422')

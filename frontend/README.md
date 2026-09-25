@@ -9,7 +9,7 @@ Nuxt 4, Vue, JavaScript, Tailwind and Leaflet power **Your Friendly Neighbourhoo
 | `/areas/206041117` | Area Details: four indicators, annual population chart/table and source notes; optional `compare` query preserves the selected areas |
 | `/api-test-console` | Preserved developer console: four API requests, raw JSON, HTTP status and retry controls |
 
-Home follows the approved blue design, using verified ABS boundaries and allowing two or three areas to be combined from search and map selections before comparison. Compare and Area Details complete the renter journey with dated measures, rent differences, population history and selection-preserving return navigation. Data remains provisional and the site stays `noindex` until publication decisions are resolved.
+Home follows the approved blue design, using verified ABS boundaries and allowing two or three areas to be combined from search and map selections before comparison. Compare and Area Details complete the renter journey with dated measures, rent differences, population history and selection-preserving return navigation. The site is published and open to search engines; only the API console is `noindex`.
 
 ## Run locally
 
@@ -31,7 +31,7 @@ Open `http://localhost:3000`. On PowerShell, use `Copy-Item` instead of `cp`. Th
 | `app/pages/index.vue` | Renter homepage and ordered two-to-three-area selection |
 | `app/pages/compare.vue` | URL selection, comparison requests, values and source notes |
 | `app/pages/areas/[sa2_code].vue` | Dynamic area details, request states and comparison return link |
-| `app/components/ComparisonTable.vue`, `IndicatorValue.vue` | Shared measure presentation, null/provisional flags and source notes |
+| `app/components/ComparisonTable.vue`, `IndicatorValue.vue` | Shared measure presentation, bars, notes, null flags and source notes |
 | `app/components/PopulationHistory.vue` | Population chart, accessible table and revision status |
 | `app/utils/comparison.js`, `population.js` | Rent difference rules and population chart calculations |
 | `app/pages/api-test-console.vue` | Preserved diagnostic page |
@@ -105,4 +105,4 @@ Home collects two or three distinct eligible SA2s and passes their ordered codes
 
 Rent differences use only available observations with matching units, reference periods and methods. They describe historical Census rent, not current prices or predicted savings. Population charts use the API’s actual annual observations, break lines across missing years and show revision status in a table. Unknown values stay unavailable. No overall score or ranking is added.
 
-The completed pages passed 21 unit/component tests, 10 desktop/mobile browser tests and static generation locally on 9 September 2026. The tests use the maintained SQLite database; missing-data fixtures are intercepted only inside tests. These checks do not imply deployment or approval of provisional data.
+The completed pages pass 34 unit/component tests, 10 desktop/mobile browser tests and static generation locally. The tests use the maintained SQLite database; missing-data fixtures are intercepted only inside tests. These checks do not imply deployment or approval of provisional data.

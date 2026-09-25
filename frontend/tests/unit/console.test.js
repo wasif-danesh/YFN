@@ -3,7 +3,7 @@ import { mount, flushPromises } from '@vue/test-utils'
 import ApiConsole from '../../app/components/ApiConsole.vue'
 
 afterEach(() => vi.unstubAllGlobals())
-const success = () => ({ status: 200, ok: true, text: async () => JSON.stringify({ raw_value: null, publication_ready: false }) })
+const success = () => ({ status: 200, ok: true, text: async () => JSON.stringify({ raw_value: null, publication_ready: true }) })
 
 it('automatically calls all four endpoints and displays exact JSON including null', async () => {
   const fetcher = vi.fn().mockImplementation(async () => success())

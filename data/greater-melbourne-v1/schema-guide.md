@@ -84,7 +84,7 @@ erDiagram
     sampleRelease["sample_release"] {
         TEXT release_id PK
         TEXT data_mode "Real"
-        INTEGER publication_ready "False"
+        INTEGER publication_ready "True"
         TEXT manifest_json "Applies to this whole database file"
     }
     dataSources ||--o{ sourceFiles : contains
@@ -126,6 +126,6 @@ Solid identifying relationships indicate a parent key forms part of a child's pr
 
 The database stores one boundary edition and one current observation per area/indicator per release. For multiple boundary editions or observation releases in one database, extend the primary and foreign keys consistently (for example with a geography-edition identity and release ID). Do not merely add a year column while keeping an incompatible unique key.
 
-The schema is intentionally marked as a real-data sample, with `publication_ready=0`. Generalize the release metadata and approval rules when implementing the application's shared synthetic/real loader. `is_comparable` currently means positive 2025 ERP and does not approve transport scoring eligibility or a minimum population threshold. Source quality cannot be fixed by a database constraint.
+The release metadata records real data that the team has approved for publication (`publication_ready=1`). `is_comparable` currently means positive 2025 ERP and does not approve transport scoring eligibility or a minimum population threshold. Source quality cannot be fixed by a database constraint.
 
 No suburb-alias table is populated because a verified one-to-many suburb/SA2 mapping has not been acquired. The diagram does not invent one. The application can begin with official SA2 names, and a future alias relationship can be added with its own source and mapping basis.

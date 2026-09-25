@@ -1,9 +1,9 @@
 {
   "data_mode": "real",
   "release_id": "greater-melbourne-v1",
-  "purpose": "schema_design_sample",
-  "publication_ready": false,
-  "method_version": "greater-melbourne-sample-v1-not-approved-for-publication",
+  "purpose": "renter_release",
+  "publication_ready": true,
+  "method_version": "greater-melbourne-v1",
   "boundary_year": 2021,
   "population_start_year": 2020,
   "population_end_year": 2025,
@@ -31,13 +31,13 @@
     "numpy": "2.5.3"
   },
   "pipeline_files_sha256": {
-    "build_greater_melbourne.py": "ffbaefdc05c7b450128718bef0453f51d8262eed1a07ae94cb6604cbb152d32e",
+    "build_greater_melbourne.py": "8b49a6546e171fd6dbe2fc9c5f2df6e75ecb67cd95ffb818855c9e6a166dbd3e",
     "melbourne_spatial.py": "dfbc52c7ea527979bd77e33944953195a63ef9997208ad175f75668b908d62fe",
     "melbourne_source_checks.py": "ec546e3abc21dfe9f6b0121b974f107c8512d6fe8a8f2bc6107d056728339b9e",
     "acquire_greater_melbourne.py": "27178b566a588680c8843a7a6cad3db9d9ee586b64fbb1409ce315854f3345c6",
     "melbourne_common.py": "ee122dfae0f61d95ff09fdce24b95d9a15034323da7f5bc802407d97b3a26b09",
     "melbourne_config.py": "346505671e2372bea7bf7240fddec06ef98baa3af1960c26e88875eda9a6feb0",
-    "greater_melbourne_schema.sql": "d158ab5acefcb4a039ecb9398bdc30350ff437f059ad2755fa5c481e06665161",
+    "greater_melbourne_schema.sql": "a03cb35bd0b4c9dcdfbf49f04c49eb42a7fa024db23f77bb51ec9618e882d8c1",
     "requirements-greater-melbourne.txt": "5329e3ad9471a694b89ec2a2ba890119535af1d395281298468d69cfa83300e7"
   },
   "crs": {

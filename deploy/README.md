@@ -42,8 +42,8 @@ The CORS setting uses `sync: false`, so the value you enter is retained outside 
 - Open the frontend and test name search, map selection and comparison. Open `/api-test-console`, allow the API to wake, then expect **4 of 4 requests successful** with JSON in every card.
 - On `/api-test-console`, search for `carl`, change the detail SA2 code, and try comparison with only one code. Expect an HTTP 422 error; restore `206041117,213031348` and retry successfully.
 - Reload the homepage, check it on a phone, and confirm the API base shown is the public HTTPS API address. If JSON fails, inspect API logs, the exact CORS origin and the browser Network panel.
-- Confirm source dates, nulls and `publication_ready: false` remain visible. The renter pages retain provisional-data notes; the API console preserves raw metadata. This is not final publication approval.
-- Record the Git commit and both live URLs in the team tracker. Health means the app/database are operational, not that provisional methods have been approved.
+- Confirm source dates, nulls and `publication_ready: true` remain visible. The renter pages keep the notes under each figure; the API console preserves raw metadata.
+- Record the Git commit and both live URLs in the team tracker. Health means the app/database are operational, not that the data has been approved for publication.
 
 ## Subsequent changes and recovery
 
